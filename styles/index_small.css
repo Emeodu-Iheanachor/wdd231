@@ -17,7 +17,7 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 padding:12px;
-background:#ddd;
+background:#fd6304;
 }
 
 .site-name{
@@ -32,7 +32,70 @@ border:none;
 cursor:pointer;
 }
 
-/* NAVIGATION */
+.photo img:hover{
+transform:scale(1.05);
+}
+
+
+
+
+/* --- Header --- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #0a3d62;
+  color: rgb(242, 244, 243);
+ 
+}
+
+header img {
+  display: block;
+}
+
+header .site-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  align-items: left;
+}
+
+/* --- Navigation --- */
+nav {
+  display: none; /* hidden on mobile by default */
+  background-color: #1e3799;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  border-bottom: 1px solid #3c40c6;
+}
+
+nav li a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: white;
+  text-decoration: none;
+}
+
+nav li a:hover,
+nav li a.active {
+  background-color: #3c40c6;
+}
+
+/* Show nav when "open" class is added */
+nav.open {
+  display: block;
+}
+
+
+
+/* ---------- NAVIGATION ---------- */
 
 nav{
 background:#222;
@@ -41,6 +104,8 @@ background:#222;
 .navigation{
 list-style:none;
 display:none;
+padding:0;
+margin:0;
 }
 
 .navigation.open{
@@ -54,13 +119,30 @@ border-top:1px solid #444;
 .navigation a{
 display:block;
 padding:14px;
-color:white;
 text-decoration:none;
+color:white;
+font-weight:500;
+transition:background 0.3s ease;
 }
 
+/* Hover effect */
+
 .navigation a:hover{
-background:#444;
+background:#555;
 }
+
+/* Active page */
+
+.navigation .active{
+background:#111;
+color:#fff;
+font-weight:600;
+}
+
+
+
+
+
 
 /* MAIN */
 
@@ -116,6 +198,18 @@ background:#ddd;
 cursor:pointer;
 }
 
+.buttons button:hover{
+background:#333;
+color:white;
+transform:translateY(-2px);
+}
+
+
+.buttons button:active{
+transform:scale(0.95);
+}
+
+
 /* COURSE GRID */
 
 #courses{
@@ -131,6 +225,13 @@ border:1px solid #888;
 text-align:center;
 font-weight:500;
 }
+
+.course:hover{
+background:#333;
+color:white;
+transform:scale(1.03);
+}
+
 
 .completed{
 background:#333;
@@ -154,4 +255,9 @@ margin:0 10px;
 text-decoration:none;
 font-weight:600;
 color:black;
+}
+
+.social a:hover{
+color:#06fd06;
+border: borderline;
 }

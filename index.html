@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WDD231 Course Home Page | Emeodu Iheanachor</title>
+
+<meta name="description" content="Course home page for Emeodu Iheanachor in WDD231. This site showcases coursework, certificate courses, and projects including the Lagos Chamber of Commerce website.">
+
+<meta name="author" content="Emeodu Iheanachor">
+
+<link rel="stylesheet" href="styles/index_normalize.css">
+<link rel="stylesheet" href="styles/index_small.css">
+<link rel="stylesheet" href="styles/index_larger.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script src="scripts/index_navigation.js" defer></script>
+<script src="scripts/index_date.js" defer></script>
+<script src="scripts/index_course.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+  <img src="images/logo.svg" alt="Website logo" width="48" height="48">
+  <span class="site-name">Emeodu Iheanachor</span>
+
+  <button id="menu" aria-label="Toggle navigation menu">☰</button>
+</header>
+
+<nav>
+  <ul class="navigation">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="chamber/index.html">Lagos Chamber of Commerce</a></li>
+    <li><a href="final/index.html">Final Project</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<h1>Home</h1>
+
+<section class="card about">
+    <h2>About Me</h2>
+    <p>
+    My name is Emeodu, R. C. Iheanachor and I am currently studying Software Development through 
+    BYU-Pathway Worldwide. This website serves as my course home page for WDD231 and displays 
+    he projects and skills I am developing during this course.
+    </p>
+
+    <p>
+    One of the main projects in this course is the Lagos Chamber of Commerce website. This 
+    project focuses on promoting businesses, encouraging economic development, and supporting
+    community engagement within Lagos, Nigeria.
+    </p>
+
+</section>
+
+<section class="card photo">
+    <h2>Student's Photo</h2>
+    <img src="images/Student-photo.jpg" alt="Photo of Emeodu, R. C. Iheanachor" loading="lazy">
+
+</section>
+
+<section class="card courses">
+    <h2>Web Certificate Courses</h2>
+
+    <div class="buttons">
+        <button>All</button>
+        <button>CSE</button>
+        <button>WDD</button>
+    </div>
+
+    <div id="courses">
+        <div class="course">WDD 130</div>
+        <div class="course">WDD 131</div>
+        <div class="course">WDD 231</div>
+    </div>
+
+</section>
+
+
+<section class="card credits">
+<h2>Total Credits</h2>
+
+<p class="credits">
+Total Credits: <span id="credits"></span>
+</p>
+
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="social">
+
+<a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+
+<a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+
+<a href="https://x.com" target="_blank" rel="noopener">X</a>
+
+</div>
+
+<p>
+© <span id="currentyear"></span> •
+Emeodu, R. C. Iheanachor • Lagos, Nigeria
+</p>
+
+<p id="lastModified"></p>
+
+</footer>
+
+</body>
+</html>

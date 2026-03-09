@@ -1,55 +1,190 @@
-@media (min-width:768px){
-
-/* HIDE HAMBURGER */
-
-#menu{
-display:none;
+@media screen and (min-width: 768px) {
+*{
+box-sizing:border-box;
 }
 
-/* HORIZONTAL NAV */
+ #menu {
+    display: none; /* hide hamburger button on desktop */
+  }
+  nav {
+    display: block; /* show menu */
+  }
+    
+  
+  nav li {
+    border: none;
+  }
+  nav li a {
+    padding: 1rem 1.5rem;
+  }
 
-.navigation{
-display:flex;
-justify-content:center;
+    
+  body{
+    font-family:'Roboto', sans-serif;
+    background:#e6e6e6;
+    line-height:1.6;
+  }
+
+     
+
+
+  .navigation {
+    display: flex;
+    gap: 5px;
+    padding: 1rem;
+    background-color: #d007f400;
 }
 
-.navigation li{
-border:none;
+.navigation a {
+    text-align: center;
+    border: none;
 }
 
-.navigation a{
-padding:15px 30px;
+header {
+    display: grid;
+    grid-template-columns: 24px auto 44px;
+    align-items: end;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #044776;
+    color: rgb(242, 244, 243);
+
 }
 
-/* MAIN WIDTH */
-
-main{
-max-width:1000px;
-margin:auto;
+header img {
+    display: block;
+    height: auto;
 }
 
-/* GRID LAYOUT FOR MAIN */
+/* ---------- MAIN GRID ---------- */
 
-main{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
 }
 
-main h1{
-grid-column:1 / -1;
+/* Page title spans both columns */
+main h1 {
+    grid-column: 1 / 3;
+
 }
 
-/* COURSE SECTION FULL WIDTH */
 
-.card:nth-child(3){
-grid-column:1 / -1;
+/* About Me section */
+.about {
+    grid-column: 1 / 2;
 }
 
-/* COURSE GRID */
+.about p {
+    text-align:justify;
+}
+/* Student Photo section */
+.photo {
+    grid-column: 2 / 3;
+}
+
+.photo img{
+width:80%;
+display:block;
+margin:1rem auto;
+border-radius:10px;
+transition:transform .3s ease;
+}
+
+.photo img:hover{
+transform:scale(1.05);
+}
+
+/* Courses section full width */
+.courses {
+    grid-column: 1 / 3;
+}
+
+/* ---------- COURSE GRID ---------- */
+
+#courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* ---------- COURSES ---------- */
 
 #courses{
-grid-template-columns:repeat(3,1fr);
+display:grid;
+gap:10px;
+padding:10px;
 }
+
+.course{
+padding:10px;
+text-align:center;
+background:#d9d9d9;
+border:1px solid #999;
+font-weight:500;
+cursor:pointer;
+transition:all .25s ease;
+}
+
+/* Hover effect */
+
+.course:hover{
+background:#333;
+color:white;
+transform:scale(1.03);
+}
+
+
+.social a{
+margin:0 10px;
+text-decoration:none;
+font-weight:500;
+color:black;
+transition:color .3s ease;
+}
+
+.social a:hover{
+color:#06fd06;
+
+}
+
+/* ---------- FILTER BUTTONS ---------- */
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+padding:10px;
+}
+
+.buttons button{
+padding:8px 16px;
+border-radius:6px;
+border:1px solid #888;
+background:#e5e5e5;
+font-weight:600;
+cursor:pointer;
+transition:all .25s ease;
+}
+
+/* Hover */
+
+.buttons button:hover{
+background:#333;
+color:white;
+transform:translateY(-2px);
+}
+
+/* Click effect */
+
+.buttons button:active{
+transform:scale(0.95);
+}
+
 
 }

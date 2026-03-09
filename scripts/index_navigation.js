@@ -1,14 +1,22 @@
-
-const menuButton = document.querySelector("#menu");
-const navigation = document.querySelector(".navigation");
+// Toggle nav menu on mobile and switch ☰ ↔ ✕
+const menuButton = document.getElementById("menu");
+const nav = document.querySelector("nav");
 
 menuButton.addEventListener("click", () => {
-    navigation.classList.toggle("open");
-    menuButton.classList.toggle("open");
+  nav.classList.toggle("open"); // show/hide menu
 
-    if (menuButton.classList.contains("open")) {
-        menuButton.textContent = "✖";
-    } else {
-        menuButton.textContent = "☰";
-    }
+  // Switch icon
+  if (nav.classList.contains("open")) {
+    menuButton.textContent = "✕"; // show X when menu is open
+  } else {
+    menuButton.textContent = "☰"; // show hamburger when menu is closed
+  }
+});
+
+// Close menu when a link is clicked (mobile friendly)
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuButton.textContent = "☰"; // reset to hamburger
+  });
 });
