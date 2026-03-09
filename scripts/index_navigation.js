@@ -1,6 +1,14 @@
-const menuBtn = document.querySelector("#menu");
-const nav = document.querySelector(".navigation");
 
-menuBtn.addEventListener("click", () => {
-nav.classList.toggle("show");
+const menuButton = document.querySelector("#menu");
+const navigation = document.querySelector(".navigation");
+
+menuButton.addEventListener("click", () => {
+    navigation.classList.toggle("open");
+    menuButton.classList.toggle("open");
+
+    if (menuButton.classList.contains("open")) {
+        menuButton.textContent = "✖";
+    } else {
+        menuButton.textContent = "☰";
+    }
 });

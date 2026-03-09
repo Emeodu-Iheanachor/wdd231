@@ -1,5 +1,13 @@
 @media (min-width:768px){
 
+/* HIDE HAMBURGER */
+
+#menu{
+display:none;
+}
+
+/* HORIZONTAL NAV */
+
 .navigation{
 display:flex;
 justify-content:center;
@@ -13,13 +21,35 @@ border:none;
 padding:15px 30px;
 }
 
+/* MAIN WIDTH */
+
 main{
 max-width:1000px;
 margin:auto;
 }
 
-.card{
-display:block;
+/* GRID LAYOUT FOR MAIN */
+
+main{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+main h1{
+grid-column:1 / -1;
+}
+
+/* COURSE SECTION FULL WIDTH */
+
+.card:nth-child(3){
+grid-column:1 / -1;
+}
+
+/* COURSE GRID */
+
+#courses{
+grid-template-columns:repeat(3,1fr);
 }
 
 }
