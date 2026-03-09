@@ -1,0 +1,42 @@
+/* normalize.css */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body, h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+/* Improve line height */
+body {
+  line-height: 1.5;
+}
+
+/* Images responsive */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove link underline default */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Button reset */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Navigation default hidden for mobile */
+nav {
+  display: none;
+}

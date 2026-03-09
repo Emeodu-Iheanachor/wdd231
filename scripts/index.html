@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WDD231 Course Home Page | Emeodu Iheanachor</title>
+
+<meta name="description" content="WDD231 course home page for Emeodu Iheanachor. This page provides information about my web development learning journey, certificate courses, and links to my Lagos Chamber of Commerce project and final project.">
+
+<meta name="author" content="Emeodu Iheanachor">
+
+<link rel="stylesheet" href="styles/index_normalize.css">
+<link rel="stylesheet" href="styles/index_small.css">
+<link rel="stylesheet" href="styles/index_larger.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script src="scripts/index_navigation.js" defer></script>
+<script src="scripts/index_date.js" defer></script>
+<script src="scripts/index_course.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+
+<img src="images/logo.svg" alt="Site Logo">
+
+<span class="site-name">Emeodu Iheanachor</span>
+
+<button id="menu" aria-label="Menu Button">☰</button>
+
+</header>
+
+
+<nav>
+
+<ul class="navigation">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="chamber/index.html">Lagos Chamber of Commerce</a></li>
+<li><a href="final/index.html">Final Project</a></li>
+
+</ul>
+
+</nav>
+
+
+<main>
+
+<h1>Home</h1>
+
+<section class="card">
+
+<h2>About Me</h2>
+
+<p>
+My name is Emeodu Iheanachor, and I am currently studying Software Development through BYU–Pathway Worldwide. 
+This course home page showcases the projects I am developing as part of the WDD231 course. One of the key projects 
+is the Lagos Chamber of Commerce website, which is designed to promote local businesses, economic development, 
+and community engagement within Lagos, Nigeria.
+</p>
+
+<p>
+Through this course, I am strengthening my skills in HTML, CSS, and JavaScript while learning how to build 
+responsive, accessible, and user-friendly websites.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Student Photo</h2>
+
+<img src="images/student-photo.jpg" alt="Photo of Emeodu Iheanachor">
+
+</section>
+
+
+<section class="card">
+
+<h2>Web Certificate Courses</h2>
+
+<div class="buttons">
+
+<button id="all">All</button>
+<button id="cse">CSE</button>
+<button id="wdd">WDD</button>
+
+</div>
+
+<div id="courses"></div>
+
+<p class="credits">
+The total credits for the courses listed above is
+<span id="credits"></span>
+</p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="social">
+
+<a href="https://linkedin.com" target="_blank">LinkedIn</a>
+<a href="https://github.com" target="_blank">GitHub</a>
+<a href="https://x.com" target="_blank">X</a>
+
+</div>
+
+<p>
+© <span id="currentyear"></span> •
+Emeodu Iheanachor • Lagos, Nigeria
+</p>
+
+<p id="lastModified"></p>
+
+</footer>
+
+</body>
+</html>

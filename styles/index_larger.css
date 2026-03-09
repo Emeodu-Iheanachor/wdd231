@@ -1,0 +1,25 @@
+@media (min-width:768px){
+
+.navigation{
+display:flex;
+justify-content:center;
+}
+
+.navigation li{
+border:none;
+}
+
+.navigation a{
+padding:15px 30px;
+}
+
+main{
+max-width:1000px;
+margin:auto;
+}
+
+.card{
+display:block;
+}
+
+}

@@ -1,0 +1,161 @@
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:'Roboto',sans-serif;
+background:#e6e6e6;
+line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px;
+background:#ddd;
+}
+
+header img{
+width:45px;
+}
+
+.site-name{
+font-weight:600;
+font-size:18px;
+}
+
+#menu{
+font-size:24px;
+background:none;
+border:none;
+cursor:pointer;
+}
+
+/* NAVIGATION */
+
+nav{
+background:#222;
+}
+
+.navigation{
+list-style:none;
+display:none;
+}
+
+.navigation.show{
+display:block;
+}
+
+.navigation li{
+border-top:1px solid #444;
+}
+
+.navigation a{
+display:block;
+padding:14px;
+color:white;
+text-decoration:none;
+}
+
+.navigation a:hover{
+background:#444;
+}
+
+/* MAIN */
+
+main{
+padding:15px;
+}
+
+h1{
+margin-bottom:10px;
+}
+
+/* CARD STYLE */
+
+.card{
+background:white;
+margin-bottom:20px;
+border:1px solid #bbb;
+}
+
+.card h2{
+background:#333;
+color:white;
+padding:10px;
+text-align:center;
+font-size:18px;
+}
+
+.card p{
+padding:15px;
+}
+
+/* STUDENT IMAGE */
+
+.card img{
+width:90%;
+display:block;
+margin:15px auto;
+border-radius:10px;
+}
+
+/* BUTTONS */
+
+.buttons{
+display:flex;
+justify-content:space-between;
+padding:10px;
+}
+
+.buttons button{
+padding:8px 16px;
+border-radius:8px;
+border:1px solid #444;
+background:#ddd;
+cursor:pointer;
+}
+
+/* COURSES */
+
+#courses{
+padding:10px;
+display:grid;
+gap:10px;
+}
+
+.course{
+padding:10px;
+border:1px solid #999;
+background:#ccc;
+text-align:center;
+}
+
+.completed{
+background:#444;
+color:white;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:15px;
+background:#eee;
+}
+
+.social{
+margin-bottom:10px;
+}
+
+.social a{
+margin:0 10px;
+text-decoration:none;
+font-weight:bold;
+color:black;
+}
