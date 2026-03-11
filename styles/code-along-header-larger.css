@@ -1,0 +1,20 @@
+@media (min-width:768px){
+
+.hamburger{
+display:none;
+}
+
+#nav-menu{
+display:flex;
+flex-direction:row;
+justify-content:flex-end;
+gap:2rem;
+padding:1rem;
+background:#0b3d5c;
+}
+
+#nav-menu a{
+border:none;
+}
+
+}

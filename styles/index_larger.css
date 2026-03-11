@@ -1,91 +1,147 @@
-@media screen and (min-width: 768px) {
-*{
-box-sizing:border-box;
+@media (min-width:768px){
+
+/* ---------- GLOBAL IMAGE ---------- */
+
+img{
+max-width:100%;
+height:auto;
 }
 
- #menu {
-    display: none; /* hide hamburger button on desktop */
-  }
-  nav {
-    display: block; /* show menu */
-  }
-    
-  
-  nav li {
+/* ---------- HIDE HAMBURGER ON DESKTOP ---------- */
+
+#menu{
+display:none;
+}
+/* HAMBURGER */
+#hamburger {
+    font-size: 2rem;
+    background: none;
     border: none;
-  }
-  nav li a {
-    padding: 1rem 1.5rem;
-  }
-
-    
-  body{
-    font-family:'Roboto', sans-serif;
-    background:#e6e6e6;
-    line-height:1.6;
-  }
-
-     
-
-
-  .navigation {
-    display: flex;
-    gap: 5px;
-    padding: 1rem;
-    background-color: #d007f400;
+    color: white;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
 }
 
-.navigation a {
-    text-align: center;
-    border: none;
+
+/* ---------- NAVIGATION ---------- */
+
+nav{
+background:#333;
+box-shadow:0 2px 6px rgba(0,0,0,0.15);
 }
 
-header {
-    display: grid;
-    grid-template-columns: 24px auto 44px;
-    align-items: end;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: #044776;
-    color: rgb(242, 244, 243);
+/* Force menu to show on desktop */
 
+.navigation{
+display:flex !important;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+gap:25px;
+list-style:none;
+margin:0;
+padding:0;
 }
 
-header img {
-    display: block;
-    height: auto;
+/* nav links */
+
+.navigation li a{
+display:block;
+padding:14px 18px;
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:all .25s ease;
+}
+
+/* hover */
+
+.navigation li a:hover{
+background:#575757;
+border-radius:6px;
+}
+
+/* active link */
+
+.navigation li a.active{
+background:#656567;
+border-radius:6px;
+}
+
+/* ---------- HEADER ---------- */
+
+header{
+display:grid;
+grid-template-columns:auto 1fr auto;
+align-items:center;
+gap:12px;
+padding:1rem 1.5rem;
+background:#f4f4f4;
+border-bottom:2px solid #ddd;
+}
+
+header img{
+width:clamp(45px,5vw,65px);
+}
+
+.site-name{
+font-size:clamp(1.3rem,2vw,1.7rem);
+font-weight:700;
+color:#333;
+}
+
+/* ---------- CARD ---------- */
+
+.card{
+background:white;
+border-radius:10px;
+border:1px solid #ddd;
+margin-bottom:20px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+overflow:hidden;
+}
+
+.card h2{
+background:#333;
+color:white;
+text-align:center;
+padding:12px;
+font-size:1.2rem;
+}
+
+.card p{
+padding:16px;
+line-height:1.7;
 }
 
 /* ---------- MAIN GRID ---------- */
 
-main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1rem;
+main{
+max-width:1100px;
+margin:0 auto;
+padding:1rem;
 
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1rem;
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:1rem;
 }
 
-/* Page title spans both columns */
-main h1 {
-    grid-column: 1 / 3;
-
+main h1{
+grid-column:1/3;
 }
 
+/* ---------- ABOUT ---------- */
 
-/* About Me section */
-.about {
-    grid-column: 1 / 2;
+.about p{
+text-align:justify;
 }
 
-.about p {
-    text-align:justify;
-}
-/* Student Photo section */
-.photo {
-    grid-column: 2 / 3;
+/* ---------- PHOTO ---------- */
+
+.photo{
+grid-column:2/3;
 }
 
 .photo img{
@@ -100,91 +156,85 @@ transition:transform .3s ease;
 transform:scale(1.05);
 }
 
-/* Courses section full width */
-.courses {
-    grid-column: 1 / 3;
+/* ---------- COURSES ---------- */
+
+.courses{
+grid-column:1/3;
 }
 
 /* ---------- COURSE GRID ---------- */
 
-#courses {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-/* ---------- COURSES ---------- */
-
 #courses{
 display:grid;
+grid-template-columns:repeat(3,1fr);
 gap:10px;
-padding:10px;
 }
 
 .course{
-padding:10px;
+padding:14px;
+background:#d7d4d4;
+border-radius:6px;
+border:1px solid #ccc;
 text-align:center;
-background:#d9d9d9;
-border:1px solid #999;
-font-weight:500;
-cursor:pointer;
-transition:all .25s ease;
+font-weight:600;
+transition:.25s;
 }
-
-/* Hover effect */
 
 .course:hover{
-background:#333;
+background:#7208f4;
 color:white;
-transform:scale(1.03);
+transform:scale(1.05);
 }
 
-
-.social a{
-margin:0 10px;
-text-decoration:none;
-font-weight:500;
-color:black;
-transition:color .3s ease;
-}
-
-.social a:hover{
-color:#06fd06;
-
-}
-
-/* ---------- FILTER BUTTONS ---------- */
+/* ---------- BUTTONS ---------- */
 
 .buttons{
 display:flex;
 justify-content:center;
-gap:10px;
-padding:10px;
+gap:12px;
+padding:15px;
 }
 
 .buttons button{
-padding:8px 16px;
-border-radius:6px;
-border:1px solid #888;
-background:#e5e5e5;
+padding:8px 18px;
+border-radius:20px;
+border:none;
+background:#16032ef4;
+color:white;
 font-weight:600;
 cursor:pointer;
-transition:all .25s ease;
+transition:.25s;
 }
 
-/* Hover */
-
 .buttons button:hover{
-background:#333;
-color:white;
+background:#540bfe;
 transform:translateY(-2px);
 }
 
-/* Click effect */
+/* ---------- FOOTER ---------- */
 
-.buttons button:active{
-transform:scale(0.95);
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:1.5rem;
+margin-top:20px;
 }
 
+.social{
+margin-bottom:12px;
+}
+
+.social a{
+margin:0 12px;
+text-decoration:none;
+font-weight:500;
+color:#ddd;
+transition:.3s;
+}
+
+.social a:hover{
+color:#fded06;
+}
 
 }

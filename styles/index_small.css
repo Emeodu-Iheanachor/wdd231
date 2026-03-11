@@ -4,93 +4,74 @@ margin:0;
 padding:0;
 }
 
+/* ---------- BODY ---------- */
+
 body{
 font-family:'Roboto', sans-serif;
 background:#e6e6e6;
 line-height:1.6;
 }
 
-/* HEADER */
+main{
+padding:1rem;
+max-width:1100px;
+margin:auto;
+}
+
+/* ---------- HEADER ---------- */
 
 header{
-display:flex;
+display:grid;
+grid-template-columns:48px 1fr 44px;
 align-items:center;
-justify-content:space-between;
-padding:12px;
-background:#fd6304;
+gap:10px;
+padding:1rem;
+background:#0b041c;
+color: white;
+position:relative;
+}
+
+nav {
+background:#0d0a15;
+color:white;
+display: flex;
+justify-content: space-between;
+
+}
+
+
+
+
+header img{
+display:block;
 }
 
 .site-name{
-font-size:18px;
-font-weight:600;
+font-weight:800;
+font-size:1.2rem;
 }
+
+/* ---------- HAMBURGER ---------- */
 
 #menu{
-font-size:24px;
-background:none;
+font-size:2rem;
 border:none;
+background:none;
 cursor:pointer;
-}
-
-.photo img:hover{
-transform:scale(1.05);
+color:rgb(247, 246, 248);
 }
 
 
-
-
-/* --- Header --- */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #0a3d62;
-  color: rgb(242, 244, 243);
- 
-}
-
-header img {
-  display: block;
-}
-
-header .site-name {
-  font-weight: 600;
-  font-size: 1.2rem;
-  align-items: left;
-}
-
-/* --- Navigation --- */
-nav {
-  display: none; /* hidden on mobile by default */
-  background-color: #1e3799;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  border-bottom: 1px solid #3c40c6;
-}
-
-nav li a {
-  display: block;
-  padding: 0.8rem 1rem;
-  color: white;
-  text-decoration: none;
-}
-
-nav li a:hover,
-nav li a.active {
-  background-color: #3c40c6;
-}
-
-/* Show nav when "open" class is added */
-nav.open {
-  display: block;
+/* HAMBURGER */
+#hamburger {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
 }
 
 
@@ -98,68 +79,46 @@ nav.open {
 /* ---------- NAVIGATION ---------- */
 
 nav{
-background:#222;
+background:#18171a;
 }
+
+/* hidden menu (mobile default) */
 
 .navigation{
 list-style:none;
-display:none;
-padding:0;
 margin:0;
+padding:0;
+display:none;
 }
+
+/* menu when opened */
 
 .navigation.open{
 display:block;
 }
 
-.navigation li{
-border-top:1px solid #444;
-}
+/* menu links */
 
-.navigation a{
+.navigation li a{
 display:block;
-padding:14px;
+padding:1rem;
 text-decoration:none;
 color:white;
 font-weight:500;
-transition:background 0.3s ease;
+border-bottom:1px solid rgba(255,255,255,0.2);
 }
 
-/* Hover effect */
-
-.navigation a:hover{
+.navigation li a:hover{
 background:#555;
 }
 
-/* Active page */
-
-.navigation .active{
-background:#111;
-color:#fff;
-font-weight:600;
-}
-
-
-
-
-
-
-/* MAIN */
-
-main{
-padding:15px;
-}
-
-h1{
-margin-bottom:15px;
-}
-
-/* CARDS */
+/* ---------- CARDS ---------- */
 
 .card{
 background:white;
 margin-bottom:20px;
 border:1px solid #bbb;
+border-radius:6px;
 }
 
 .card h2{
@@ -171,9 +130,23 @@ padding:10px;
 
 .card p{
 padding:15px;
+text-align:justify;
 }
 
-/* PHOTO */
+/* ---------- PHOTO ---------- */
+
+.photo img{
+width:100%;
+height:auto;
+border-radius:8px;
+transition:transform .3s;
+}
+
+.photo img:hover{
+transform:scale(1.05);
+}
+
+/* ---------- CARD IMAGE ---------- */
 
 .card img{
 width:90%;
@@ -182,12 +155,13 @@ margin:15px auto;
 border-radius:10px;
 }
 
-/* COURSE BUTTONS */
+/* ---------- BUTTONS ---------- */
 
 .buttons{
 display:flex;
 justify-content:space-between;
 padding:10px;
+gap:8px;
 }
 
 .buttons button{
@@ -196,6 +170,7 @@ border-radius:6px;
 border:1px solid #444;
 background:#ddd;
 cursor:pointer;
+transition:.25s;
 }
 
 .buttons button:hover{
@@ -204,13 +179,11 @@ color:white;
 transform:translateY(-2px);
 }
 
-
 .buttons button:active{
-transform:scale(0.95);
+transform:scale(.95);
 }
 
-
-/* COURSE GRID */
+/* ---------- COURSE GRID ---------- */
 
 #courses{
 display:grid;
@@ -224,27 +197,21 @@ background:#ccc;
 border:1px solid #888;
 text-align:center;
 font-weight:500;
+transition:.25s;
 }
 
 .course:hover{
-background:#333;
+background:#8506fd;
 color:white;
 transform:scale(1.03);
 }
-
 
 .completed{
 background:#333;
 color:white;
 }
 
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:15px;
-background:#eee;
-}
+/* ---------- SOCIAL ---------- */
 
 .social{
 margin-bottom:10px;
@@ -254,10 +221,18 @@ margin-bottom:10px;
 margin:0 10px;
 text-decoration:none;
 font-weight:600;
-color:black;
+color:white;
 }
 
 .social a:hover{
 color:#06fd06;
-border: borderline;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+background-color:navy;
+color:rgb(251,251,4);
+text-align:center;
+padding:1rem;
 }
