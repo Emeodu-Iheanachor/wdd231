@@ -32,14 +32,12 @@ position:relative;
 }
 
 nav {
-background:#0d0a15;
+background:#7d7d80;
 color:white;
 display: flex;
 justify-content: space-between;
 
 }
-
-
 
 
 header img{
@@ -53,34 +51,19 @@ font-size:1.2rem;
 
 /* ---------- HAMBURGER ---------- */
 
-#menu{
-font-size:2rem;
-border:none;
-background:none;
-cursor:pointer;
-color:rgb(247, 246, 248);
-}
 
 
 /* HAMBURGER */
-#hamburger {
+#menu {
     font-size: 2rem;
     background: none;
     border: none;
-    color: white;
-    position: absolute;
+    color:white;
     right: 1rem;
     top: 1rem;
     cursor: pointer;
 }
 
-
-
-/* ---------- NAVIGATION ---------- */
-
-nav{
-background:#18171a;
-}
 
 /* hidden menu (mobile default) */
 
