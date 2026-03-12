@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lagos Chamber Directory</title>
+
+<meta name="description" content="Directory of businesses belonging to the Lagos Chamber of Commerce.">
+<meta name="author" content="Emeodu Iheanachor">
+
+<!-- Favicon -->
+<link rel="icon" href="images/favicon.ico">
+
+<!-- Facebook Open Graph -->
+<meta property="og:title" content="Lagos Chamber of Commerce Directory">
+<meta property="og:description" content="Find local businesses in the Lagos Chamber of Commerce directory.">
+<meta property="og:image" content="images/logo.webp">
+<meta property="og:url" content="https://yourdomain.com/chamber/directory.html">
+
+<link rel="stylesheet" href="styles/normalize.css">
+<link rel="stylesheet" href="styles/directory-small.css">
+<link rel="stylesheet" href="styles/directory-larger.css">
+
+<script src="scripts/directory.js" defer></script>
+<script src="scripts/directory-navigation.js" defer></script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo-title">
+<img src="images/logo.webp" alt="Lagos Chamber Logo" width="50" height="50">
+<h1>Lagos Chamber of Commerce</h1>
+</div>
+
+<button id="menu">☰</button>
+
+<nav>
+<ul class="navigation">
+<li><a href="index.html">Home</a></li>
+<li><a href="directory.html" class="active">Directory</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="join.html">Join</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+</header>
+
+<main>
+
+<h2>Business Directory</h2>
+
+<div class="view-buttons">
+<button id="grid">Grid View</button>
+<button id="list">List View</button>
+</div>
+
+<section id="members" class="grid"></section>
+
+</main>
+
+<footer>
+
+<p>Contact: info@lagoschamber.com | +234 800 123 4567</p>
+
+<p>© <span id="year"></span> Lagos Chamber of Commerce</p>
+
+<p>Emeodu Iheanachor | WDD231</p>
+
+<p id="lastModified"></p>
+
+</footer>
+
+</body>
+</html>

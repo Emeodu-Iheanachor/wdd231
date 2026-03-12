@@ -238,4 +238,12 @@ transition:.3s;
 color:#fded06;
 }
 
+
+/* Target mobile / Android screens (width 767px or less) */
+@media (max-width: 767px) {
+  .social-icons {
+    color: white; /* all SVGs inside will inherit this color */
+  }
+}
+
 }
