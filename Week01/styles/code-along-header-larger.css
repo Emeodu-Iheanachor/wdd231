@@ -1,0 +1,35 @@
+@media (min-width: 768px){
+
+
+    #menu{
+display:none;
+}
+
+#logo-img{
+display:grid;
+justify-content:flex-end;
+background:#333;
+height: auto;
+align-items:end;
+
+}
+
+span {
+    color: white;
+    font-size: 1.5rem;
+    background:#4c01ed
+} 
+
+
+nav {
+border:none;
+padding:1rem 1.5rem;
+display: flex;
+justify-content: flex-end;
+background:#333;
+gap: 8px;
+    
+
+}
+
+}
