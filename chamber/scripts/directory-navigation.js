@@ -1,6 +1,12 @@
 const menuButton = document.querySelector("#menu");
-const nav = document.querySelector(".navigation");
+const navigation = document.querySelector(".navigation");
 
 menuButton.addEventListener("click", () => {
-nav.classList.toggle("open");
+    navigation.classList.toggle("open");
+
+    if (menuButton.textContent === "☰") {
+        menuButton.textContent = "X";
+    } else {
+        menuButton.textContent = "☰";
+    }
 });

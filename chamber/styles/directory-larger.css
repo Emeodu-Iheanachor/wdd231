@@ -12,6 +12,33 @@ flex-direction:row;
 justify-content:flex-end;
 }
 
+
+
+/* Navigation links */
+.navigation a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    display: block;
+    font-weight: 500;
+}
+
+/* Hover effect */
+.navigation a:hover {
+    background-color: #e6e6e6;
+    color: #000;
+}
+
+/* Active page style */
+.navigation a.active {
+    background-color: #db07fc;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+
 /* Directory grid */
 
 #members.grid{
@@ -29,6 +56,16 @@ align-items:center;
 
 header{
 grid-template-columns: auto 1fr auto;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffd700;
+    text-decoration: underline;
 }
 
 }
