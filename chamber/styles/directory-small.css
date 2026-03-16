@@ -44,12 +44,23 @@ border-radius:5px;
 /* NAVIGATION */
 /* -------------------- */
 
+h1 {
+color: blue;
+font-size: 2rem;
+}
+
 #menu{
 font-size:2rem;
 background:none;
 border:none;
 color:white;
 cursor:pointer;
+}
+
+
+nav {
+background-color: #333;
+color: white;
 }
 
 .navigation{
@@ -80,7 +91,7 @@ display:flex;
 /* Navigation links */
 .navigation a {
     text-decoration: none;
-    color: #333;
+    color: #f9f4f4;
     padding: 10px 15px;
     display: block;
     font-weight: 500;
@@ -89,12 +100,12 @@ display:flex;
 /* Hover effect */
 .navigation a:hover {
     background-color: #e6e6e6;
-    color: #000;
+    color: #6a6868;
 }
 
 /* Active page style */
 .navigation a.active {
-    background-color: #db07fc;
+    background-color: #1a181a;
     color: #fff;
     border-radius: 5px;
     font-weight: bold;

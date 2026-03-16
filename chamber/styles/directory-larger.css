@@ -31,7 +31,7 @@ justify-content:flex-end;
 
 /* Active page style */
 .navigation a.active {
-    background-color: #db07fc;
+    background-color: #1a181a;
     color: #fff;
     border-radius: 5px;
     font-weight: bold;
