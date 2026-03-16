@@ -12,12 +12,10 @@ flex-direction:row;
 justify-content:flex-end;
 }
 
-
-
 /* Navigation links */
 .navigation a {
     text-decoration: none;
-    color: #333;
+    color: #1a1a1a; /* darker for better contrast */
     padding: 10px 15px;
     display: block;
     font-weight: 500;
@@ -25,19 +23,17 @@ justify-content:flex-end;
 
 /* Hover effect */
 .navigation a:hover {
-    background-color: #e6e6e6;
-    color: #000;
+    background-color: #d9d9d9; /* darker background */
+    color: #000000;
 }
 
 /* Active page style */
 .navigation a.active {
-    background-color: #1a181a;
-    color: #fff;
+    background-color: #000000;
+    color: #ffffff;
     border-radius: 5px;
     font-weight: bold;
 }
-
-
 
 /* Directory grid */
 
@@ -58,13 +54,15 @@ header{
 grid-template-columns: auto 1fr auto;
 }
 
+/* Footer links */
+
 footer a {
     color: #ffffff;
     text-decoration: none;
 }
 
 footer a:hover {
-    color: #ffd700;
+    color: #ffd700; /* strong contrast on dark footer */
     text-decoration: underline;
 }
 
