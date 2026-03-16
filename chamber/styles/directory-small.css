@@ -2,42 +2,42 @@
 /* GLOBAL STYLES */
 /* -------------------- */
 
-:root{
---primary-color:#003366;
---secondary-color:#f4b400;
---background-color:#ffffff;
---text-color:#333;
+:root {
+    --primary-color: #003366;
+    --secondary-color: #f4b400;
+    --background-color: #ffffff;
+    --text-color: #333;
 }
 
-body{
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
-line-height:1.6;
-background:var(--background-color);
-color:var(--text-color);
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    background: var(--background-color, #ffffff);
+    color: var(--text-color, #333);
 }
 
 /* -------------------- */
 /* HEADER */
 /* -------------------- */
 
-header{
-display:grid;
-grid-template-columns: auto 1fr auto;
-align-items:center;
-padding:1rem;
-background:var(--primary-color);
-color:white;
+header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 1rem;
+    background: var(--primary-color, #003366);
+    color: white;
 }
 
-.logo-title{
-display:flex;
-align-items:center;
-gap:10px;
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.logo-title img{
-border-radius:5px;
+.logo-title img {
+    border-radius: 5px;
 }
 
 /* -------------------- */
@@ -45,48 +45,46 @@ border-radius:5px;
 /* -------------------- */
 
 h1 {
-color: blue;
-font-size: 2rem;
+    color: blue;
+    font-size: 2rem;
 }
 
-#menu{
-font-size:2rem;
-background:none;
-border:none;
-color:white;
-cursor:pointer;
+#menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
-
 
 nav {
-background-color: #333;
-color: white;
+    background-color: #333;
+    color: white;
 }
 
-.navigation{
-list-style:none;
-padding:0;
-margin:0;
-display:none;
-flex-direction:column;
+.navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    flex-direction: column;
 }
 
-.navigation li a{
-display:block;
-padding:0.75rem;
-color:white;
-text-decoration:none;
+.navigation li a {
+    display: block;
+    padding: 0.75rem;
+    color: white;
+    text-decoration: none;
 }
 
-.navigation li a:hover{
-background:var(--secondary-color);
-color:black;
+.navigation li a:hover {
+    background: var(--secondary-color, #f4b400);
+    color: black;
 }
 
-.navigation.open{
-display:flex;
+.navigation.open {
+    display: flex;
 }
-
 
 /* Navigation links */
 .navigation a {
@@ -111,89 +109,90 @@ display:flex;
     font-weight: bold;
 }
 
-
 /* -------------------- */
 /* MAIN */
 /* -------------------- */
 
-main{
-padding:1rem;
-max-width:1000px;
-margin:auto;
+main {
+    padding: 1rem;
+    max-width: 1000px;
+    margin: auto;
 }
 
-h2{
-text-align:center;
+h2 {
+    text-align: center;
 }
 
 /* -------------------- */
 /* VIEW BUTTONS */
 /* -------------------- */
 
-.view-buttons{
-text-align:center;
-margin:1rem 0;
+.view-buttons {
+    text-align: center;
+    margin: 1rem 0;
 }
 
-.view-buttons button{
-padding:0.5rem 1rem;
-margin:0.5rem;
-border:none;
-background:var(--primary-color);
-color:white;
-cursor:pointer;
+.view-buttons button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    background: var(--primary-color, #003366);
+    color: white;
+    cursor: pointer;
 }
 
-.view-buttons button:hover{
-background:var(--secondary-color);
-color:black;
+.view-buttons button:hover {
+    background: var(--secondary-color, #f4b400);
+    color: black;
 }
 
 /* -------------------- */
 /* MEMBER CARDS */
 /* -------------------- */
 
-#members.grid{
-display:grid;
-grid-template-columns:1fr;
-gap:1rem;
+/* default list/grid base */
+#members {
+    display: block;
 }
 
-#members section{
-border:1px solid #ddd;
-padding:1rem;
-text-align:center;
-background:#fafafa;
+#members.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
-#members img{
-max-width:100%;
-height:auto;
+#members section {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    background: #fafafa;
 }
 
-/* -------------------- */
+#members img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* LIST VIEW */
-/* -------------------- */
-
-#members.list{
-display:block;
+#members.list {
+    display: block;
 }
 
-#members.list section{
-display:grid;
-grid-template-columns:1fr;
-text-align:left;
-margin-bottom:1rem;
+#members.list section {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: left;
+    margin-bottom: 1rem;
 }
 
 /* -------------------- */
 /* FOOTER */
 /* -------------------- */
 
-footer{
-text-align:center;
-padding:1rem;
-background:#222;
-color:white;
-margin-top:2rem;
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: white;
+    margin-top: 2rem;
 }

@@ -208,7 +208,7 @@ transition:.25s;
 }
 
 .buttons button:hover{
-background:#540bfe;
+background:#defe0b;
 transform:translateY(-2px);
 }
 
