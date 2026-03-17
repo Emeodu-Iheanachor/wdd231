@@ -4,18 +4,15 @@ margin:0;
 padding:0;
 }
 
-
-:root {
-  --text-color: #222;
-  --bg-color: #eee;
+:root{
+--text-color:#1a1a1a;
+--bg-color:#f5f5f5;
 }
 
-
-.low-contrast-text {
-  color: var(--text-color);
-  background: var(--bg-color);
+.low-contrast-text{
+color:var(--text-color);
+background:var(--bg-color);
 }
-
 
 /* ---------- BODY ---------- */
 
@@ -40,18 +37,16 @@ align-items:center;
 gap:10px;
 padding:1rem;
 background:#0b041c;
-color: white;
+color:white;
 position:relative;
 }
 
-nav {
-background:#7d7d80;
+nav{
+background:#3a3a3d; /* darker for better contrast */
 color:white;
-display: flex;
-justify-content: space-between;
-
+display:flex;
+justify-content:space-between;
 }
-
 
 header img{
 display:block;
@@ -64,21 +59,17 @@ font-size:1.2rem;
 
 /* ---------- HAMBURGER ---------- */
 
-
-
-/* HAMBURGER */
-#menu {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color:white;
-    right: 1rem;
-    top: 1rem;
-    cursor: pointer;
+#menu{
+font-size:2rem;
+background:none;
+border:none;
+color:white;
+right:1rem;
+top:1rem;
+cursor:pointer;
 }
 
-
-/* hidden menu (mobile default) */
+/* ---------- NAVIGATION ---------- */
 
 .navigation{
 list-style:none;
@@ -87,13 +78,9 @@ padding:0;
 display:none;
 }
 
-/* menu when opened */
-
 .navigation.open{
 display:block;
 }
-
-/* menu links */
 
 .navigation li a{
 display:block;
@@ -105,7 +92,7 @@ border-bottom:1px solid rgba(255,255,255,0.2);
 }
 
 .navigation li a:hover{
-background:#555;
+background:#222; /* darker hover for contrast */
 }
 
 /* ---------- CARDS ---------- */
@@ -118,7 +105,7 @@ border-radius:6px;
 }
 
 .card h2{
-background:#333;
+background:#222; /* darker for better contrast */
 color:white;
 text-align:center;
 padding:10px;
@@ -127,6 +114,7 @@ padding:10px;
 .card p{
 padding:15px;
 text-align:justify;
+color:#222;
 }
 
 /* ---------- PHOTO ---------- */
@@ -164,7 +152,8 @@ gap:8px;
 padding:8px 16px;
 border-radius:6px;
 border:1px solid #444;
-background:#ddd;
+background:#d9d9d9;
+color:#000; /* ensures readable text */
 cursor:pointer;
 transition:.25s;
 }
@@ -189,7 +178,7 @@ padding:10px;
 
 .course{
 padding:10px;
-background:#ccc;
+background:#d4d4d4;
 border:1px solid #888;
 text-align:center;
 font-weight:500;
@@ -197,13 +186,13 @@ transition:.25s;
 }
 
 .course:hover{
-background:#8506fd;
+background:#6a00f4; /* darker purple for contrast */
 color:white;
 transform:scale(1.03);
 }
 
 .completed{
-background:#333;
+background:#222;
 color:white;
 }
 
@@ -221,22 +210,22 @@ color:white;
 }
 
 .social a:hover{
-color:#06fd06;
+color:#39ff14; /* bright but readable on dark */
 }
 
 /* ---------- FOOTER ---------- */
 
 footer{
-background-color:navy;
-color:rgb(251,251,4);
+background-color:#000080;
+color:#ffff33; /* good contrast on navy */
 text-align:center;
 padding:1rem;
 }
 
+/* ---------- MOBILE ---------- */
 
-/* Target mobile / Android screens (width 767px or less) */
-@media (max-width: 767px) {
-  .social-icons {
-    color: white; /* all SVGs inside will inherit this color */
-  }
+@media (max-width:767px){
+.social-icons{
+color:white;
+}
 }

@@ -6,10 +6,12 @@
 display:none;
 }
 
+
 .navigation{
 display:flex;
 flex-direction:row;
-justify-content:flex-end;
+justify-content:space-evenly;
+gap:5px;
 }
 
 /* Navigation links */
