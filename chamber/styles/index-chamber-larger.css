@@ -1,0 +1,43 @@
+/* ===== DESKTOP NAVIGATION ===== */
+@media screen and (min-width: 768px) {
+  /* Show nav on larger screens */
+  nav {
+    display: block !important;
+  }
+
+  .navigation {
+    flex-direction: row;
+    justify-content: center;
+    text-align: space-between;
+    gap: 10rem;
+  }
+
+  .navigation li a {
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Remove hamburger menu on desktop */
+  #menu {
+    display: none;
+  }
+
+  /* Hero text bigger */
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+
+  
+}
+
+/* Desktop card layout for member spotlight */
+@media screen and (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 2rem auto;
+  }
+
+}

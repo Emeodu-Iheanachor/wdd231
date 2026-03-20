@@ -1,0 +1,179 @@
+/* ------------------ Reset & Base ------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+  padding: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+/* ------------------ Course Header ------------------ */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e3a8a; /* dark blue */
+  transition: color 0.3s ease;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2563eb; /* lighter blue */
+  margin-bottom: 2rem;
+}
+
+/* ------------------ Controls: Section select + buttons ------------------ */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select:focus {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 5px rgba(30, 58, 138, 0.5);
+  outline: none;
+}
+
+button {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  color: #fff;
+}
+
+#enrollStudent {
+  background-color: #10b981; /* green */
+}
+
+#enrollStudent:hover {
+  background-color: #059669;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+#dropStudent {
+  background-color: #ef4444; /* red */
+}
+
+#dropStudent:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+/* ------------------ Enrollment Table ------------------ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #1e3a8a;
+  color: #fff;
+}
+
+thead th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+/* Hover animation for rows */
+tbody tr:hover td {
+  background-color: #e0f2fe; /* subtle light blue */
+  transform: scale(1.02);
+}
+
+/* ------------------ Responsive Design ------------------ */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  select,
+  button {
+    width: 100%;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead {
+    display: none; /* hide headers on small screens */
+  }
+
+  tbody tr {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: none;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #374151;
+  }
+}

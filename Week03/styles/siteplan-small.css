@@ -1,0 +1,131 @@
+:root {
+  --primary: #004080;
+  --secondary: #ffcc00;
+  --bg: #f9f9f9;
+  --text: #333333;
+  --font: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+}
+
+header, nav {
+  background-color: var(--primary);
+}
+
+nav ul li a:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+
+
+
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; /* From design brief */
+}
+
+body {
+  background-color: #f9f9f9; /* Background color */
+  color: #333333;            /* Text color */
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #004080; /* Primary color */
+  color: #ffffff;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header h1 {
+  font-size: 1.2rem;
+}
+
+#menu {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* ===== Navigation ===== */
+nav {
+  display: none;
+  background-color: #004080; /* Primary color */
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: #ffcc00; /* Secondary color for hover */
+  color: #004080;
+}
+
+/* ===== Sitemap Section ===== */
+.sitemap {
+  margin: 1rem;
+  background-color: #ffffff; /* White card background */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.sitemap h2 {
+  margin-bottom: 0.75rem;
+  color: #004080; /* Primary color for headings */
+}
+
+.sitemap ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sitemap ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  cursor: default;
+}
+
+.sitemap ul li ul {
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+  border-left: 2px dashed #004080; /* Primary color */
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #004080; /* Primary color */
+  color: #ffffff;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+}

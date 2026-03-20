@@ -1,0 +1,87 @@
+/* ===== Normalize CSS for cross-browser consistency ===== */
+
+/* Document defaults */
+html {
+  line-height: 1.15; /* Correct default line-height */
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in iOS */
+}
+
+/* Body defaults */
+body {
+  margin: 0;
+}
+
+/* Sections */
+main, header, nav, section, article, aside, footer {
+  display: block;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Paragraphs */
+p {
+  margin: 0;
+}
+
+/* Lists */
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Anchors */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Images */
+img {
+  border-style: none;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Buttons */
+button {
+  font: inherit;
+  margin: 0;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+/* Forms */
+input, textarea, select {
+  font: inherit;
+  margin: 0;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Small adjustments */
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* SVG */
+
