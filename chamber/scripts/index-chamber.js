@@ -18,18 +18,75 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent =
 `Last Modified: ${document.lastModified}`;
 
-// Weather (Demo static data, replace with API if needed)
+const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // 🔑 Replace with your API key
+const city = 'Lagos, NG';
+const units = 'metric'; // Celsius
+
 const tempEl = document.getElementById('temp');
 const descEl = document.getElementById('desc');
+const humidityEl = document.getElementById('humidity');
+const windEl = document.getElementById('wind');
+const forecastEl = document.getElementById('forecast');
 
-const demoWeather = {
-  temp: '28°C',
-  desc: 'Sunny with light clouds'
-};
+// Fetch Current Weather
+async function getWeather() {
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`
+    );
+    const data = await response.json();
 
-tempEl.textContent = `Temperature: ${demoWeather.temp}`;
-descEl.textContent = `Condition: ${demoWeather.desc}`;
+    tempEl.textContent = `${Math.round(data.main.temp)}°C`;
+    descEl.textContent = data.weather[0].description;
+    humidityEl.textContent = `${data.main.humidity}%`;
+    windEl.textContent = `${data.wind.speed} m/s`;
+  } catch (error) {
+    console.error('Error fetching current weather:', error);
+    tempEl.textContent = 'N/A';
+    descEl.textContent = 'N/A';
+    humidityEl.textContent = 'N/A';
+    windEl.textContent = 'N/A';
+  }
+}
 
+// Fetch 5-Day Forecast
+async function getForecast() {
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`
+    );
+    const data = await response.json();
+
+    // Clear previous forecast
+    forecastEl.innerHTML = '';
+
+    // OpenWeatherMap provides data every 3 hours; pick one forecast per day
+    const dailyData = data.list.filter((item) => item.dt_txt.includes('12:00:00'));
+
+    dailyData.forEach((day) => {
+      const date = new Date(day.dt_txt);
+      const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+      const temp = Math.round(day.main.temp);
+      const condition = day.weather[0].main;
+
+      const card = document.createElement('div');
+      card.className = 'forecast-card';
+      card.innerHTML = `
+        <p>${dayName}</p>
+        <p>${temp}°C</p>
+        <p>${condition}</p>
+      `;
+      forecastEl.appendChild(card);
+    });
+  } catch (error) {
+    console.error('Error fetching forecast:', error);
+    forecastEl.innerHTML = '<p>Forecast not available.</p>';
+  }
+}
+
+// Initialize
+getWeather();
+getForecast();
 // Member Spotlights (demo)
 const spotlights = [
   { name: "Company A", desc: "Leading in tech", img: "images/member1.webp" },
@@ -88,3 +145,16 @@ function filterCourses(type) {
 
 // ===== INITIAL DISPLAY =====
 displayCourses(courses);
+
+// ===== COURSE FILTER BUTTONS =====
+document.getElementById("allBtn").addEventListener("click", () => {
+  filterCourses("all");
+});
+
+document.getElementById("cseBtn").addEventListener("click", () => {
+  filterCourses("cse");
+});
+
+document.getElementById("wddBtn").addEventListener("click", () => {
+  filterCourses("wdd");
+});

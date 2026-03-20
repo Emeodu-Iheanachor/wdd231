@@ -7,10 +7,17 @@
 <title>Lagos Chamber of Commerce</title>
 
 <meta name="description" content="Welcome to the Lagos Chamber of Commerce. Connect with businesses, events, and opportunities.">
+<meta name="author" content="Emeodu, R. C. Iheanachor">
 
 <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
+<!-- Open Graph (Facebook/WhatsApp sharing) -->
+  <meta property="og:title" content="Lagos Chamber of Commerce Directory">
+  <meta property="og:description" content="Explore businesses and events from the Lagos Chamber of Commerce directory.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/chamber-social.webp">
+  <meta property="og:url" content="https://emeoduiheanachor.github.io/wdd231/chamber/directory.html">
 
 <link rel="stylesheet" href="styles/index-chamber-normalize.css">
 <link rel="stylesheet" href="styles/index-chamber-small.css">
@@ -71,12 +78,20 @@
   </ul>
 </section>
 
-<!-- WEATHER -->
 <section class="card" id="weather">
   <h2>Weather</h2>
-  <p id="temp"></p>
-  <p id="desc"></p>
-  <div id="forecast"></div>
+
+  <!-- Current Weather -->
+  <div class="current-weather">
+    <p><strong>Temperature:</strong> <span id="temp"></span></p>
+    <p><strong>Condition:</strong> <span id="desc"></span></p>
+    <p><strong>Humidity:</strong> <span id="humidity"></span></p>
+    <p><strong>Wind Speed:</strong> <span id="wind"></span></p>
+  </div>
+
+  <!-- 5-Day Forecast -->
+  <h3>5-Day Forecast</h3>
+  <div id="forecast" class="forecast-grid"></div>
 </section>
 
 <!-- SPOTLIGHT -->
@@ -90,10 +105,10 @@
   <h2>Courses</h2>
 
   <div class="filters">
-    <button onclick="filterCourses('all')">All</button>
-    <button onclick="filterCourses('cse')">CSE</button>
-    <button onclick="filterCourses('wdd')">WDD</button>
-  </div>
+  <button id="allBtn">All</button>
+  <button id="cseBtn">CSE</button>
+  <button id="wddBtn">WDD</button>
+</div>
 
   <div id="courses"></div>
 
