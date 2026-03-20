@@ -15,6 +15,19 @@
   --text-color: #333333;
 }
 
+
+/* Dark blue background headers */
+.dark-bg-text {
+  color: rgb(255, 255, 255); /* white text for high contrast */
+  background-color: rgb(0, 64, 128);
+}
+
+/* Light gray background sections */
+.light-bg-text {
+  color: rgb(51, 51, 51); /* dark text */
+  background-color: rgb(249, 249, 249);
+}
+
 /* ===== BODY ===== */
 body {
   font-family: 'Roboto', sans-serif;
@@ -61,6 +74,16 @@ nav.open {
   display: block;
 }
 
+
+
+.navigation{
+display:flex;
+flex-direction:row;
+justify-content:space-evenly;
+gap:5px;
+background-color:Navy;
+}
+
 .navigation {
   list-style: none;
   display: flex;
@@ -77,10 +100,13 @@ nav.open {
 .navigation li a:hover {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+  
 }
 
 .navigation li a.active {
   background-color: #003366;
+  color: white;
+ 
 }
 
 /* ===== HERO ===== */

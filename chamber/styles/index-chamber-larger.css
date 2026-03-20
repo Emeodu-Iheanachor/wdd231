@@ -27,6 +27,7 @@ display:flex;
 flex-direction:row;
 justify-content:space-evenly;
 gap:5px;
+background-color:Navy;
 }
 
   .navigation li a {
@@ -60,8 +61,6 @@ gap:5px;
   .card {
     margin: 0;
   }
-
-
 
 
 
