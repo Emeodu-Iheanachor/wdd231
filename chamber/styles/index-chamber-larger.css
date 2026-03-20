@@ -18,10 +18,11 @@
     display: block;
   }
 
-  .navigation {
+   .navigation {
     flex-direction: row;
     justify-content: space-evenly;
     gap: 5px;
+    background-color: var(--primary-color); /* MUST match mobile */
   }
 
   .navigation li a {
