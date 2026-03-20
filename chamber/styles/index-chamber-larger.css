@@ -1,7 +1,5 @@
-/* ===== DESKTOP STYLES ===== */
 @media screen and (min-width: 768px) {
 
-  /* ===== HEADER ===== */
   header {
     padding: 1rem 2rem;
   }
@@ -10,104 +8,63 @@
     font-size: 1.8rem;
   }
 
-  /* Hide hamburger */
   #menu {
     display: none;
   }
 
-  /* ===== NAVIGATION ===== */
   nav {
     display: block;
-    background-color: var(--primary-color);
   }
 
-  
-.navigation{
-display:flex;
-flex-direction:row;
-justify-content:space-evenly;
-gap:5px;
-background-color:Navy;
-}
+  /* ✅ ONLY OVERRIDE WHAT CHANGES */
+  .navigation {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5px;
+    background-color: darkgreen;
+  }
 
   .navigation li a {
     padding: 1rem 1.5rem;
   }
 
-  /* ===== HERO ===== */
   .hero-text h2 {
     font-size: 2rem;
   }
 
-  .cta {
-    font-size: 1rem;
-  }
-
-  /* ===== MAIN LAYOUT ===== */
   main {
     max-width: 1100px;
     margin: auto;
   }
 
-  /* ===== TOP GRID (EVENTS + WEATHER) ===== */
   .top-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 1rem;
-    margin-bottom: 1rem;
   }
 
-  /* ===== CARDS ===== */
-  .card {
-    margin: 0;
-  }
-
-
-
-  .forecast-grid {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.forecast-card {
-  background-color: #f0f0f0;
-  padding: 0.8rem;
-  border-radius: 8px;
-  text-align: center;
-  flex: 1 1 100px;
-}
-
-  /* ===== SPOTLIGHT GRID ===== */
   .grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* ===== BUSINESS GRID ===== */
   .business-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .biz-content {
-    flex-direction: row;
-    align-items: center;
+  .forecast-grid {
+    display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
   }
 
-  .img-box {
-    width: 120px;
-    height: 120px;
+  .forecast-card {
+    background-color: #f0f0f0;
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-align: center;
   }
 
-  /* ===== FOOTER ===== */
   footer {
     font-size: 0.9rem;
   }
-
-footer a:hover {
-    color: #ffd700; /* strong contrast on dark footer */
-    text-decoration: underline;
-
-}
-
 }

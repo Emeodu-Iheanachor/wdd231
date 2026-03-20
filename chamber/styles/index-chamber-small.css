@@ -7,25 +7,14 @@
   box-sizing: border-box;
 }
 
-/* ===== VARIABLES ===== */
+/* ===== VARIABLES (STANDARDIZED COLORS) ===== */
 :root {
   --primary-color: #004080;
+  --primary-dark: #003366;
   --secondary-color: #ffcc00;
   --background-color: #f9f9f9;
   --text-color: #333333;
-}
-
-
-/* Dark blue background headers */
-.dark-bg-text {
-  color: rgb(255, 255, 255); /* white text for high contrast */
-  background-color: rgb(0, 64, 128);
-}
-
-/* Light gray background sections */
-.light-bg-text {
-  color: rgb(51, 51, 51); /* dark text */
-  background-color: rgb(249, 249, 249);
+  --white: #ffffff;
 }
 
 /* ===== BODY ===== */
@@ -43,7 +32,7 @@ header {
   align-items: center;
   padding: 0.5rem 1rem;
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--white);
 }
 
 .logo-title {
@@ -60,11 +49,11 @@ header h1 {
   font-size: 1.5rem;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
 }
 
-/* ===== NAVIGATION (MOBILE) ===== */
+/* ===== NAVIGATION (FIXED - NO DUPLICATION) ===== */
 nav {
   display: none;
   background-color: var(--primary-color);
@@ -74,39 +63,43 @@ nav.open {
   display: block;
 }
 
-
-
-.navigation{
-display:flex;
-flex-direction:row;
-justify-content:space-evenly;
-gap:5px;
-background-color:Navy;
-}
-
 .navigation {
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* mobile default */
 }
 
 .navigation li a {
   display: block;
   padding: 0.75rem 1rem;
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
 }
 
-.navigation li a:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  
+/* ✅ GOOD CONTRAST */
+
+
+.navigation li a {
+  color: var(--white);
+  text-decoration: none;
 }
 
+/* Hover effect (applies to ALL links) */
+.navigation li a:hover {
+  background-color: var(--secondary-color); /* yellow */
+  color: var(--primary-color); /* readable contrast */
+}
+
+/* Active link (current page) */
 .navigation li a.active {
-  background-color: #003366;
-  color: white;
- 
+  background-color: var(--primary-dark);
+  color: var(--white);
+}
+
+/* Hover on active link (IMPORTANT) */
+.navigation li a.active:hover {
+  background-color: var(--secondary-color); /* same yellow */
+  color: var(--primary-color);
 }
 
 /* ===== HERO ===== */
@@ -126,8 +119,10 @@ background-color:Navy;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
-  text-shadow: 1px 1px 5px #000;
+  color: var(--white);
+  background-color: rgba(0, 0, 0, 0.5); /* ✅ FIX contrast */
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 .hero-text h2 {
@@ -151,7 +146,7 @@ main {
 
 /* ===== CARDS ===== */
 .card {
-  background-color: #fff;
+  background-color: var(--white);
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 8px;
@@ -161,10 +156,9 @@ main {
 .card h2,
 .card h3 {
   color: var(--primary-color);
-  margin-bottom: 0.5rem;
 }
 
-/* ===== GRID (STACKED ON MOBILE) ===== */
+/* ===== GRID ===== */
 .grid,
 .business-grid {
   display: grid;
@@ -172,45 +166,19 @@ main {
   gap: 1rem;
 }
 
-
-/* ===== BUSINESS CARDS ===== */
-.business-card {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.biz-content {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.img-box {
-  width: 100%;
-  height: 120px;
-  background-color: #ddd;
-  border-radius: 6px;
-}
-
 /* ===== FILTER BUTTONS ===== */
-.filters {
-  margin-bottom: 0.5rem;
-}
-
 .filters button {
   margin: 0.2rem;
   padding: 0.4rem 0.6rem;
   border: none;
   border-radius: 4px;
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
 }
 
 .filters button:hover {
-  background-color: #00264d;
+  background-color: var(--primary-dark);
 }
 
 /* ===== FOOTER ===== */
@@ -218,13 +186,14 @@ footer {
   text-align: center;
   padding: 1rem;
   background-color: var(--primary-color);
-  color: #fff;
+  color: var(--white);
   font-size: 0.8rem;
-  margin-top: 1rem;
+}
+
+footer a {
+  color: var(--white);
 }
 
 footer a:hover {
-    color: #ffd700; /* strong contrast on dark footer */
-    text-decoration: underline;
-
+  color: var(--secondary-color);
 }
