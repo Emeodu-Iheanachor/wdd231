@@ -64,7 +64,6 @@ nav {
 }
 
 
-
 .navigation {
     list-style: none;
     padding: 0;
@@ -175,6 +174,15 @@ h2 {
 #members img {
     max-width: 100%;
     height: auto;
+}
+
+
+
+.chamber-social.webp {
+  width: 200px;   /* Set width to 200px */
+  height: 200px;  /* Set height to 200px */
+  object-fit: cover;  /* Ensures the image fills the box without stretching */
+  display: block; /* Optional: ensures proper block formatting */
 }
 
 /* LIST VIEW */
