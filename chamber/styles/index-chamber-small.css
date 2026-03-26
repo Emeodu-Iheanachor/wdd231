@@ -9,14 +9,17 @@
 
 /* ===== VARIABLES (ACCESSIBLE COLORS) ===== */
 :root {
-  --primary-color: #003366;
-  --primary-dark: #001f3f;
+  /* Primary colors */
+  --primary-color: #002147;      /* Darker blue for better contrast */
+  --primary-dark: #00132a;       /* Even darker for active states */
 
-  --secondary-color: #ffcc00;
-  --secondary-dark: #cc9900;
+  /* Secondary colors */
+  --secondary-color: #ffd700;    /* Bright gold, high contrast on dark backgrounds */
+  --secondary-dark: #e6c200;    /* Slightly darker gold for hover */
 
-  --background-color: #ffffff;
-  --text-color: #111111;
+  /* Neutral colors */
+  --background-color: #ffffff;   /* White background */
+  --text-color: #0d0d0d;        /* Almost black for good contrast on white */
 
   --white: #ffffff;
   --black: #000000;
@@ -88,7 +91,7 @@ nav.open {
 /* Hover (ALL links) */
 .navigation li a:hover {
   background-color: var(--secondary-color);
-  color: var(--black);
+  color: var(--black); /* High contrast against gold background */
 }
 
 /* Active page */
@@ -122,7 +125,7 @@ nav.open {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--white);
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay for contrast */
   padding: 1rem;
   border-radius: 8px;
 }
@@ -130,6 +133,7 @@ nav.open {
 .hero-text h2 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  color: var(--white);
 }
 
 /* ===== CTA BUTTON ===== */
@@ -137,7 +141,7 @@ nav.open {
   display: inline-block;
   padding: 0.6rem 1.2rem;
   background-color: var(--secondary-color);
-  color: var(--primary-dark);
+  color: var(--primary-dark); /* Dark text on bright gold for contrast */
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
@@ -183,7 +187,7 @@ main {
   border: none;
   border-radius: 5px;
   background-color: var(--primary-color);
-  color: var(--white);
+  color: var(--white); /* High contrast */
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s ease;
