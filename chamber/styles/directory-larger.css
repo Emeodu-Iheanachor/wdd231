@@ -1,71 +1,67 @@
-@media screen and (min-width:768px){
+@media screen and (min-width: 768px) {
 
-/* Navigation always visible */
+  /* Hide mobile menu button */
+  #menu {
+    display: none;
+  }
 
-#menu{
-display:none;
-}
+  /* Navigation horizontal for larger screens */
+  .navigation {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 5px;
+  }
 
-
-.navigation{
-display:flex;
-flex-direction:row;
-justify-content:space-evenly;
-gap:5px;
-}
-
-/* Navigation links */
-.navigation a {
+  /* Navigation links */
+  .navigation a {
     text-decoration: none;
-    color: #1a1a1a; /* darker for better contrast */
+    color: #1a1a1a; /* dark for better contrast */
     padding: 10px 15px;
     display: block;
     font-weight: 500;
-}
+    border-radius: 5px;
+    transition: 0.3s;
+  }
 
-/* Hover effect */
-.navigation a:hover {
-    background-color: #d9d9d9; /* darker background */
-    color: #000000;
-}
+  /* Hover effect */
+  .navigation a:hover {
+    background-color: #d9d9d9;
+    color: #000000; /* strong contrast */
+  }
 
-/* Active page style */
-.navigation a.active {
+  /* Active page style */
+  .navigation a.active {
     background-color: #000000;
     color: #ffffff;
-    border-radius: 5px;
     font-weight: bold;
-}
+  }
 
-/* Directory grid */
+  /* Directory grid layout for larger screens */
+  #members.grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
 
-#members.grid{
-grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-}
+  /* List layout for larger screens */
+  #members.list section {
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
 
-/* List layout */
+  /* Header layout */
+  header {
+    grid-template-columns: auto 1fr auto;
+  }
 
-#members.list section{
-grid-template-columns: 200px 1fr 1fr 1fr;
-align-items:center;
-}
-
-/* Header layout */
-
-header{
-grid-template-columns: auto 1fr auto;
-}
-
-/* Footer links */
-
-footer a {
+  /* Footer links */
+  footer a {
     color: #ffffff;
     text-decoration: none;
-}
+  }
 
-footer a:hover {
+  footer a:hover {
     color: #ffd700; /* strong contrast on dark footer */
     text-decoration: underline;
-}
-
+  }
 }

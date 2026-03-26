@@ -47,6 +47,8 @@
   <!-- Scripts -->
   <script src="scripts/directory.js" defer></script>
   <script src="scripts/directory-navigation.js" defer></script>
+
+  <link rel="preload" as="image" href="images/logo.webp">
 </head>
 
 <body>
@@ -75,9 +77,18 @@
 
 <h2>Business Directory</h2>
 
-<div class="view-buttons">
-<button id="grid" type="button">Grid View</button>
-<button id="list" type="button">List View</button>
+<div class="view-controls">
+  <select id="filter" aria-label="Filter Members">
+  <option value="all">All Members</option>
+  <option value="Gold">Gold Members</option>
+  <option value="Silver">Silver Members</option>
+  <option value="Bronze">Bronze Members</option>
+</select>
+
+  <div class="view-buttons">
+    <button id="grid" type="button" aria-label="Grid View">Grid View</button>
+    <button id="list" type="button" aria-label="List View">List View</button>
+  </div>
 </div>
 
 <section id="members" class="grid"></section>

@@ -1,68 +1,58 @@
-{
- "members":[
-
-{
-"name":"Lagos Tech Hub",
-"address":"12 Marina Road, Lagos",
-"phone":"+234 801 222 1111",
-"website":"https://lagostechhub.com",
-"image":"business1.jpeg",
-"membership":3
-},
-
-{
-"name":"Ocean Logistics",
-"address":"45 Apapa Wharf, Lagos",
-"phone":"+234 801 333 2222",
-"website":"https://oceanlogistics.com",
-"image":"business2.jpg",
-"membership":2
-},
-
-{
-"name":"Green Farms Ltd",
-"address":"23 Ikeja Road, Lagos",
-"phone":"+234 801 444 3333",
-"website":"https://greenfarms.com",
-"image":"business3.jpg",
-"membership":1
-},
-
-{
-"name":"City Bank",
-"address":"78 Victoria Island, Lagos",
-"phone":"+234 801 555 4444",
-"website":"https://citybank.com",
-"image":"business4.jpg",
-"membership":3
-},
-
-{
-"name":"Sunrise Hotels",
-"address":"11 Lekki Phase 1, Lagos",
-"phone":"+234 801 666 5555",
-"website":"https://sunrisehotels.in/",
-"image":"business5.jpg",
-"membership":2
-},
-
-{
-"name":"Metro Supermarket",
-"address":"30 Surulere Road, Lagos",
-"phone":"+234 801 777 6666",
-"website":"https://metrosupermarket.com.ng/?utm_source=chatgpt.com",
-"image":"business6.jpg",
-"membership":1
-},
-
-{
-"name":"Prime Construction",
-"address":"50 Ikoyi Street, Lagos",
-"phone":"+234 801 888 7777",
-"website":"https://primeconstruction.com",
-"image":"business7.jpg",
-"membership":3
-}
-
- ]
-}
+[
+  {
+    "name": "TechNova Ltd",
+    "address": "12 Marina Road, Lagos",
+    "phone": "+2348001111111",
+    "website": "https://technova.com",
+    "image": "technova.webp",
+    "level": "Gold"
+  },
+  {
+    "name": "GreenFarm Nigeria",
+    "address": "45 Ikeja Avenue, Lagos",
+    "phone": "+2348002222222",
+    "website": "https://greenfarms.com",
+    "image": "greenfarm.webp",
+    "level": "Silver"
+  },
+  {
+    "name": "Skyline Properties",
+    "address": "8 Lekki Phase 1, Lagos",
+    "phone": "+2348003333333",
+    "website": "https://skyline.com",
+    "image": "skyline.webp",
+    "level": "Gold"
+  },
+  {
+    "name": "Ocean Logistics",
+    "address": "22 Apapa Port, Lagos",
+    "phone": "+2348004444444",
+    "website": "https://oceanlogistics.com",
+    "image": "ocean.webp",
+    "level": "Silver"
+  },
+  {
+    "name": "Bright Education",
+    "address": "10 Yaba Tech Road, Lagos",
+    "phone": "+2348005555555",
+    "website": "https://www.brighteducation.com.au/",
+    "image": "education.webp",
+    "level": "Bronze"
+  },
+  {
+    "name": "HealthPlus Clinic",
+    "address": "5 Surulere Street, Lagos",
+    "phone": "+2348006666666",
+    "website": "https://www.healthplusutah.com/",
+    "image": "health.webp",
+    "level": "Gold"
+  },
+  {
+    "name": "Fashion Hub",
+    "address": "3 Balogun Market, Lagos",
+    "phone": "+2348007777777",
+    "website": "https://fashionhubeg.com/collections",
+    "image": "fashion.webp",
+    "level": "Silver"
+  }
+]

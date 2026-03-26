@@ -1,210 +1,207 @@
 /* -------------------- */
-/* GLOBAL STYLES */
+/* SMALL / MOBILE STYLES */
 /* -------------------- */
 
 :root {
-    --primary-color: #003366;
-    --secondary-color: #f4b400;
-    --background-color: #ffffff;
-    --text-color: #333;
+  --primary-color: #003366;       /* Dark Blue */
+  --secondary-color: #f4b400;     /* Yellow */
+  --background-color: #ffffff;    /* White background */
+  --text-color: #111111;          /* Very dark text for readability */
+  --header-text-color: #ffffff;
+  --nav-text-color: #ffffff;
+  --nav-hover-color: #000000;     
+  --footer-bg: #222222;
+  --footer-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    background: var(--background-color, #ffffff);
-    color: var(--text-color, #333);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: var(--background-color);
+  overflow-x: hidden;
 }
 
-/* -------------------- */
-/* HEADER */
-/* -------------------- */
-
+/* Header */
 header {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    padding: 1rem;
-    background: var(--primary-color, #003366);
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--primary-color);
+  color: var(--header-text-color);
 }
 
 .logo-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .logo-title img {
-    border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
 }
 
-/* -------------------- */
-/* NAVIGATION */
-/* -------------------- */
-
-h1 {
-    color: blue;
-    font-size: 2rem;
-}
-
+/* Menu button (mobile) */
 #menu {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--header-text-color);
+  cursor: pointer;
 }
 
-nav {
-    background-color: #333;
-    color: white;
-    
-}
-
-
+/* Navigation - hidden by default for mobile */
 .navigation {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none;
-    flex-direction: column;
-}
-
-.navigation li a {
-    display: block;
-    padding: 0.75rem;
-    color: white;
-    text-decoration: none;
-}
-
-.navigation li a:hover {
-    background: var(--secondary-color, #f4b400);
-    color: black;
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .navigation.open {
-    display: flex;
+  display: flex;
 }
 
-/* Navigation links */
 .navigation a {
-    text-decoration: none;
-    color: #f9f4f4;
-    padding: 5px 5px;
-    gap: 5px;
-    display: block;
-    font-weight: 500;
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--nav-text-color);
+  font-weight: 500;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
-/* Hover effect */
-.navigation a:hover {
-    background-color: #e6e6e6;
-    color: #6a6868;
+/* Hover (ALL links) */
+.navigation li a:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-dark);
 }
 
-/* Active page style */
-.navigation a.active {
-    background-color: #1a181a;
-    color: #fff;
-    border-radius: 5px;
-    font-weight: bold;
+/* Active page */
+.navigation li a.active {
+  background-color: var(--primary-dark);
+  color: var(--white);
 }
 
-/* -------------------- */
-/* MAIN */
-/* -------------------- */
+/* Hover on active */
+.navigation li a.active:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-dark);
+}
 
+/* Main / View Controls */
 main {
-    padding: 1rem;
-    max-width: 1000px;
-    margin: auto;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-/* -------------------- */
-/* VIEW BUTTONS */
-/* -------------------- */
+.view-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  align-items: center;
+}
 
 .view-buttons {
-    text-align: center;
-    margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .view-buttons button {
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    border: none;
-    background: var(--primary-color, #003366);
-    color: white;
-    cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--header-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .view-buttons button:hover {
-    background: var(--secondary-color, #f4b400);
-    color: black;
+  background: var(--secondary-color);
+  color: var(--nav-hover-color);
 }
 
-/* -------------------- */
-/* MEMBER CARDS */
-/* -------------------- */
-
-/* default list/grid base */
+/* Members - Grid / List */
 #members {
-    display: block;
+  display: block;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 #members.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+#members.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #members section {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    text-align: center;
-    background: #fafafa;
-}
-
-#members img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-
-.chamber-social.webp {
-  width: 200px;   /* Set width to 200px */
-  height: 200px;  /* Set height to 200px */
-  object-fit: cover;  /* Ensures the image fills the box without stretching */
-  display: block; /* Optional: ensures proper block formatting */
-}
-
-/* LIST VIEW */
-#members.list {
-    display: block;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  background: #fafafa;
 }
 
 #members.list section {
-    display: grid;
-    grid-template-columns: 1fr;
-    text-align: left;
-    margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: left;
 }
 
-/* -------------------- */
-/* FOOTER */
-/* -------------------- */
+#members img {
+  max-width: 100%;
+  height: auto;
+}
 
+/* Chamber Spotlight */
+.chamber-social {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background: #222;
-    color: white;
-    margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--footer-text);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffd700;
+  text-decoration: underline;
 }

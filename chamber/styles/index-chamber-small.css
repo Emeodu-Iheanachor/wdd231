@@ -9,11 +9,11 @@
 
 /* ===== VARIABLES ===== */
 :root {
-  --primary-color: #004080;
-  --primary-dark: #003366;
-  --secondary-color: #ffcc00;
-  --background-color: #f9f9f9;
-  --text-color: #333333;
+  --primary-color: #003366;       /* Darker Blue for better contrast */
+  --primary-dark: #00264d;        /* Even darker for active states */
+  --secondary-color: #ffcc00;     /* Yellow */
+  --background-color: #fefefe;    /* Off-white background for readability */
+  --text-color: #111111;          /* Very dark text */
   --white: #ffffff;
 }
 
@@ -43,6 +43,7 @@ header {
 
 header h1 {
   font-size: 1.2rem;
+  color: var(--white);
 }
 
 #menu {
@@ -74,13 +75,15 @@ nav.open {
   padding: 0.75rem 1rem;
   color: var(--white);
   text-decoration: none;
+  font-weight: 500;
+  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
 /* Hover (ALL links) */
 .navigation li a:hover {
   background-color: var(--secondary-color);
-  color: var(--primary-color);
+  color: var(--primary-dark);
 }
 
 /* Active page */
@@ -92,7 +95,7 @@ nav.open {
 /* Hover on active */
 .navigation li a.active:hover {
   background-color: var(--secondary-color);
-  color: var(--primary-color);
+  color: var(--primary-dark);
 }
 
 /* ===== HERO ===== */
@@ -113,7 +116,7 @@ nav.open {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--white);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for readability */
   padding: 1rem;
   border-radius: 8px;
 }
@@ -123,13 +126,20 @@ nav.open {
   margin-bottom: 0.5rem;
 }
 
+/* CTA buttons */
 .cta {
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: var(--secondary-color);
-  color: var(--primary-color);
+  color: var(--primary-dark);
   text-decoration: none;
   border-radius: 4px;
+  font-weight: bold;
+}
+
+.cta:hover {
+  background-color: #e6b800; /* Slightly darker yellow on hover */
+  color: var(--primary-color);
 }
 
 /* ===== MAIN ===== */
@@ -168,23 +178,26 @@ main {
   background-color: var(--primary-color);
   color: var(--white);
   cursor: pointer;
+  font-weight: 500;
 }
 
 .filters button:hover {
   background-color: var(--primary-dark);
+  color: var(--white);
 }
 
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: var(--primary-color);
+  background-color: var(--primary-dark);
   color: var(--white);
   font-size: 0.8rem;
 }
 
 footer a {
   color: var(--white);
+  font-weight: 500;
 }
 
 footer a:hover {
