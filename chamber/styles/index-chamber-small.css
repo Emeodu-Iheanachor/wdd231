@@ -7,14 +7,19 @@
   box-sizing: border-box;
 }
 
-/* ===== VARIABLES ===== */
+/* ===== VARIABLES (ACCESSIBLE COLORS) ===== */
 :root {
-  --primary-color: #003366;       /* Darker Blue for better contrast */
-  --primary-dark: #00264d;        /* Even darker for active states */
-  --secondary-color: #ffcc00;     /* Yellow */
-  --background-color: #fefefe;    /* Off-white background for readability */
-  --text-color: #111111;          /* Very dark text */
+  --primary-color: #003366;
+  --primary-dark: #001f3f;
+
+  --secondary-color: #ffcc00;
+  --secondary-dark: #cc9900;
+
+  --background-color: #ffffff;
+  --text-color: #111111;
+
   --white: #ffffff;
+  --black: #000000;
 }
 
 /* ===== BODY ===== */
@@ -30,7 +35,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   background-color: var(--primary-color);
   color: var(--white);
 }
@@ -83,19 +88,20 @@ nav.open {
 /* Hover (ALL links) */
 .navigation li a:hover {
   background-color: var(--secondary-color);
-  color: var(--primary-dark);
+  color: var(--black);
 }
 
 /* Active page */
 .navigation li a.active {
   background-color: var(--primary-dark);
   color: var(--white);
+  border: 2px solid var(--secondary-color);
 }
 
 /* Hover on active */
 .navigation li a.active:hover {
   background-color: var(--secondary-color);
-  color: var(--primary-dark);
+  color: var(--black);
 }
 
 /* ===== HERO ===== */
@@ -116,7 +122,7 @@ nav.open {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--white);
-  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for readability */
+  background-color: rgba(0, 0, 0, 0.65);
   padding: 1rem;
   border-radius: 8px;
 }
@@ -126,20 +132,21 @@ nav.open {
   margin-bottom: 0.5rem;
 }
 
-/* CTA buttons */
+/* ===== CTA BUTTON ===== */
 .cta {
   display: inline-block;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.2rem;
   background-color: var(--secondary-color);
   color: var(--primary-dark);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 5px;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .cta:hover {
-  background-color: #e6b800; /* Slightly darker yellow on hover */
-  color: var(--primary-color);
+  background-color: var(--secondary-dark);
+  color: var(--primary-dark);
 }
 
 /* ===== MAIN ===== */
@@ -152,8 +159,8 @@ main {
   background-color: var(--white);
   margin-bottom: 1rem;
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
 .card h2,
@@ -171,19 +178,19 @@ main {
 
 /* ===== FILTER BUTTONS ===== */
 .filters button {
-  margin: 0.2rem;
-  padding: 0.4rem 0.6rem;
+  margin: 0.3rem;
+  padding: 0.5rem 0.8rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: var(--primary-color);
   color: var(--white);
   cursor: pointer;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .filters button:hover {
   background-color: var(--primary-dark);
-  color: var(--white);
 }
 
 /* ===== FOOTER ===== */
@@ -192,12 +199,13 @@ footer {
   padding: 1rem;
   background-color: var(--primary-dark);
   color: var(--white);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 
 footer a {
   color: var(--white);
   font-weight: 500;
+  text-decoration: none;
 }
 
 footer a:hover {

@@ -91,6 +91,7 @@ header {
 .navigation li a.active {
   background-color: var(--primary-dark);
   color: var(--white);
+  border: 2px solid var(--secondary-color);
 }
 
 /* Hover on active */
