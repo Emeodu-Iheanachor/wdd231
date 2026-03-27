@@ -18,7 +18,7 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent =
 `Last Modified: ${document.lastModified}`;
 
-const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // 🔑 Replace with your API key
+const apiKey = 'api.openweathermap.org'; // 🔑 Replace with your API key
 const city = 'Lagos, NG';
 const units = 'metric'; // Celsius
 
