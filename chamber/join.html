@@ -48,14 +48,33 @@
 
 
   <!-- JAVASCRIPT -->
-  <script defer src="scripts/join.js"></script>
+  
+<script src="scripts/join.js" defer></script>
+
 </head>
 
 <body>
 
 <header>
-  <h1>Chamber of Commerce</h1>
+  <div class="logo-title">
+    <img src="images/logo.webp" alt="Lagos Chamber of Commerce Logo" width="50" height="50">
+    <h1>Lagos Chamber of Commerce</h1>
+  </div>
+
+  <button id="menu" aria-label="Toggle Navigation Menu">☰</button>
 </header>
+
+<nav>
+  <ul class="navigation">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="directory.html">Directory</a></li>
+    <li><a href="join.html" class="active">Join</a></li>
+    <li><a href="contact.html">Discover</a></li>
+  </ul>
+</nav>
+
+
+
 
 <main class="join-container">
 
@@ -174,8 +193,19 @@
   <button onclick="closeModal('goldModal')">Close</button>
 </dialog>
 
+
+
+
 <footer>
-  <p>&copy; 2026 Chamber</p>
+  <p>
+<strong>Contact:</strong>
+<a href="mailto:info@lagoschamber.com">info@lagoschamber.com</a> |
+<a href="tel:+2348001234567">+234 800 123 4567</a>
+</p>
+<p>© <span id="year"></span> Lagos Chamber of Commerce</p>
+<p>Emeodu, R. C. Iheanachor | WDD231</p>
+<p id="lastModified"></p>
+
 </footer>
 
 </body>
