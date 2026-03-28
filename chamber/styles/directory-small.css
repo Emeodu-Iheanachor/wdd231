@@ -75,7 +75,7 @@ header {
   display: block;
   padding: 0.75rem 1rem;
   text-decoration: none;
-  color: var(--nav-text-color);
+  color: gray;
   font-weight: 500;
   border-radius: 5px;
   transition: 0.3s;

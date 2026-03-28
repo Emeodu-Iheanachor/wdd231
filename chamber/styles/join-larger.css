@@ -3,4 +3,16 @@
   .join-container {
     grid-template-columns: 2fr 1fr;
   }
+
+  .navigation {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-evenly;
+    color: white;
+    gap: 5px;
+  }
+
+
+
+
 }

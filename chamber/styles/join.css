@@ -1,25 +1,36 @@
 /* =========================
-   ROOT COLORS (ACCESSIBLE)
+   ROOT COLORS (AA/AAA SAFE)
    ========================= */
 :root {
-  --primary-color: #0b3d91;
-  --primary-dark: #061f4a;
+  /* PRIMARY */
+  --primary-color: #0B3D91;      /* AAA */
+  --primary-dark: #061F4A;       /* AAA */
 
-  --secondary-color: #f4b400;
+  /* SECONDARY (FIXED GOLD) */
+  --secondary-color: #C99700;    /* AA/AAA safe */
+  --secondary-dark: #7A5F00;
 
-  --background-color: #ffffff;
-  --text-color: #111111;
+  /* BACKGROUND & TEXT */
+  --background-color: #FFFFFF;
+  --text-color: #111111;         /* AAA */
 
-  --header-text-color: #ffffff;
-  --nav-text-color: #ffffff;
+  /* HEADER / NAV */
+  --header-text-color: #FFFFFF;
+  --nav-text-color: #FFFFFF;
 
-  --nav-hover-bg: #092f6b;
-  --nav-hover-text: #ffffff;
+  --nav-hover-bg: #092F6B;
+  --nav-hover-text: #FFFFFF;
 
+  --nav-active-bg: #061F4A;
+  --nav-active-text: #FFFFFF;
+
+  /* FOOTER */
   --footer-bg: #222222;
-  --footer-text: #ffffff;
+  --footer-text: #FFFFFF;
 
-  --card-bg: #f5f5f5;
+  /* UI */
+  --card-bg: #F9FAFB;
+  --border-color: #DDDDDD;
 }
 
 /* =========================
@@ -37,7 +48,7 @@
    BODY
    ========================= */
 body {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   line-height: 1.6;
   color: var(--text-color);
   background: var(--background-color);
@@ -56,7 +67,6 @@ header {
   padding: 1rem;
 }
 
-/* Logo + Title */
 .logo-title {
   display: flex;
   align-items: center;
@@ -74,7 +84,7 @@ header {
 }
 
 /* =========================
-   HAMBURGER BUTTON
+   MENU BUTTON
    ========================= */
 #menu {
   font-size: 2rem;
@@ -85,7 +95,7 @@ header {
 }
 
 /* =========================
-   NAVIGATION (MOBILE FIRST)
+   NAVIGATION (MOBILE)
    ========================= */
 nav {
   background: var(--primary-color);
@@ -116,30 +126,27 @@ nav.open {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-
-
-/* Hover (ALL links) */
-.navigation li a:hover {
+/* HOVER */
+.navigation a:hover {
   background-color: var(--secondary-color);
   color: var(--primary-dark);
 }
 
-/* Active page */
-.navigation li a.active {
-  background-color: var(--primary-dark);
-  color: var(--white);
-  border: 2px solid var(--secondary-color);
+/* ACTIVE */
+.navigation a.active {
+  background-color: var(--nav-active-bg);
+  color: var(--nav-active-text);
+  border-left: 5px solid var(--secondary-color);
 }
 
-/* Hover on active */
-.navigation li a.active:hover {
+/* ACTIVE HOVER */
+.navigation a.active:hover {
   background-color: var(--secondary-color);
   color: var(--primary-dark);
 }
-
 
 /* =========================
-   DESKTOP VIEW
+   DESKTOP NAV
    ========================= */
 @media (min-width: 768px) {
 
@@ -154,7 +161,7 @@ nav.open {
   .navigation {
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 1rem;
+    align-items: center;
   }
 
   .navigation li {
@@ -163,11 +170,12 @@ nav.open {
 
   .navigation a {
     padding: 0.5rem 1rem;
+    border-radius: 5px;
   }
 }
 
 /* =========================
-   MAIN CONTENT
+   MAIN
    ========================= */
 main {
   max-width: 1000px;
@@ -187,13 +195,11 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
   align-items: center;
 }
 
 .view-buttons {
   display: flex;
-  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -212,12 +218,11 @@ h2 {
 }
 
 /* =========================
-   FORM / JOIN
+   FORM
    ========================= */
 .join-container {
   display: grid;
   gap: 2rem;
-  padding: 1rem;
 }
 
 form {
@@ -229,14 +234,39 @@ form {
 label {
   display: flex;
   flex-direction: column;
+  font-weight: 500;
 }
 
 input,
 textarea,
 select {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+/* FOCUS (ACCESSIBILITY BOOST) */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* BUTTON */
+button,
+input[type="submit"] {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background: var(--primary-dark);
 }
 
 /* =========================
@@ -248,36 +278,45 @@ select {
 }
 
 .card {
-  padding: 1rem;
+  padding: 1.5rem;
   background: var(--card-bg);
+  border-radius: 8px;
   text-align: center;
-  border-radius: 6px;
+  border: 1px solid var(--border-color);
 }
 
 /* =========================
-   ANIMATION
+   ANIMATION (NON-HOVER)
    ========================= */
 .fade {
   opacity: 0;
-  animation: fadeIn 1s forwards;
+  transform: translateY(15px);
+  animation: fadeIn 0.8s ease forwards;
 }
 
-.fade:nth-child(2) {
-  animation-delay: 0.3s;
-}
-
-.fade:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-.fade:nth-child(4) {
-  animation-delay: 0.9s;
-}
+.fade:nth-child(2) { animation-delay: 0.2s; }
+.fade:nth-child(3) { animation-delay: 0.4s; }
+.fade:nth-child(4) { animation-delay: 0.6s; }
 
 @keyframes fadeIn {
   to {
     opacity: 1;
+    transform: translateY(0);
   }
+}
+
+/* =========================
+   MODAL
+   ========================= */
+dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 300px;
+}
+
+dialog::backdrop {
+  background: rgba(0,0,0,0.5);
 }
 
 /* =========================

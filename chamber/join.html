@@ -1,39 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CHARACTER ENCODING -->
+  <meta charset="UTF-8">
 
-<title>Join Chamber | Lagos Chamber of Commerce</title>
+  <!-- RESPONSIVE DESIGN -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Join the Chamber of Commerce and grow your business.">
-<meta name="author" content="Emeodu, R. C. Iheanachor">
+  <!-- SEO DESCRIPTION -->
+  <meta name="description" content="Join the Chamber of Commerce and grow your business through networking, training, and opportunities.">
+  <meta name="author" content="Emeodu, R. C. Iheanachor">
+  
+  <!-- TITLE -->
+  <title>Join Chamber | Lagos Chamber of Commerce</title>
 
-<link rel="icon" href="images/favicon.ico">
+    
+ <!-- Favicon -->
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<!-- Open Graph / Facebook / WhatsApp -->
+<meta property="og:title" content="Lagos Chamber of Commerce">
+<meta property="og:description" content="Welcome to the Lagos Chamber of Commerce. Connect with businesses, events, and opportunities.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emeodu-iheanachor.github.io/wdd231/chamber/index.html">
+<meta property="og:site_name" content="Lagos Chamber of Commerce">
+<meta property="og:locale" content="en_US">
+<meta property="fb:app_id" content="123456789012345">
 
-<link rel="stylesheet" href="styles/join.css">
+
+<!-- OG Image -->
+<meta property="og:image" content="https://emeodu-iheanachor.github.io/wdd231/chamber/images/chamber-social.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo of Lagos Chamber of Commerce">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lagos Chamber of Commerce">
+<meta name="twitter:description" content="Welcome to the Lagos Chamber of Commerce. Connect with businesses, events, and opportunities.">
+<meta name="twitter:image" content="https://emeodu-iheanachor.github.io/wdd231/chamber/images/chamber-social.webp">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+  <link rel="stylesheet" href="styles/join.css">
+
+
+  <!-- JAVASCRIPT -->
+  
 <script src="scripts/join.js" defer></script>
+
 </head>
 
 <body>
 
 <header>
   <div class="logo-title">
-    <img src="images/logo.webp" alt="Lagos Chamber Logo" width="50" height="50">
+    <img src="images/logo.webp" alt="Lagos Chamber of Commerce Logo" width="50" height="50">
     <h1>Lagos Chamber of Commerce</h1>
   </div>
 
-  <button id="menu" aria-label="Toggle Navigation">☰</button>
+  <button id="menu" aria-label="Toggle Navigation Menu">☰</button>
 </header>
 
-<nav id="nav">
+<nav>
   <ul class="navigation">
     <li><a href="index.html">Home</a></li>
     <li><a href="directory.html">Directory</a></li>
     <li><a href="join.html" class="active">Join</a></li>
-    <li><a href="discover.html">Discover</a></li>
+    <li><a href="contact.html">Discover</a></li>
   </ul>
 </nav>
+
 
 <main class="join-container">
 
@@ -136,15 +176,17 @@
   <button class="close">Close</button>
 </dialog>
 
+
 <footer>
   <p>
-  <strong>Contact:</strong>
-  <a href="mailto:info@lagoschamber.com">info@lagoschamber.com</a> |
-  <a href="tel:+2348001234567">+234 800 123 4567</a>
-  </p>
-  <p>© <span id="year"></span> Lagos Chamber of Commerce</p>
-  <p>Emeodu, R. C. Iheanachor | WDD231</p>
-  <p id="lastModified"></p>
+<strong>Contact:</strong>
+<a href="mailto:info@lagoschamber.com">info@lagoschamber.com</a> |
+<a href="tel:+2348001234567">+234 800 123 4567</a>
+</p>
+<p>© <span id="year"></span> Lagos Chamber of Commerce</p>
+<p>Emeodu, R. C. Iheanachor | WDD231</p>
+<p id="lastModified"></p>
+
 </footer>
 
 </body>

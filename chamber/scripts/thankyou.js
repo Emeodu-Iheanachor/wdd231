@@ -1,3 +1,21 @@
+
+const menuBtn = document.getElementById("menu");
+const nav = document.querySelector("nav");
+
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("open");
+
+  // Toggle icon
+  if (nav.classList.contains("open")) {
+    menuBtn.textContent = "✖";
+  } else {
+    menuBtn.textContent = "☰";
+  }
+});
+
+
+
+
 const params = new URLSearchParams(window.location.search);
 
 const results = document.getElementById("results");
