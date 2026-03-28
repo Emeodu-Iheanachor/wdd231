@@ -1,0 +1,6 @@
+/* LARGE SCREEN */
+@media (min-width: 768px) {
+  .join-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}

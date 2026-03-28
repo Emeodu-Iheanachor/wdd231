@@ -1,42 +1,62 @@
-/* -------------------- */
-/* SMALL / MOBILE STYLES */
-/* -------------------- */
-
+/* =========================
+   ROOT COLORS (ACCESSIBLE)
+   ========================= */
 :root {
-  --primary-color: #003366;       /* Dark Blue */
-  --secondary-color: #f4b400;     /* Yellow */
-  --background-color: #ffffff;    /* White background */
-  --text-color: #111111;          /* Very dark text for readability */
+  --primary-color: #0b3d91;
+  --primary-dark: #061f4a;
+
+  --secondary-color: #f4b400;
+
+  --background-color: #ffffff;
+  --text-color: #111111;
+
   --header-text-color: #ffffff;
   --nav-text-color: #ffffff;
-  --nav-hover-color: #000000;     
+
+  --nav-hover-bg: #092f6b;
+  --nav-hover-text: #ffffff;
+
   --footer-bg: #222222;
   --footer-text: #ffffff;
+
+  --card-bg: #f5f5f5;
 }
 
-* {
+/* =========================
+   RESET
+   ========================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* =========================
+   BODY
+   ========================= */
 body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
-  margin: 0;
   line-height: 1.6;
   color: var(--text-color);
   background: var(--background-color);
   overflow-x: hidden;
 }
 
-/* Header */
+/* =========================
+   HEADER
+   ========================= */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
   background: var(--primary-color);
   color: var(--header-text-color);
+  padding: 1rem;
 }
 
+/* Logo + Title */
 .logo-title {
   display: flex;
   align-items: center;
@@ -49,66 +69,41 @@ header {
   border-radius: 5px;
 }
 
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ===== HEADER ===== */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #0b3d91;
-  color: white;
-  padding: 1rem;
-}
-
-/* Logo + title */
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .logo-title h1 {
   font-size: 1.2rem;
 }
 
-/* ===== HAMBURGER BUTTON ===== */
+/* =========================
+   HAMBURGER BUTTON
+   ========================= */
 #menu {
   font-size: 2rem;
   background: none;
   border: none;
-  color: white;
+  color: var(--header-text-color);
   cursor: pointer;
 }
 
-/* ===== NAVIGATION (MOBILE FIRST) ===== */
+/* =========================
+   NAVIGATION (MOBILE FIRST)
+   ========================= */
 nav {
-  background: #0b3d91;
-
-  /* Hidden by default */
+  background: var(--primary-color);
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
 
-/* When open */
 nav.open {
   max-height: 500px;
 }
 
-/* Nav list */
 .navigation {
   list-style: none;
   display: flex;
   flex-direction: column;
 }
 
-/* Links */
 .navigation li {
   border-top: 1px solid rgba(255,255,255,0.2);
 }
@@ -117,43 +112,11 @@ nav.open {
   display: block;
   padding: 1rem;
   text-decoration: none;
-  color: white;
+  color: var(--nav-text-color);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Hover + active */
-.navigation a:hover {
-  background: #092f6b;
-}
 
-.navigation .active {
-  background: #061f4a;
-}
-
-/* ===== DESKTOP VIEW ===== */
-@media (min-width: 768px) {
-
-  #menu {
-    display: none;
-  }
-
-  nav {
-    max-height: none;
-  }
-
-  .navigation {
-    flex-direction: row;
-    justify-content:space-evenly;
-    gap: 1rem;
-  }
-
-  .navigation li {
-    border: none;
-  }
-
-  .navigation a {
-    padding: 0.5rem 1rem;
-  }
-}
 
 /* Hover (ALL links) */
 .navigation li a:hover {
@@ -174,7 +137,38 @@ nav.open {
   color: var(--primary-dark);
 }
 
-/* Main / View Controls */
+
+/* =========================
+   DESKTOP VIEW
+   ========================= */
+@media (min-width: 768px) {
+
+  #menu {
+    display: none;
+  }
+
+  nav {
+    max-height: none;
+  }
+
+  .navigation {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+
+  .navigation li {
+    border: none;
+  }
+
+  .navigation a {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* =========================
+   MAIN CONTENT
+   ========================= */
 main {
   max-width: 1000px;
   margin: auto;
@@ -186,6 +180,9 @@ h2 {
   margin-bottom: 1rem;
 }
 
+/* =========================
+   VIEW CONTROLS
+   ========================= */
 .view-controls {
   display: flex;
   flex-direction: column;
@@ -210,8 +207,13 @@ h2 {
   transition: 0.3s;
 }
 
+.view-buttons button:hover {
+  background: var(--primary-dark);
+}
 
-
+/* =========================
+   FORM / JOIN
+   ========================= */
 .join-container {
   display: grid;
   gap: 2rem;
@@ -229,11 +231,17 @@ label {
   flex-direction: column;
 }
 
-input, textarea, select {
-  padding: 8px;
+input,
+textarea,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+   ========================= */
 .cards {
   display: grid;
   gap: 1rem;
@@ -241,22 +249,40 @@ input, textarea, select {
 
 .card {
   padding: 1rem;
-  background: #eee;
+  background: var(--card-bg);
   text-align: center;
+  border-radius: 6px;
 }
 
-/* ANIMATION ON LOAD */
+/* =========================
+   ANIMATION
+   ========================= */
 .fade {
   opacity: 0;
   animation: fadeIn 1s forwards;
 }
 
-.fade:nth-child(2) { animation-delay: 0.3s; }
-.fade:nth-child(3) { animation-delay: 0.6s; }
-.fade:nth-child(4) { animation-delay: 0.9s; }
+.fade:nth-child(2) {
+  animation-delay: 0.3s;
+}
 
+.fade:nth-child(3) {
+  animation-delay: 0.6s;
+}
 
-/* Footer */
+.fade:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
   text-align: center;
   padding: 1rem;
@@ -271,21 +297,6 @@ footer a {
 }
 
 footer a:hover {
-  color: #ffd700;
+  color: var(--secondary-color);
   text-decoration: underline;
-}
-
-
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* LARGE SCREEN */
-@media (min-width: 768px) {
-  .join-container {
-    grid-template-columns: 2fr 1fr;
-  }
 }

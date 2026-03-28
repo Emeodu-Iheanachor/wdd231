@@ -1,32 +1,30 @@
-// TIMESTAMP
-document.getElementById("timestamp").value = new Date().toISOString();
-
-// MODALS
-function openModal(id) {
-  document.getElementById(id).showModal();
-}
-
-function closeModal(id) {
-  document.getElementById(id).close();
-}
-
-
-const menuBtn = document.getElementById("menu");
+// NAV TOGGLE
+const menuBtn = document.querySelector("#menu");
 const nav = document.querySelector("nav");
 
 menuBtn.addEventListener("click", () => {
   nav.classList.toggle("open");
-
-  // Toggle icon
-  if (nav.classList.contains("open")) {
-    menuBtn.textContent = "✖";
-  } else {
-    menuBtn.textContent = "☰";
-  }
 });
 
+// TIMESTAMP
+document.querySelector("#timestamp").value = new Date().toISOString();
 
+// FOOTER
 document.querySelector("#year").textContent = new Date().getFullYear();
+document.querySelector("#lastModified").textContent = document.lastModified;
 
-document.querySelector("#lastModified").textContent =
-`Last Modified: ${document.lastModified}`;
+// MODALS
+const buttons = document.querySelectorAll("[data-modal]");
+const dialogs = document.querySelectorAll("dialog");
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.getElementById(btn.dataset.modal).showModal();
+  });
+});
+
+dialogs.forEach(dialog => {
+  dialog.querySelector(".close").addEventListener("click", () => {
+    dialog.close();
+  });
+});
