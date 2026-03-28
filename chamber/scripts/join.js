@@ -1,148 +1,180 @@
-// TIMESTAMP
-document.getElementById("timestamp").value = new Date().toISOString();
+// ===============================
+// DOM READY (SAFE START)
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
 
-// MODALS
-function openModal(id) {
-  document.getElementById(id).showModal();
-}
-
-function closeModal(id) {
-  document.getElementById(id).close();
-}
-
-
-const menuBtn = document.getElementById("menu");
-const nav = document.querySelector("nav");
-
-menuBtn.addEventListener("click", () => {
-  nav.classList.toggle("open");
-
-  // Toggle icon
-  if (nav.classList.contains("open")) {
-    menuBtn.textContent = "✖";
-  } else {
-    menuBtn.textContent = "☰";
+  // =========================
+  // TIMESTAMP (HIDDEN FIELD)
+  // =========================
+  const timestampField = document.querySelector("#timestamp");
+  if (timestampField) {
+    timestampField.value = new Date().toISOString();
   }
-});
 
+  // =========================
+  // MENU TOGGLE
+  // =========================
+  const menuBtn = document.getElementById("menu");
+  const nav = document.querySelector("nav");
 
-/* =========================
-   TIMESTAMP (HIDDEN FIELD)
-   ========================= */
-const timestampField = document.querySelector("#timestamp");
-
-if (timestampField) {
-  timestampField.value = new Date().toISOString();
-}
-
-
-/* =========================
-   FOOTER DATES
-   ========================= */
-const year = document.querySelector("#year");
-const lastModified = document.querySelector("#lastModified");
-
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
-
-if (lastModified) {
-  lastModified.textContent = `Last Modified: ${document.lastModified}`;
-}
-
-
-/* =========================
-   MODAL HANDLING (NO INLINE JS)
-   ========================= */
-const modalButtons = document.querySelectorAll("[data-modal]");
-const dialogs = document.querySelectorAll("dialog");
-
-modalButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const modalId = button.dataset.modal;
-    const modal = document.getElementById(modalId);
-
-    if (modal) {
-      modal.showModal();
-    }
-  });
-});
-
-
-/* CLOSE MODALS */
-dialogs.forEach(dialog => {
-  const closeBtn = dialog.querySelector(".close");
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      dialog.close();
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      menuBtn.textContent = nav.classList.contains("open") ? "✖" : "☰";
     });
   }
 
-  /* CLICK OUTSIDE TO CLOSE (UX BOOST) */
-  dialog.addEventListener("click", (event) => {
-    const rect = dialog.getBoundingClientRect();
+  // =========================
+  // FOOTER DATES
+  // =========================
+  const year = document.querySelector("#year");
+  const lastModified = document.querySelector("#lastModified");
 
-    if (
-      event.clientX < rect.left ||
-      event.clientX > rect.right ||
-      event.clientY < rect.top ||
-      event.clientY > rect.bottom
-    ) {
-      dialog.close();
-    }
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+
+  if (lastModified) {
+    lastModified.textContent = `Last Modified: ${document.lastModified}`;
+  }
+
+  // =========================
+  // MODALS (NO INLINE JS)
+  // =========================
+  const modalButtons = document.querySelectorAll("[data-modal]");
+  const dialogs = document.querySelectorAll("dialog");
+
+  modalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const modal = document.getElementById(button.dataset.modal);
+      if (modal) modal.showModal();
+    });
   });
-});
 
+  dialogs.forEach(dialog => {
+    const closeBtn = dialog.querySelector(".close");
 
-/* =========================
-   ACCESSIBLE KEYBOARD SUPPORT
-   ========================= */
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    dialogs.forEach(dialog => {
-      if (dialog.open) {
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => dialog.close());
+    }
+
+    // Click outside closes modal
+    dialog.addEventListener("click", (event) => {
+      const rect = dialog.getBoundingClientRect();
+      if (
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
+      ) {
         dialog.close();
       }
     });
-  }
-});
+  });
 
-
-/* =========================
-   FORM VALIDATION BOOST
-   ========================= */
-const form = document.querySelector("#joinForm");
-
-if (form) {
-  form.addEventListener("submit", (e) => {
-    const orgTitle = document.querySelector("#orgtitle");
-
-    if (orgTitle && orgTitle.value && orgTitle.value.length < 7) {
-      e.preventDefault();
-      alert("Organizational title must be at least 7 characters.");
-      orgTitle.focus();
+  // ESC key closes modal
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      dialogs.forEach(dialog => dialog.open && dialog.close());
     }
   });
-}
 
+  // =========================
+  // FORM + ACCESSIBILITY FIX
+  // =========================
+  const form = document.querySelector("#joinForm");
+  const inputs = document.querySelectorAll("input, textarea, select");
 
-/* =========================
-   CARD ANIMATION ON LOAD
-   (NOT HOVER - RUBRIC SAFE)
-   ========================= */
-const cards = document.querySelectorAll(".fade");
+  // ✅ AUTO ADD TITLES (FIXES YOUR ERROR)
+  inputs.forEach(input => {
+    if (!input.hasAttribute("title")) {
+      const label = document.querySelector(`label[for="${input.id}"]`);
+      const labelText = label
+        ? label.textContent.trim()
+        : (input.name || "this field");
 
-window.addEventListener("load", () => {
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, index * 200);
+      input.setAttribute(
+        "title",
+        `Please enter ${labelText.toLowerCase()} correctly`
+      );
+    }
   });
+
+  // =========================
+  // REAL-TIME VALIDATION
+  // =========================
+  inputs.forEach(input => {
+    input.addEventListener("input", () => {
+      input.setCustomValidity("");
+    });
+  });
+
+  // =========================
+  // FORM SUBMIT VALIDATION
+  // =========================
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      let isValid = true;
+
+      inputs.forEach(input => {
+        const value = input.value.trim();
+
+        // Required
+        if (input.required && value === "") {
+          input.setCustomValidity("This field is required.");
+          isValid = false;
+          return;
+        }
+
+        // Email
+        if (input.type === "email") {
+          const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
+          if (!pattern.test(value)) {
+            input.setCustomValidity("Enter a valid email address.");
+            isValid = false;
+            return;
+          }
+        }
+
+        // Nigerian Phone
+        if (input.type === "tel") {
+          const pattern = /^(\+234|0)[789][01]\d{8}$/;
+          if (!pattern.test(value)) {
+            input.setCustomValidity("Enter valid Nigerian number (08012345678 or +2348012345678)");
+            isValid = false;
+            return;
+          }
+        }
+
+        // Org Title (matches your HTML pattern)
+        if (input.id === "orgtitle" && value && value.length < 7) {
+          input.setCustomValidity("Minimum 7 characters required.");
+          isValid = false;
+          return;
+        }
+
+        input.setCustomValidity("");
+      });
+
+      if (!isValid) {
+        e.preventDefault();
+        form.reportValidity();
+      }
+    });
+  }
+
+  // =========================
+  // CARD ANIMATION (SAFE)
+  // =========================
+  const cards = document.querySelectorAll(".animate");
+
+  window.addEventListener("load", () => {
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+      }, index * 200);
+    });
+  });
+
 });
-
-document.querySelector("#year").textContent = new Date().getFullYear();
-
-document.querySelector("#lastModified").textContent =
-`Last Modified: ${document.lastModified}`;
