@@ -2,27 +2,31 @@
    ROOT COLORS (AA/AAA SAFE)
    ========================= */
 :root {
-  --primary-color: #0B3D91;
-  --primary-dark: #061F4A;
+  /* PRIMARY / BRAND */
+  --primary-color: #0B3D91;      /* deep blue */
+  --primary-dark: #061F4A;       /* darker blue for hover */
 
-  --secondary-color: #C99700;
-  --secondary-dark: #7A5F00;
+  /* SECONDARY (ACCESSIBLE GOLD) */
+  --secondary-color: #C99700;    /* gold accent */
+  --secondary-dark: #7A5F00;     /* darker gold */
 
+  /* BACKGROUND & TEXT */
   --background-color: #FFFFFF;
-  --text-color: #111111;
-
-  --header-text-color: #FFFFFF;
-  --nav-text-color: #FFFFFF;
+  --text-color: #111111;         /* text on white bg - AAA */
+  --header-text-color: #FFFFFF;  /* AAA on primary-color */
+  --nav-text-color: #FFFFFF;     /* AAA on primary-color */
 
   --nav-hover-bg: var(--secondary-color);
-  --nav-hover-text: var(--primary-dark);
+  --nav-hover-text: var(--primary-dark); /* AAA contrast on gold */
 
   --nav-active-bg: var(--primary-dark);
-  --nav-active-text: #FFFFFF;
+  --nav-active-text: #FFFFFF; /* AAA contrast */
 
+  /* FOOTER */
   --footer-bg: #222222;
   --footer-text: #FFFFFF;
 
+  /* CARDS */
   --card-bg: #F9FAFB;
   --border-color: #DDDDDD;
 }
@@ -66,9 +70,8 @@ header {
   padding: 1rem;
 }
 
-/* 🔥 CONTRAST FIX */
 header * {
-  color: #FFFFFF;
+  color: var(--header-text-color); /* AAA text */
 }
 
 .logo-title {
@@ -88,12 +91,12 @@ header * {
   font-size: 2rem;
   background: none;
   border: none;
-  color: #FFFFFF;
+  color: var(--header-text-color);
   cursor: pointer;
 }
 
 /* =========================
-   NAVIGATION (MOBILE)
+   NAVIGATION
    ========================= */
 nav {
   background: var(--primary-color);
@@ -102,13 +105,12 @@ nav {
   transition: max-height 0.3s ease;
 }
 
-/* 🔥 CONTRAST FIX */
-nav * {
-  color: #FFFFFF;
-}
-
 nav.open {
   max-height: 500px;
+}
+
+nav * {
+  color: var(--nav-text-color); /* AAA contrast */
 }
 
 .navigation {
@@ -129,7 +131,6 @@ nav.open {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* 🔥 FIX VISITED LINK ISSUE */
 .navigation a:visited {
   color: var(--nav-text-color);
 }
@@ -138,13 +139,47 @@ nav.open {
 .navigation a:hover,
 .navigation a:focus-visible {
   background-color: var(--nav-hover-bg);
-  color: var(--nav-hover-text);
+  color: var(--nav-hover-text); /* AAA on gold */
 }
 
 .navigation a.active {
   background-color: var(--nav-active-bg);
   color: var(--nav-active-text);
   border-left: 5px solid var(--secondary-color);
+}
+
+.navigation a.active:hover,
+.navigation a.active:focus-visible {
+  background-color: var(--secondary-color);
+  color: var(--primary-dark);
+}
+
+/* =========================
+   DESKTOP NAV
+   ========================= */
+@media (min-width: 768px) {
+  #menu {
+    display: none;
+  }
+
+  nav {
+    max-height: none;
+  }
+
+  .navigation {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .navigation li {
+    border: none;
+  }
+
+  .navigation a {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+  }
 }
 
 /* =========================
@@ -201,7 +236,7 @@ select:focus-visible {
 button,
 input[type="submit"] {
   background: var(--primary-color);
-  color: #FFFFFF;
+  color: #FFFFFF; /* AAA on primary-color */
   border: none;
   padding: 0.7rem;
   border-radius: 5px;
@@ -213,7 +248,7 @@ button:hover,
 button:focus-visible,
 input[type="submit"]:hover,
 input[type="submit"]:focus-visible {
-  background: var(--primary-dark);
+  background: var(--primary-dark); /* AAA contrast */
 }
 
 /* =========================
@@ -233,7 +268,7 @@ input[type="submit"]:focus-visible {
 }
 
 /* =========================
-   ANIMATION (ACCESSIBLE)
+   ANIMATION
    ========================= */
 @media (prefers-reduced-motion: no-preference) {
   .fade {
@@ -275,7 +310,7 @@ footer {
   text-align: center;
   padding: 1rem;
   background: var(--footer-bg);
-  color: var(--footer-text);
+  color: var(--footer-text); /* AAA contrast */
   margin-top: 2rem;
 }
 
@@ -286,6 +321,6 @@ footer a {
 
 footer a:hover,
 footer a:focus-visible {
-  color: var(--secondary-color);
+  color: var(--secondary-color); /* AAA contrast on dark footer */
   text-decoration: underline;
 }

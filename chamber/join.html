@@ -101,10 +101,19 @@
   autocomplete="tel"
   title="Enter a valid Nigerian phone number (e.g., 08012345678 or +2348012345678)">
 
+<!-- ORGANIZATION NAME -->
 <label for="organization">Organization Name</label>
 <input id="organization" type="text" name="organization" required
-  autocomplete="organization-title"
-  title="Enter your organization name">
+       autocomplete="organization"
+       pattern="[a-zA-Z0-9\s\.,'-]{2,100}"
+       title="Enter your organization name (letters, numbers, and basic punctuation)">
+
+<!-- ORGANIZATION TITLE / POSITION -->
+<label for="orgtitle">Organization Title</label>
+<input id="orgtitle" type="text" name="orgtitle" required
+       autocomplete="organization-title"
+       pattern="[a-zA-Z\s\.,'-]{2,50}"
+       title="Enter your position or title in the organization (letters only)">
 
 <label for="description">Business Description</label>
 <textarea id="description" name="description"
