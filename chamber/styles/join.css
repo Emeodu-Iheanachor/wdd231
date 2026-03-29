@@ -6,7 +6,7 @@
   --primary-color: #0B3D91;      /* AAA */
   --primary-dark: #061F4A;       /* AAA */
 
-  /* SECONDARY (FIXED GOLD) */
+  /* SECONDARY (ACCESSIBLE GOLD) */
   --secondary-color: #C99700;    /* AA/AAA safe */
   --secondary-dark: #7A5F00;
 
@@ -18,10 +18,10 @@
   --header-text-color: #FFFFFF;
   --nav-text-color: #FFFFFF;
 
-  --nav-hover-bg: #092F6B;
-  --nav-hover-text: #FFFFFF;
+  --nav-hover-bg: var(--secondary-color);
+  --nav-hover-text: var(--primary-dark);
 
-  --nav-active-bg: #061F4A;
+  --nav-active-bg: var(--primary-dark);
   --nav-active-text: #FFFFFF;
 
   /* FOOTER */
@@ -126,10 +126,16 @@ nav.open {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* HOVER */
-.navigation a:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-dark);
+/* =========================
+   NAV STATES (ACCESSIBLE)
+   ========================= */
+
+/* HOVER + FOCUS */
+.navigation a:hover,
+.navigation a:focus {
+  background-color: var(--nav-hover-bg);
+  color: var(--nav-hover-text);
+  outline: none;
 }
 
 /* ACTIVE */
@@ -139,8 +145,9 @@ nav.open {
   border-left: 5px solid var(--secondary-color);
 }
 
-/* ACTIVE HOVER */
-.navigation a.active:hover {
+/* ACTIVE + HOVER */
+.navigation a.active:hover,
+.navigation a.active:focus {
   background-color: var(--secondary-color);
   color: var(--primary-dark);
 }
@@ -213,7 +220,8 @@ h2 {
   transition: 0.3s;
 }
 
-.view-buttons button:hover {
+.view-buttons button:hover,
+.view-buttons button:focus {
   background: var(--primary-dark);
 }
 
@@ -257,7 +265,7 @@ select:focus {
 button,
 input[type="submit"] {
   background: var(--primary-color);
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 0.7rem;
   border-radius: 5px;
@@ -265,7 +273,9 @@ input[type="submit"] {
 }
 
 button:hover,
-input[type="submit"]:hover {
+button:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
   background: var(--primary-dark);
 }
 
@@ -286,7 +296,7 @@ input[type="submit"]:hover {
 }
 
 /* =========================
-   ANIMATION (NON-HOVER)
+   ANIMATION
    ========================= */
 .fade {
   opacity: 0;
@@ -335,7 +345,8 @@ footer a {
   text-decoration: none;
 }
 
-footer a:hover {
+footer a:hover,
+footer a:focus {
   color: var(--secondary-color);
   text-decoration: underline;
 }

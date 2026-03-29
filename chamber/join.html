@@ -79,36 +79,48 @@
 
 <main class="join-container">
 
-<!-- FORM -->
-<form method="get" action="thankyou.html" id="joinForm">
+<form id="joinForm" method="get" action="thankyou.html">
 
   <h2>Membership Application</h2>
 
+  <!-- NAME -->
   <label for="fname">First Name</label>
-  <input id="fname" type="text" name="fname" required autocomplete="given-name" title="Enter your first name">
+  <input id="fname" name="fname" required
+    title="Enter your first name"
+    autocomplete="given-name">
 
   <label for="lname">Last Name</label>
-  <input id="lname" type="text" name="lname" required autocomplete="family-name" title="Enter your last name">
+  <input id="lname" name="lname" required
+    title="Enter your last name"
+    autocomplete="family-name">
 
+  <!-- TITLE -->
   <label for="orgtitle">Organizational Title</label>
-  <input id="orgtitle" type="text" name="orgtitle"
+  <input id="orgtitle" name="orgtitle"
     pattern="[A-Za-z\\-\\s]{7,}"
-    title="Minimum 7 characters: letters, spaces, hyphens only"
-    autocomplete="organization-title">
+    title="Minimum 7 characters: letters, spaces, hyphens only">
 
+  <!-- EMAIL -->
   <label for="email">Email</label>
   <input id="email" type="email" name="email" required
-    placeholder="example@email.com"
+    title="Enter a valid email address (example@email.com)"
     autocomplete="email">
 
+  <!-- PHONE -->
   <label for="phone">Phone</label>
-  <input id="phone" type="tel" name="phone" required autocomplete="tel">
+  <input id="phone" type="tel" name="phone" required
+    title="Enter valid Nigerian number (08012345678 or +2348012345678)"
+    autocomplete="tel">
 
+  <!-- ORG -->
   <label for="organization">Organization Name</label>
-  <input id="organization" type="text" name="organization" required autocomplete="organization">
+  <input id="organization" name="organization" required
+    title="Enter your organization name">
 
+  <!-- MEMBERSHIP -->
   <label for="membership">Membership Level</label>
-  <select id="membership" name="membership" required>
+  <select id="membership" name="membership" required
+    title="Select a membership level">
     <option value="">Select Level</option>
     <option value="NP">NP Membership</option>
     <option value="Bronze">Bronze</option>
@@ -116,67 +128,17 @@
     <option value="Gold">Gold</option>
   </select>
 
+  <!-- DESCRIPTION -->
   <label for="description">Business Description</label>
-  <textarea id="description" name="description"></textarea>
+  <textarea id="description" name="description"
+    title="Describe your business"></textarea>
 
-  <!-- HIDDEN TIMESTAMP -->
-  <input type="hidden" name="timestamp" id="timestamp">
+  <input type="hidden" id="timestamp" name="timestamp">
 
-  <button type="submit">Apply for Membership</button>
-
+  <button type="submit">Apply</button>
 </form>
 
-<!-- MEMBERSHIP CARDS -->
-<section class="cards">
-
-  <div class="card animate">
-    <h3>NP Membership</h3>
-    <button data-modal="npModal">View Benefits</button>
-  </div>
-
-  <div class="card animate">
-    <h3>Bronze</h3>
-    <button data-modal="bronzeModal">View Benefits</button>
-  </div>
-
-  <div class="card animate">
-    <h3>Silver</h3>
-    <button data-modal="silverModal">View Benefits</button>
-  </div>
-
-  <div class="card animate">
-    <h3>Gold</h3>
-    <button data-modal="goldModal">View Benefits</button>
-  </div>
-
-</section>
-
 </main>
-
-<!-- MODALS -->
-<dialog id="npModal">
-  <h3>NP Membership</h3>
-  <p>No fee. Access to events.</p>
-  <button class="close">Close</button>
-</dialog>
-
-<dialog id="bronzeModal">
-  <h3>Bronze</h3>
-  <p>Training + networking.</p>
-  <button class="close">Close</button>
-</dialog>
-
-<dialog id="silverModal">
-  <h3>Silver</h3>
-  <p>Advertising + discounts.</p>
-  <button class="close">Close</button>
-</dialog>
-
-<dialog id="goldModal">
-  <h3>Gold</h3>
-  <p>VIP events + spotlight ads.</p>
-  <button class="close">Close</button>
-</dialog>
 
 
 <footer>

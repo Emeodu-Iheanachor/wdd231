@@ -12,15 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // MENU TOGGLE
+  // MENU TOGGLE (ACCESSIBLE)
   // =========================
   const menuBtn = document.getElementById("menu");
   const nav = document.querySelector("nav");
 
   if (menuBtn && nav) {
     menuBtn.addEventListener("click", () => {
-      nav.classList.toggle("open");
-      menuBtn.textContent = nav.classList.contains("open") ? "✖" : "☰";
+      const isOpen = nav.classList.toggle("open");
+
+      menuBtn.textContent = isOpen ? "✖" : "☰";
+      menuBtn.setAttribute("aria-expanded", isOpen);
     });
   }
 
@@ -30,16 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const year = document.querySelector("#year");
   const lastModified = document.querySelector("#lastModified");
 
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
+  if (year) year.textContent = new Date().getFullYear();
   if (lastModified) {
     lastModified.textContent = `Last Modified: ${document.lastModified}`;
   }
 
   // =========================
-  // MODALS (NO INLINE JS)
+  // MODALS (ACCESSIBLE)
   // =========================
   const modalButtons = document.querySelectorAll("[data-modal]");
   const dialogs = document.querySelectorAll("dialog");
@@ -47,7 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
   modalButtons.forEach(button => {
     button.addEventListener("click", () => {
       const modal = document.getElementById(button.dataset.modal);
-      if (modal) modal.showModal();
+      if (modal) {
+        modal.showModal();
+        modal.querySelector("button.close")?.focus();
+      }
     });
   });
 
@@ -72,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ESC key closes modal
+  // ESC closes modal
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       dialogs.forEach(dialog => dialog.open && dialog.close());
@@ -80,12 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // =========================
-  // FORM + ACCESSIBILITY FIX
+  // FORM + ACCESSIBILITY
   // =========================
   const form = document.querySelector("#joinForm");
   const inputs = document.querySelectorAll("input, textarea, select");
 
-  // ✅ AUTO ADD TITLES (FIXES YOUR ERROR)
+  // SAFE BACKUP TITLES (HTML should already have them)
   inputs.forEach(input => {
     if (!input.hasAttribute("title")) {
       const label = document.querySelector(`label[for="${input.id}"]`);
@@ -100,9 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // =========================
-  // REAL-TIME VALIDATION
-  // =========================
+  // REAL-TIME VALIDATION RESET
   inputs.forEach(input => {
     input.addEventListener("input", () => {
       input.setCustomValidity("");
@@ -119,14 +119,14 @@ document.addEventListener("DOMContentLoaded", () => {
       inputs.forEach(input => {
         const value = input.value.trim();
 
-        // Required
+        // REQUIRED
         if (input.required && value === "") {
           input.setCustomValidity("This field is required.");
           isValid = false;
           return;
         }
 
-        // Email
+        // EMAIL
         if (input.type === "email") {
           const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
           if (!pattern.test(value)) {
@@ -136,17 +136,19 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
 
-        // Nigerian Phone
+        // NIGERIAN PHONE
         if (input.type === "tel") {
           const pattern = /^(\+234|0)[789][01]\d{8}$/;
           if (!pattern.test(value)) {
-            input.setCustomValidity("Enter valid Nigerian number (08012345678 or +2348012345678)");
+            input.setCustomValidity(
+              "Enter valid Nigerian number (08012345678 or +2348012345678)"
+            );
             isValid = false;
             return;
           }
         }
 
-        // Org Title (matches your HTML pattern)
+        // ORG TITLE
         if (input.id === "orgtitle" && value && value.length < 7) {
           input.setCustomValidity("Minimum 7 characters required.");
           isValid = false;
@@ -164,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================
-  // CARD ANIMATION (SAFE)
+  // CARD ANIMATION
   // =========================
   const cards = document.querySelectorAll(".animate");
 
