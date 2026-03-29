@@ -1,26 +1,24 @@
 /* =========================
-   ROOT COLORS (AA/AAA SAFE)
+   ROOT COLORS (AAA SAFE)
    ========================= */
 :root {
   /* PRIMARY / BRAND */
-  --primary-color: #0B3D91;      /* deep blue */
-  --primary-dark: #061F4A;       /* darker blue for hover */
+  --primary-color: #0B3D91;       /* deep blue */
+  --primary-dark: #061F4A;        /* darker blue for hover and active */
 
   /* SECONDARY (ACCESSIBLE GOLD) */
-  --secondary-color: #C99700;    /* gold accent */
-  --secondary-dark: #7A5F00;     /* darker gold */
+  --secondary-color: #C99700;     /* gold accent */
+  --secondary-dark: #7A5F00;      /* darker gold for hover */
 
   /* BACKGROUND & TEXT */
-  --background-color: #FFFFFF;
-  --text-color: #111111;         /* text on white bg - AAA */
-  --header-text-color: #FFFFFF;  /* AAA on primary-color */
-  --nav-text-color: #FFFFFF;     /* AAA on primary-color */
-
+  --background-color: #FFFFFF;    /* white background */
+  --text-color: #111111;          /* dark text on white bg (AAA) */
+  --header-text-color: #FFFFFF;   /* AAA on primary-color */
+  --nav-text-color: #FFFFFF;      /* AAA on primary-color */
   --nav-hover-bg: var(--secondary-color);
-  --nav-hover-text: var(--primary-dark); /* AAA contrast on gold */
-
+  --nav-hover-text: #061F4A;      /* AAA contrast on gold */
   --nav-active-bg: var(--primary-dark);
-  --nav-active-text: #FFFFFF; /* AAA contrast */
+  --nav-active-text: #FFFFFF;     /* AAA contrast */
 
   /* FOOTER */
   --footer-bg: #222222;
@@ -71,7 +69,7 @@ header {
 }
 
 header * {
-  color: var(--header-text-color); /* AAA text */
+  color: var(--header-text-color);
 }
 
 .logo-title {
@@ -110,7 +108,7 @@ nav.open {
 }
 
 nav * {
-  color: var(--nav-text-color); /* AAA contrast */
+  color: var(--nav-text-color);
 }
 
 .navigation {
@@ -135,11 +133,11 @@ nav * {
   color: var(--nav-text-color);
 }
 
-/* NAV STATES */
+/* NAVIGATION STATES */
 .navigation a:hover,
 .navigation a:focus-visible {
   background-color: var(--nav-hover-bg);
-  color: var(--nav-hover-text); /* AAA on gold */
+  color: var(--nav-hover-text);
 }
 
 .navigation a.active {
@@ -189,6 +187,7 @@ main {
   max-width: 1000px;
   margin: auto;
   padding: 1rem;
+  color: var(--text-color);
 }
 
 h2 {
@@ -236,7 +235,7 @@ select:focus-visible {
 button,
 input[type="submit"] {
   background: var(--primary-color);
-  color: #FFFFFF; /* AAA on primary-color */
+  color: var(--header-text-color); /* AAA contrast */
   border: none;
   padding: 0.7rem;
   border-radius: 5px;
@@ -265,6 +264,7 @@ input[type="submit"]:focus-visible {
   border-radius: 8px;
   text-align: center;
   border: 1px solid var(--border-color);
+  color: var(--text-color);
 }
 
 /* =========================
@@ -310,7 +310,7 @@ footer {
   text-align: center;
   padding: 1rem;
   background: var(--footer-bg);
-  color: var(--footer-text); /* AAA contrast */
+  color: var(--footer-text);
   margin-top: 2rem;
 }
 
@@ -321,6 +321,6 @@ footer a {
 
 footer a:hover,
 footer a:focus-visible {
-  color: var(--secondary-color); /* AAA contrast on dark footer */
+  color: var(--secondary-color);
   text-decoration: underline;
 }
