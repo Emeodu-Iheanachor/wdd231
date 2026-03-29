@@ -4,18 +4,42 @@
     grid-template-columns: 2fr 1fr;
   }
 
+
+  /* NAV */
+  #menu {
+    display: none;
+  }
+
+  nav {
+    max-height: none;
+  }
+
   .navigation {
-    display: flex !important;
     flex-direction: row;
     justify-content: space-evenly;
-    color: white;
-    gap: 5px;
+    align-items: center;
+  }
+
+  .navigation li {
+    border: none;
+  }
+
+  .navigation a {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
   }
 
   
+
+  
+
+}
+
+
+  
+  
   
 
 
 
 
-}

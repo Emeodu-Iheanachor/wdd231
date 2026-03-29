@@ -2,19 +2,15 @@
    ROOT COLORS (AA/AAA SAFE)
    ========================= */
 :root {
-  /* PRIMARY */
-  --primary-color: #0B3D91;      /* AAA */
-  --primary-dark: #061F4A;       /* AAA */
+  --primary-color: #0B3D91;
+  --primary-dark: #061F4A;
 
-  /* SECONDARY (ACCESSIBLE GOLD) */
-  --secondary-color: #C99700;    /* AA/AAA safe */
+  --secondary-color: #C99700;
   --secondary-dark: #7A5F00;
 
-  /* BACKGROUND & TEXT */
   --background-color: #FFFFFF;
-  --text-color: #111111;         /* AAA */
+  --text-color: #111111;
 
-  /* HEADER / NAV */
   --header-text-color: #FFFFFF;
   --nav-text-color: #FFFFFF;
 
@@ -24,11 +20,9 @@
   --nav-active-bg: var(--primary-dark);
   --nav-active-text: #FFFFFF;
 
-  /* FOOTER */
   --footer-bg: #222222;
   --footer-text: #FFFFFF;
 
-  /* UI */
   --card-bg: #F9FAFB;
   --border-color: #DDDDDD;
 }
@@ -45,7 +39,7 @@
 }
 
 /* =========================
-   BODY
+   GLOBAL
    ========================= */
 body {
   font-family: 'Roboto', Arial, sans-serif;
@@ -53,6 +47,11 @@ body {
   color: var(--text-color);
   background: var(--background-color);
   overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 /* =========================
@@ -71,12 +70,6 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.logo-title img {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
 }
 
 .logo-title h1 {
@@ -126,59 +119,17 @@ nav.open {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* =========================
-   NAV STATES (ACCESSIBLE)
-   ========================= */
-
-/* HOVER + FOCUS */
+/* NAV STATES */
 .navigation a:hover,
-.navigation a:focus {
+.navigation a:focus-visible {
   background-color: var(--nav-hover-bg);
   color: var(--nav-hover-text);
-  outline: none;
 }
 
-/* ACTIVE */
 .navigation a.active {
   background-color: var(--nav-active-bg);
   color: var(--nav-active-text);
   border-left: 5px solid var(--secondary-color);
-}
-
-/* ACTIVE + HOVER */
-.navigation a.active:hover,
-.navigation a.active:focus {
-  background-color: var(--secondary-color);
-  color: var(--primary-dark);
-}
-
-/* =========================
-   DESKTOP NAV
-   ========================= */
-@media (min-width: 768px) {
-
-  #menu {
-    display: none;
-  }
-
-  nav {
-    max-height: none;
-  }
-
-  .navigation {
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-
-  .navigation li {
-    border: none;
-  }
-
-  .navigation a {
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-  }
 }
 
 /* =========================
@@ -196,36 +147,6 @@ h2 {
 }
 
 /* =========================
-   VIEW CONTROLS
-   ========================= */
-.view-controls {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-}
-
-.view-buttons {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.view-buttons button {
-  padding: 0.5rem 1rem;
-  background: var(--primary-color);
-  color: var(--header-text-color);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.view-buttons button:hover,
-.view-buttons button:focus {
-  background: var(--primary-dark);
-}
-
-/* =========================
    FORM
    ========================= */
 .join-container {
@@ -240,8 +161,6 @@ form {
 }
 
 label {
-  display: flex;
-  flex-direction: column;
   font-weight: 500;
 }
 
@@ -253,15 +172,15 @@ select {
   border-radius: 5px;
 }
 
-/* FOCUS (ACCESSIBILITY BOOST) */
-input:focus,
-textarea:focus,
-select:focus {
+/* ACCESSIBLE FOCUS */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
   outline: 3px solid var(--secondary-color);
   outline-offset: 2px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 button,
 input[type="submit"] {
   background: var(--primary-color);
@@ -270,12 +189,13 @@ input[type="submit"] {
   padding: 0.7rem;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover,
-button:focus,
+button:focus-visible,
 input[type="submit"]:hover,
-input[type="submit"]:focus {
+input[type="submit"]:focus-visible {
   background: var(--primary-dark);
 }
 
@@ -296,22 +216,24 @@ input[type="submit"]:focus {
 }
 
 /* =========================
-   ANIMATION
+   ANIMATION (RESPECTS USERS)
    ========================= */
-.fade {
-  opacity: 0;
-  transform: translateY(15px);
-  animation: fadeIn 0.8s ease forwards;
-}
+@media (prefers-reduced-motion: no-preference) {
+  .fade {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeIn 0.8s ease forwards;
+  }
 
-.fade:nth-child(2) { animation-delay: 0.2s; }
-.fade:nth-child(3) { animation-delay: 0.4s; }
-.fade:nth-child(4) { animation-delay: 0.6s; }
+  .fade:nth-child(2) { animation-delay: 0.2s; }
+  .fade:nth-child(3) { animation-delay: 0.4s; }
+  .fade:nth-child(4) { animation-delay: 0.6s; }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -322,7 +244,7 @@ dialog {
   border: none;
   border-radius: 10px;
   padding: 1.5rem;
-  max-width: 300px;
+  max-width: 320px;
 }
 
 dialog::backdrop {
@@ -346,7 +268,7 @@ footer a {
 }
 
 footer a:hover,
-footer a:focus {
+footer a:focus-visible {
   color: var(--secondary-color);
   text-decoration: underline;
 }
