@@ -1,13 +1,14 @@
+/* =========================
+   MEDIA QUERIES (LARGER SCREENS ≥768px)
+   ========================= */
 @media screen and (min-width: 768px) {
-
-  /* ===== HEADER ===== */
   header {
     padding: 1rem 2rem;
   }
 
   header h1 {
     font-size: 1.8rem;
-    color: var(--white); /* White text on primary-color background */
+    color: var(--white);
   }
 
   #menu {
@@ -16,135 +17,56 @@
 
   nav {
     display: block;
+    max-height: none;
   }
 
-  /* Navigation container */
   .navigation {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5rem;
-    background-color: var(--primary-color); /* #002147 dark blue */
+    background-color: var(--primary-color);
   }
 
-  /* Navigation links */
   .navigation li a {
     padding: 1rem 1.5rem;
-    color: var(--white); /* White text on dark background */
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    color: var(--white);
   }
 
-  /* Hover / focus */
   .navigation li a:hover,
-  .navigation li a:focus {
-    background-color: var(--secondary-color); /* #ffd700 gold */
-    color: var(--black); /* Black text on gold background */
+  .navigation li a:focus-visible {
+    background-color: var(--secondary-color);
+    color: var(--primary-dark);
   }
 
-  /* Active page */
   .navigation li a.active {
-    background-color: var(--primary-dark); /* #00132a very dark blue */
+    background-color: var(--primary-dark);
     color: var(--white);
     border: 2px solid var(--secondary-color);
   }
 
   .navigation li a.active:hover,
-  .navigation li a.active:focus {
+  .navigation li a.active:focus-visible {
     background-color: var(--secondary-color);
-    color: var(--black);
+    color: var(--primary-dark);
   }
 
-  /* ===== HERO ===== */
-  .hero-text h2 {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    color: var(--white); /* White text */
-  }
-
-  .hero-text {
-    background-color: rgba(0,0,0,0.7); /* Dark overlay for contrast */
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-  }
-
-  /* ===== MAIN ===== */
   main {
     max-width: 1100px;
     margin: auto;
     padding: 0 1rem;
-    color: var(--text-color); /* #0d0d0d on white */
   }
 
-  /* ===== TOP GRID ===== */
-  .top-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 1rem;
+  .hero-text h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
   }
 
   .grid,
   .business-grid {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
   }
 
-  /* ===== FORECAST GRID ===== */
-  .forecast-grid {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .forecast-card {
-    background-color: #e6e6e6; /* Slightly darker gray for better contrast */
-    color: var(--text-color);   /* #0d0d0d almost black text */
-    padding: 0.8rem;
-    border-radius: 8px;
-    text-align: center;
-    flex: 1 1 120px;
-    max-width: 150px;
-    transition: all 0.3s ease;
-  }
-
-  .forecast-card:hover,
-  .forecast-card:focus {
-    background-color: #d4d4d4; /* Slightly darker on hover for visibility */
-    outline: 2px solid var(--primary-color); /* Focus outline for accessibility */
-  }
-
-  /* Forecast text */
-  .forecast-card h3 {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-    color: var(--primary-color); /* Dark blue for headings */
-  }
-
-  .forecast-card p {
-    font-size: 0.9rem;
-    color: var(--text-color); /* High contrast normal text */
-  }
-
-  /* ===== FOOTER ===== */
-  footer {
-    font-size: 0.9rem;
-    background-color: var(--primary-dark);
-    color: var(--white); /* White on very dark blue */
-    text-align: center;
-    padding: 1rem;
-  }
-
-  footer a {
-    color: var(--white);
-    font-weight: 500;
-    text-decoration: none;
-  }
-
-  footer a:hover,
-  footer a:focus {
-    color: var(--secondary-color); /* Gold links for hover/focus */
+  .top-grid {
+    grid-template-columns: 2fr 1fr 1fr;
   }
 }

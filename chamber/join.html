@@ -108,12 +108,17 @@
        pattern="[a-zA-Z0-9\s\.,'-]{2,100}"
        title="Enter your organization name (letters, numbers, and basic punctuation)">
 
-<!-- ORGANIZATION TITLE / POSITION -->
-<label for="orgtitle">Organization Title</label>
-<input id="orgtitle" type="text" name="orgtitle" required
-       autocomplete="organization-title"
-       pattern="[a-zA-Z\s\.,'-]{2,50}"
-       title="Enter your position or title in the organization (letters only)">
+<label for="organization-title">Organization Title</label>
+<input 
+  type="text" 
+  id="organization-title" 
+  name="organization-title" 
+  autocomplete="organization-title" 
+  placeholder="Enter your organization title"
+  pattern="[A-Za-z\s-]{7,}" 
+  title="Organization title must be at least 7 characters and contain only letters, spaces, or hyphens" 
+  required
+>
 
 <label for="description">Business Description</label>
 <textarea id="description" name="description"

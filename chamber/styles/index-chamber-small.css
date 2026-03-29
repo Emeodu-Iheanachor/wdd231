@@ -1,4 +1,6 @@
- /* ===== RESET ===== */
+/* =========================
+   RESET
+   ========================= */
 *,
 *::before,
 *::after {
@@ -7,53 +9,52 @@
   box-sizing: border-box;
 }
 
-/* ===== VARIABLES (ACCESSIBLE COLORS) ===== */
+/* =========================
+   VARIABLES (ACCESSIBLE COLORS)
+   ========================= */
 :root {
   /* Primary colors */
-  --primary-color: #002147;      /* Dark blue */
-  --primary-dark: #00132a;       /* Very dark blue */
+  --primary-color: #0B3D91;      /* Dark Blue - AAA safe */
+  --primary-dark: #061F4A;       /* Very Dark Blue - AAA safe */
 
   /* Secondary colors */
-  --secondary-color: #ffd700;    /* Bright gold */
-  --secondary-dark: #e6c200;    /* Slightly darker gold */
+  --secondary-color: #C99700;    /* Gold - AAA safe */
+  --secondary-dark: #7A5F00;     /* Dark Gold - AAA safe */
 
   /* Neutral colors */
-  --background-color: #ffffff;   /* White background */
-  --text-color: #0d0d0d;        /* Almost black for text */
+  --background-color: #FFFFFF;   /* White background */
+  --text-color: #111111;         /* Dark text - AAA safe */
 
-  --white: #ffffff;
+  --white: #FFFFFF;
   --black: #000000;
+
+  /* Other colors */
+  --footer-bg: #222222;
+  --footer-text: #FFFFFF;
+  --card-bg: #F9FAFB;
+  --border-color: #DDDDDD;
 }
 
-/* ===== BODY ===== */
+/* =========================
+   BODY
+   ========================= */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--background-color);
-  color: var(--text-color); /* Dark text on light background */
-  line-height: 1.6;
-}
-
-/* ===== BACKGROUND CONTRAST SYSTEM ===== */
-/* Light backgrounds → dark text */
-[data-bg="light"] {
-  background-color: var(--background-color);
   color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Dark backgrounds → light text */
-[data-bg="dark"] {
-  color: var(--white);
-}
-
-/* ===== HEADER ===== */
+/* =========================
+   HEADER
+   ========================= */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.6rem 1rem;
   background-color: var(--primary-color);
-}
-header[data-bg="dark"] {
   color: var(--white);
 }
 
@@ -76,20 +77,29 @@ header h1 {
   cursor: pointer;
 }
 
-/* ===== NAVIGATION ===== */
+/* =========================
+   NAVIGATION (MOBILE)
+   ========================= */
 nav {
   display: none;
   background-color: var(--primary-color);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }
+
 nav.open {
   display: block;
+  max-height: 500px;
 }
 
 .navigation {
   list-style: none;
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
 }
+
 .navigation li a {
   display: block;
   padding: 0.75rem 1rem;
@@ -100,26 +110,27 @@ nav.open {
   transition: all 0.3s ease;
 }
 
-/* Hover / Focus for links */
 .navigation li a:hover,
-.navigation li a:focus {
+.navigation li a:focus-visible {
   background-color: var(--secondary-color);
-  color: var(--black);
+  color: var(--primary-dark);
 }
 
-/* Active page */
 .navigation li a.active {
   background-color: var(--primary-dark);
   color: var(--white);
   border: 2px solid var(--secondary-color);
 }
+
 .navigation li a.active:hover,
-.navigation li a.active:focus {
+.navigation li a.active:focus-visible {
   background-color: var(--secondary-color);
-  color: var(--black);
+  color: var(--primary-dark);
 }
 
-/* ===== HERO ===== */
+/* =========================
+   HERO
+   ========================= */
 .hero {
   position: relative;
   text-align: center;
@@ -136,7 +147,7 @@ nav.open {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  background-color: rgba(0,0,0,0.7);
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
@@ -144,42 +155,94 @@ nav.open {
 }
 
 .hero-text h2 {
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 2vw, 2rem);
   margin-bottom: 0.5rem;
   color: var(--white);
 }
 
-/* ===== CTA BUTTON ===== */
+/* =========================
+   CTA BUTTON
+   ========================= */
 .cta {
   display: inline-block;
   padding: 0.6rem 1.2rem;
   background-color: var(--secondary-color);
-  color: var(--primary-dark); /* Dark text on bright background */
+  color: var(--primary-dark);
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
   transition: all 0.3s ease;
 }
+
 .cta:hover,
-.cta:focus {
+.cta:focus-visible {
   background-color: var(--secondary-dark);
   color: var(--primary-dark);
 }
 
-/* ===== MAIN ===== */
-main {
-  padding: 1rem;
-  color: var(--text-color);
+/* =========================
+   FORM
+   ========================= */
+.join-container {
+  display: grid;
+  gap: 2rem;
 }
 
-/* ===== CARDS ===== */
-.card {
-  background-color: var(--white);
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 500;
+}
+
+input,
+textarea,
+select {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
   color: var(--text-color);
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  background-color: var(--white);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+button,
+input[type="submit"] {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+button:focus-visible,
+input[type="submit"]:hover,
+input[type="submit"]:focus-visible {
+  background-color: var(--primary-dark);
+}
+
+/* =========================
+   CARDS
+   ========================= */
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid var(--border-color);
 }
 
 .card h2,
@@ -187,35 +250,18 @@ main {
   color: var(--primary-color);
 }
 
-/* ===== GRID ===== */
-.grid,
-.business-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+/* =========================
+   FORECAST GRID
+   ========================= */
+.forecast-grid {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* ===== FILTER BUTTONS ===== */
-.filters button {
-  margin: 0.3rem;
-  padding: 0.5rem 0.8rem;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--primary-color);
-  color: var(--white);
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-.filters button:hover,
-.filters button:focus {
-  background-color: var(--primary-dark);
-}
-
-/* ===== FORECAST CARDS ===== */
 .forecast-card {
-  background-color: #e6e6e6; /* Light gray */
-  color: var(--text-color);    /* Dark text */
+  background-color: #e6e6e6;
+  color: var(--text-color);
   padding: 0.8rem;
   border-radius: 8px;
   text-align: center;
@@ -223,32 +269,39 @@ main {
   max-width: 150px;
   transition: all 0.3s ease;
 }
+
 .forecast-card:hover,
-.forecast-card:focus {
+.forecast-card:focus-visible {
   background-color: #d4d4d4;
   outline: 2px solid var(--primary-color);
 }
+
 .forecast-card h3 {
   color: var(--primary-color);
 }
+
 .forecast-card p {
   color: var(--text-color);
 }
 
-/* ===== FOOTER ===== */
+/* =========================
+   FOOTER
+   ========================= */
 footer {
   text-align: center;
   padding: 1rem;
-  background-color: var(--primary-dark);
-  color: var(--white);
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
   font-size: 0.85rem;
 }
+
 footer a {
   color: var(--white);
   font-weight: 500;
   text-decoration: none;
 }
+
 footer a:hover,
-footer a:focus {
+footer a:focus-visible {
   color: var(--secondary-color);
 }
