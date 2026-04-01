@@ -18,75 +18,89 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent =
 `Last Modified: ${document.lastModified}`;
 
-const apiKey = 'api.openweathermap.org'; // 🔑 Replace with your API key
-const city = 'Lagos, NG';
-const units = 'metric'; // Celsius
+const apiKey = "be283d5c82532b6b0bcbd61cbd977777"; // Replace with your OpenWeatherMap API key
+const lat = "6.5244";
+const lon = "3.3792";
 
-const tempEl = document.getElementById('temp');
-const descEl = document.getElementById('desc');
-const humidityEl = document.getElementById('humidity');
-const windEl = document.getElementById('wind');
-const forecastEl = document.getElementById('forecast');
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
-// Fetch Current Weather
 async function getWeather() {
   try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`
-    );
+    const response = await fetch(url);
     const data = await response.json();
 
-    tempEl.textContent = `${Math.round(data.main.temp)}°C`;
-    descEl.textContent = data.weather[0].description;
-    humidityEl.textContent = `${data.main.humidity}%`;
-    windEl.textContent = `${data.wind.speed} m/s`;
+    document.getElementById("temp").textContent = `${data.main.temp}°C`;
+    document.getElementById("humidity").textContent = `${data.main.humidity}%`;
+    document.getElementById("wind").textContent = `${data.wind.speed} m/s`;
+    document.getElementById("condition").textContent = data.weather[0].description;
+
+    const icon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    document.getElementById("weather-icon").src = icon;
+
   } catch (error) {
-    console.error('Error fetching current weather:', error);
-    tempEl.textContent = 'N/A';
-    descEl.textContent = 'N/A';
-    humidityEl.textContent = 'N/A';
-    windEl.textContent = 'N/A';
+    console.error("Weather error:", error);
   }
 }
 
-// Fetch 5-Day Forecast
 async function getForecast() {
   try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`
-    );
+    const response = await fetch(forecastUrl);
     const data = await response.json();
 
-    // Clear previous forecast
-    forecastEl.innerHTML = '';
+    const forecastDiv = document.getElementById("forecast");
+    forecastDiv.innerHTML = "";
 
-    // OpenWeatherMap provides data every 3 hours; pick one forecast per day
-    const dailyData = data.list.filter((item) => item.dt_txt.includes('12:00:00'));
+    const filtered = data.list.filter(item => item.dt_txt.includes("12:00:00"));
 
-    dailyData.forEach((day) => {
-      const date = new Date(day.dt_txt);
-      const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
-      const temp = Math.round(day.main.temp);
-      const condition = day.weather[0].main;
-
-      const card = document.createElement('div');
-      card.className = 'forecast-card';
-      card.innerHTML = `
-        <p>${dayName}</p>
-        <p>${temp}°C</p>
-        <p>${condition}</p>
+    filtered.slice(0, 5).forEach(day => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <p>${new Date(day.dt_txt).toLocaleDateString()}</p>
+        <p>${day.main.temp}°C</p>
       `;
-      forecastEl.appendChild(card);
+      forecastDiv.appendChild(div);
     });
+
   } catch (error) {
-    console.error('Error fetching forecast:', error);
-    forecastEl.innerHTML = '<p>Forecast not available.</p>';
+    console.error("Forecast error:", error);
   }
 }
 
-// Initialize
 getWeather();
 getForecast();
+
+
+
+async function getWeather() {
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("API Error:", errorData);
+      return;
+    }
+
+    const data = await response.json();
+    console.log("Weather Data:", data); // DEBUG
+
+    document.getElementById("temp").textContent = `${data.main.temp}°C`;
+    document.getElementById("humidity").textContent = `${data.main.humidity}%`;
+    document.getElementById("wind").textContent = `${data.wind.speed} m/s`;
+    document.getElementById("condition").textContent = data.weather[0].description;
+
+    const icon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+    document.getElementById("weather-icon").src = icon;
+
+  } catch (error) {
+    console.error("Weather fetch failed:", error);
+  }
+}
+
+
+
+
 // Member Spotlights (demo)
 const spotlights = [
   { name: "Company A", desc: "Leading in tech", img: "images/member1.webp" },
@@ -105,6 +119,13 @@ spotlights.forEach(member => {
   `;
   spotlightsContainer.appendChild(div);
 });
+
+
+
+
+
+
+
 
 // ===== COURSES DATA =====
 const courses = [

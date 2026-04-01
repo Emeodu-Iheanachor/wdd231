@@ -149,6 +149,11 @@ nav.open {
   color: var(--white);
 }
 
+
+ h2 {
+  font-weight: 1000; /* Makes it bold */
+}
+
 /* ===== CTA BUTTON ===== */
 .cta {
   display: inline-block;
@@ -213,6 +218,12 @@ main {
 }
 
 /* ===== FORECAST CARDS ===== */
+
+ h3 {
+  font-weight: 1000; /* Makes it bold */
+}
+
+
 .forecast-card {
   background-color: #e6e6e6; /* Light gray */
   color: var(--text-color);    /* Dark text */
@@ -234,6 +245,7 @@ main {
 .forecast-card p {
   color: var(--text-color);
 }
+
 
 /* ===== FOOTER ===== */
 footer {

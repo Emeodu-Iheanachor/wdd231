@@ -1,0 +1,75 @@
+ /* =========================
+       COLOR SCHEME
+       ========================= */
+    :root {
+      --primary-color: #0b3d91;   /* Deep Blue */
+      --secondary-color: #f4b400; /* Gold/Yellow */
+      --background-color: #ffffff;
+      --text-color: #111111;
+      --accent-color: #f1f1f1;
+    }
+
+    /* =========================
+       GLOBAL STYLES
+       ========================= */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: var(--accent-color);
+      border-left: 5px solid var(--secondary-color);
+    }
+
+    h2 {
+      color: var(--primary-color);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .wireframe {
+      background: #fff;
+      border: 2px dashed #999;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .box {
+      border: 1px solid #333;
+      padding: 10px;
+      margin: 5px 0;
+      text-align: center;
+      background: #eaeaea;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--primary-color);
+      color: white;
+    }

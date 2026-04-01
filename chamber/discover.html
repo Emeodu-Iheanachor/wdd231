@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- META -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Explore Lagos - Discover attractions, culture, and opportunities in Nigeria's commercial hub.">
+  <meta name="author" content="Emeodu R. C. Iheanachor">
+
+  <title>Discover Lagos | Chamber of Commerce</title>
+
+<!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico">
+
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:title" content="Lagos Chamber of Commerce Directory">
+  <meta property="og:description" content="Explore businesses and events from the Lagos Chamber of Commerce directory.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emeodu-iheanachor.github.io/wdd231/chamber/discover.html">
+  <meta property="og:site_name" content="Lagos Chamber of Commerce">
+  <meta property="og:locale" content="en_US">
+  <meta property="fb:app_id" content="123456789012345">
+
+  <!-- OG Image -->
+  <meta property="og:image" content="https://emeodu-iheanachor.github.io/wdd231/chamber/chamber-social.webp">
+  <meta property="og:image:secure_url" content="https://emeodu-iheanachor.github.io/wdd231/chamber/chamber-social.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo of Lagos Chamber of Commerce">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lagos Chamber of Commerce Directory">
+  <meta name="twitter:description" content="Explore businesses and events from the Lagos Chamber of Commerce directory.">
+  <meta name="twitter:image" content="https://emeodu-iheanachor.github.io/wdd231/chamber/chamber-social.webp">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/directory-normalize.css">
+  <link rel="stylesheet" href="styles/directory-small.css">
+  <link rel="stylesheet" href="styles/directory-larger.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/discover.css">
+  <link rel="stylesheet" href="styles/discover-larger.css">
+
+  <!-- JS -->
+  <script type="module" src="scripts/discover.js" defer></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="header-container">
+    <h1>Lagos Chamber of Commerce</h1>
+
+    <!-- HAMBURGER BUTTON -->
+    <button id="menu" aria-label="Toggle Navigation Menu" aria-expanded="false">
+      ☰
+    </button>
+  </div>
+</header>
+
+<!-- ================= NAVIGATION ================= -->
+<nav>
+  <ul class="navigation">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
+    <li><a href="directory.html">Directory</a></li>
+    <li><a href="join.html">Join</a></li>
+  </ul>
+</nav>
+
+<!-- ================= MAIN ================= -->
+<main>
+
+  <!-- HERO / INTRO -->
+  <section class="discover-hero">
+    <h2>Discover Lagos</h2>
+    <p>
+      Lagos is Nigeria’s commercial heartbeat — a vibrant city filled with culture,
+      business opportunities, and world-class attractions. Explore what makes Lagos unique.
+    </p>
+  </section>
+
+  <!-- VISIT MESSAGE -->
+  <section aria-labelledby="visit-heading">
+    <h2 id="visit-heading" class="visually-hidden">Visit Information</h2>
+    <div id="visit-message" class="visit-box" role="status" aria-live="polite"></div>
+  </section>
+
+  <!-- FEATURED BUTTON (Accessible & Meaningful) -->
+  <section class="cta-section">
+    <h2 class="visually-hidden">Featured Attraction</h2>
+
+    <button 
+      class="cta-button"
+      aria-label="Learn more about Lekki Conservation Centre"
+      onclick="window.location.href='https://lccnigeria.org/'">
+      Learn More About Lekki Conservation Centre
+    </button>
+  </section>
+
+  <!-- DISCOVER CARDS GRID -->
+  <section 
+    class="discover-grid" 
+    id="cards"
+    aria-label="Places to discover in Lagos">
+    
+    <!-- JS WILL POPULATE CARDS HERE -->
+    
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+
+  <div class="footer-container">
+
+    <p>
+      <strong>Contact:</strong>
+      <a href="mailto:info@lagoschamber.com">info@lagoschamber.com</a> |
+      <a href="tel:+2348001234567">+234 800 123 4567</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Lagos Chamber of Commerce
+    </p>
+
+    <p>
+      Emeodu, R. C. Iheanachor | WDD231
+    </p>
+
+    <p id="lastModified"></p>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

@@ -43,7 +43,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://api.openweathermap.org">
 
 <!-- JS -->
 <script defer src="scripts/index-chamber.js"></script>
@@ -56,7 +55,7 @@
     <h1>Lagos Chamber of Commerce</h1>
   </div>
 
-  <button id="menu" aria-label="Toggle Navigation Menu">☰</button>
+  <button id="menu" aria-label="Toggle Navigation Menu" type="button">☰</button>
 </header>
 
 <nav>
@@ -68,6 +67,7 @@
   </ul>
 </nav>
 
+
 <main>
 
 <!-- HERO -->
@@ -75,7 +75,7 @@
   <img src="images/lagos-hero.webp" alt="Lagos city skyline" width="1200" loading="lazy">
   <div class="hero-text">
     <h2>Empowering Business Growth</h2>
-    <a href="#" class="cta">Join the Chamber</a>
+    <a href="join.html" class="cta">Join the Chamber</a>
   </div>
 </section>
 
@@ -101,14 +101,15 @@
     <p><strong>Condition:</strong> <span id="condition">N/A</span></p>
   </div>
 
-  <h3>5-Day Forecast</h3>
+  
+  <h3>5-Day Forecast:</h3>
   <div id="forecast" class="forecast-grid"></div>
 </section>
 
 <!-- SPOTLIGHT -->
 <section class="card">
-  <h2>Member Spotlights</h2>
-  <div id="spotlights" class="grid"></div>
+ <h2>Member Spotlights</h2>
+  <div id="spotlights" class="spotlight-grid"></div>
 </section>
 
 <!-- COURSES -->
