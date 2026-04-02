@@ -194,7 +194,7 @@ nav.open {
 }
 
 @media(min-width:768px){
-  .forecast-grid { grid-template-columns: repeat(3, 1fr); }
+  .forecast-grid { grid-template-columns: repeat(3 1fr); }
 }
 
 .forecast-card {
@@ -240,10 +240,10 @@ nav.open {
 }
 
 @media screen and (min-width: 768px) {
-  #spotlights { grid-template-columns: repeat(2, 1fr); }
+  #spotlights { grid-template-columns: repeat(2 1fr); }
 }
 @media screen and (min-width: 1024px) {
-  #spotlights { grid-template-columns: repeat(3, 1fr); }
+  #spotlights { grid-template-columns: repeat(3 1fr); }
 }
 
 #spotlights .spotlight-card {
@@ -297,9 +297,15 @@ nav.open {
   color: #000;
 }
 
-.membership.gold { background-color: #FFD700; }
-.membership.silver { background-color: #C0C0C0; }
+.membership.gold {
+  background-color: gold;
+  color: #000;
+}
 
+.membership.silver {
+  background-color: silver;
+  color: #000;
+}
 /* ===== FADE-IN ANIMATION ===== */
 .fade-in {
   opacity: 0;
