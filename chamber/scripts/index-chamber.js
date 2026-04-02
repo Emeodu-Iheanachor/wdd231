@@ -86,55 +86,58 @@ async function getForecast() {
 }
 
 
+const url = "data/members.json";
+const container = document.querySelector(".spotlight-container");
 
-// ===============================
-// MEMBER SPOTLIGHTS
-// ===============================
 async function getSpotlights() {
   try {
-    const response = await fetch("data/members.json");
-    if (!response.ok) throw new Error("Failed to fetch members");
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error("Network response was not OK");
+    }
 
     const data = await response.json();
-    const membersArray = data.members || data;
 
-    // Filter Gold & Silver
-    const qualified = membersArray.filter(m => 
-      m.membership === "Gold" || m.membership === "Silver"
-    );
+    displaySpotlights(data.members);
 
-    // Shuffle & pick 2–3
-    const shuffled = qualified.sort(() => 0.5 - Math.random());
-    const count = Math.floor(Math.random() * 2) + 2;
-    const selected = shuffled.slice(0, count);
-
-    const container = document.getElementById("spotlights");
-    container.innerHTML = "";
-
-    selected.forEach((member, index) => {
-      const card = document.createElement("section");
-      card.classList.add("spotlight-card", "fade-in");
-      card.style.setProperty("--delay", `${index * 0.2}s`);
-
-      card.innerHTML = `
-        <h3>${member.name}</h3>
-        <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
-        <p>${member.address}</p>
-        <p>${member.phone}</p>
-        <a href="${member.website}" target="_blank">Visit Website</a>
-        <p class="membership ${member.membership.toLowerCase()}">
-          ${member.membership} Member
-        </p>
-      `;
-
-      container.appendChild(card);
-    });
-  } catch (err) {
-    console.error("Spotlight error:", err);
-    document.getElementById("spotlights").textContent =
-      "Unable to load member spotlights.";
+  } catch (error) {
+    container.innerHTML = "<p>Unable to load member spotlights.</p>";
+    console.error(error);
   }
 }
+
+function displaySpotlights(members) {
+
+  // ✅ Filter Gold & Silver only
+  const filtered = members.filter(member =>
+    member.membership === "Gold" || member.membership === "Silver"
+  );
+
+  // ✅ Shuffle randomly
+  const shuffled = filtered.sort(() => 0.5 - Math.random());
+
+  // ✅ Select 2–3 members
+  const selected = shuffled.slice(0, Math.floor(Math.random() * 2) + 2);
+
+  selected.forEach(member => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+      <h3>${member.name}</h3>
+      <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
+      <p>${member.address}</p>
+      <p>${member.phone}</p>
+      <a href="${member.website}" target="_blank">Visit Website</a>
+      <p class="membership">${member.membership} Member</p>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+getSpotlights();
 
 // Example functions for weather & forecast (already exist)
 getWeather();

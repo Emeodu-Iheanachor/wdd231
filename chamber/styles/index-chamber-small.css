@@ -7,14 +7,20 @@
   box-sizing: border-box;
 }
 
-/* ===== VARIABLES ===== */
+/* ===== VARIABLES (ACCESSIBLE COLORS) ===== */
 :root {
-  --primary-color: #002147;
-  --primary-dark: #00132a;
-  --secondary-color: #FFD700;
-  --secondary-dark: #e6c200;
-  --background-color: #ffffff;
-  --text-color: #0d0d0d;
+  /* Primary colors */
+  --primary-color: #002147;      /* Dark blue */
+  --primary-dark: #00132a;       /* Very dark blue */
+
+  /* Secondary colors */
+  --secondary-color: #ffd700;    /* Bright gold */
+  --secondary-dark: #e6c200;     /* Slightly darker gold */
+
+  /* Neutral colors */
+  --background-color: #ffffff;   /* White background */
+  --text-color: #0d0d0d;        /* Almost black for text */
+
   --white: #ffffff;
   --black: #000000;
 }
@@ -34,6 +40,10 @@ header {
   align-items: center;
   padding: 0.6rem 1rem;
   background-color: var(--primary-color);
+}
+
+header h1 {
+  font-size: 1.2rem;
   color: var(--white);
 }
 
@@ -41,10 +51,6 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-header h1 {
-  font-size: 1.2rem;
 }
 
 #menu {
@@ -69,6 +75,7 @@ nav.open {
   list-style: none;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 .navigation li a {
@@ -119,15 +126,16 @@ nav.open {
   background-color: rgba(0,0,0,0.7);
   padding: 1rem;
   border-radius: 8px;
+  text-align: center;
   color: var(--white);
 }
 
 .hero-text h2 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 
-/* ===== CTA BUTTON ===== */
+/* ===== CTA ===== */
 .cta {
   display: inline-block;
   padding: 0.6rem 1.2rem;
@@ -145,6 +153,14 @@ nav.open {
   color: var(--primary-dark);
 }
 
+/* ===== MAIN ===== */
+main {
+  padding: 1rem;
+  color: var(--text-color);
+  max-width: 1100px;
+  margin: auto;
+}
+
 /* ===== CARDS ===== */
 .card {
   background-color: var(--white);
@@ -158,9 +174,10 @@ nav.open {
 .card h2,
 .card h3 {
   color: var(--primary-color);
+  font-weight: 700;
 }
 
-/* ===== GRID ===== */
+/* ===== GRIDS ===== */
 .grid,
 .business-grid {
   display: grid;
@@ -168,157 +185,144 @@ nav.open {
   gap: 1rem;
 }
 
-/* ===== FILTER BUTTONS ===== */
-.filters button {
-  margin: 0.3rem;
-  padding: 0.5rem 0.8rem;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--primary-color);
-  color: var(--white);
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.3s ease;
+@media screen and (min-width: 768px) {
+  .grid,
+  .business-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.filters button:hover,
-.filters button:focus {
-  background-color: var(--primary-dark);
-}
-
-/* ===== FORECAST CARDS ===== */
+/* ===== FORECAST GRID ===== */
 .forecast-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-@media(min-width:768px){
-  .forecast-grid { grid-template-columns: repeat(3 1fr); }
-}
-
-.forecast-card {
-  background: #f9fafb;
-  border-radius: 10px;
-  padding: 0.8rem;
-  text-align: center;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.forecast-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.forecast-card h3 {
-  color: var(--primary-color);
-}
-
-.forecast-card p {
-  color: var(--text-color);
-}
-
-/* ===== SPOTLIGHT SECTION ===== */
+/* ===== SPOTLIGHTS ===== */
 .spotlights {
   padding: 2rem 1rem;
-  background: #f9fafb;
-  border-radius: 12px;
-}
-
-.spotlights h2 {
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--primary-color);
 }
 
 #spotlights {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-@media screen and (min-width: 768px) {
-  #spotlights { grid-template-columns: repeat(2 1fr); }
+@media screen and (min-width: 600px) {
+  #spotlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
 @media screen and (min-width: 1024px) {
-  #spotlights { grid-template-columns: repeat(3 1fr); }
+  #spotlights {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-#spotlights .spotlight-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 1rem;
+/* Spotlight card */
+.spotlight-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
   text-align: center;
-  border-left: 5px solid #0077b6;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
 }
 
-#spotlights .spotlight-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+.spotlight-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-#spotlights img {
+/* Spotlight text */
+.spotlight-card h3 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.spotlight-card p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.spotlight-card img {
   width: 100%;
   max-width: 120px;
-  margin: 0.5rem auto;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
 }
 
-#spotlights h3 {
-  margin: 0.5rem 0;
-}
-
-#spotlights p {
-  margin: 0.25rem 0;
-  font-size: 0.9rem;
-}
-
-#spotlights a {
+.spotlight-card a {
   display: inline-block;
   margin-top: 0.5rem;
-  color: #0077b6;
+  color: #0077cc;
+  font-weight: bold;
   text-decoration: none;
-  font-weight: 500;
 }
 
-#spotlights a:hover {
+.spotlight-card a:hover {
   text-decoration: underline;
 }
 
+/* ===== MEMBERSHIP BADGES ===== */
 .membership {
-  display: inline-block;
   margin-top: 0.5rem;
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
   font-weight: bold;
-  color: #000;
+  display: inline-block;
 }
 
 .membership.gold {
-  background-color: gold;
+  background-color: #FFD700; /* gold */
   color: #000;
 }
 
 .membership.silver {
-  background-color: silver;
+  background-color: #C0C0C0; /* silver */
   color: #000;
 }
-/* ===== FADE-IN ANIMATION ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s forwards;
-  animation-delay: var(--delay, 0s);
-}
 
-@keyframes fadeInUp {
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ===== FORECAST CARD ===== */
+.forecast-card {
+  background-color: #e6e6e6;
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.forecast-card h3 {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.forecast-card p {
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.forecast-card:hover,
+.forecast-card:focus {
+  background-color: #d4d4d4;
+  outline: 2px solid var(--primary-color);
 }
 
 /* ===== FOOTER ===== */
