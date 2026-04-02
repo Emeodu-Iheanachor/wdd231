@@ -1,133 +1,150 @@
-/// ===== HAMBURGER MENU WITH ☰ -> X TOGGLE =====
+// ===============================
+// HAMBURGER MENU (CLEAN VERSION)
+// ===============================
 const menuBtn = document.getElementById('menu');
 const nav = document.querySelector('nav');
 
 menuBtn.addEventListener('click', () => {
   nav.classList.toggle('open');
-
-  if (nav.classList.contains('open')) {
-    nav.style.display = 'block';
-    menuBtn.textContent = '✖'; // Change ☰ to X
-  } else {
-    nav.style.display = 'none';
-    menuBtn.textContent = '☰'; // Change X back to ☰
-  }
+  menuBtn.textContent = nav.classList.contains('open') ? '✖' : '☰';
 });
-document.querySelector("#year").textContent = new Date().getFullYear();
 
-document.querySelector("#lastModified").textContent =
-`Last Modified: ${document.lastModified}`;
+// ===============================
+// FOOTER DATES
+// ===============================
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent =
+  `Last Modified: ${document.lastModified}`;
 
-const apiKey = "be283d5c82532b6b0bcbd61cbd977777"; // Replace with your OpenWeatherMap API key
+// ===============================
+// WEATHER API
+// ===============================
+const apiKey = "be283d5c82532b6b0bcbd61cbd977777"; // ← PUT YOUR REAL KEY HERE
 const lat = "6.5244";
 const lon = "3.3792";
 
-const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
+// ===== CURRENT WEATHER =====
 async function getWeather() {
   try {
-    const response = await fetch(url);
+    const response = await fetch(weatherURL);
+
+    if (!response.ok) throw new Error("Weather fetch failed");
+
     const data = await response.json();
 
     document.getElementById("temp").textContent = `${data.main.temp}°C`;
     document.getElementById("humidity").textContent = `${data.main.humidity}%`;
     document.getElementById("wind").textContent = `${data.wind.speed} m/s`;
-    document.getElementById("condition").textContent = data.weather[0].description;
+    document.getElementById("condition").textContent =
+      data.weather[0].description;
 
     const icon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
     document.getElementById("weather-icon").src = icon;
 
   } catch (error) {
-    console.error("Weather error:", error);
+    console.error(error);
   }
 }
 
+// ===== 3-DAY FORECAST =====
 async function getForecast() {
   try {
-    const response = await fetch(forecastUrl);
+    const response = await fetch(forecastURL);
+
+    if (!response.ok) throw new Error("Forecast fetch failed");
+
     const data = await response.json();
 
     const forecastDiv = document.getElementById("forecast");
     forecastDiv.innerHTML = "";
 
-    const filtered = data.list.filter(item => item.dt_txt.includes("12:00:00"));
+    // Get only 12:00 PM forecasts (one per day)
+    const filtered = data.list.filter(item =>
+      item.dt_txt.includes("12:00:00")
+    );
 
-    filtered.slice(0, 5).forEach(day => {
+    // Take only 3 days
+    filtered.slice(0, 3).forEach(day => {
       const div = document.createElement("div");
+
       div.innerHTML = `
-        <p>${new Date(day.dt_txt).toLocaleDateString()}</p>
-        <p>${day.main.temp}°C</p>
+        <p><strong>${new Date(day.dt_txt).toLocaleDateString()}</strong></p>
+        <p>${day.main.temp.toFixed(1)}°C</p>
       `;
+
       forecastDiv.appendChild(div);
     });
 
   } catch (error) {
-    console.error("Forecast error:", error);
+    console.error("Error loading forecast:", error);
+    document.getElementById("forecast").innerHTML = 
+      "<p>Unable to load forecast.</p>";
   }
 }
 
-getWeather();
-getForecast();
 
 
-
-async function getWeather() {
+// ===============================
+// MEMBER SPOTLIGHTS
+// ===============================
+async function getSpotlights() {
   try {
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("API Error:", errorData);
-      return;
-    }
+    const response = await fetch("data/members.json");
+    if (!response.ok) throw new Error("Failed to fetch members");
 
     const data = await response.json();
-    console.log("Weather Data:", data); // DEBUG
+    const membersArray = data.members || data;
 
-    document.getElementById("temp").textContent = `${data.main.temp}°C`;
-    document.getElementById("humidity").textContent = `${data.main.humidity}%`;
-    document.getElementById("wind").textContent = `${data.wind.speed} m/s`;
-    document.getElementById("condition").textContent = data.weather[0].description;
+    // Filter Gold & Silver
+    const qualified = membersArray.filter(m => 
+      m.membership === "Gold" || m.membership === "Silver"
+    );
 
-    const icon = `https://openweathermap.org/img/w/${data.weather[0].icon}.png`;
-    document.getElementById("weather-icon").src = icon;
+    // Shuffle & pick 2–3
+    const shuffled = qualified.sort(() => 0.5 - Math.random());
+    const count = Math.floor(Math.random() * 2) + 2;
+    const selected = shuffled.slice(0, count);
 
-  } catch (error) {
-    console.error("Weather fetch failed:", error);
+    const container = document.getElementById("spotlights");
+    container.innerHTML = "";
+
+    selected.forEach((member, index) => {
+      const card = document.createElement("section");
+      card.classList.add("spotlight-card", "fade-in");
+      card.style.setProperty("--delay", `${index * 0.2}s`);
+
+      card.innerHTML = `
+        <h3>${member.name}</h3>
+        <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
+        <p>${member.address}</p>
+        <p>${member.phone}</p>
+        <a href="${member.website}" target="_blank">Visit Website</a>
+        <p class="membership ${member.membership.toLowerCase()}">
+          ${member.membership} Member
+        </p>
+      `;
+
+      container.appendChild(card);
+    });
+  } catch (err) {
+    console.error("Spotlight error:", err);
+    document.getElementById("spotlights").textContent =
+      "Unable to load member spotlights.";
   }
 }
 
+// Example functions for weather & forecast (already exist)
+getWeather();
+getForecast();
+getSpotlights();
 
 
-
-// Member Spotlights (demo)
-const spotlights = [
-  { name: "Company A", desc: "Leading in tech", img: "images/member1.webp" },
-  { name: "Company B", desc: "Innovation hub", img: "images/member2.webp" },
-  { name: "Company C", desc: "Business consultancy", img: "images/member3.webp" }
-];
-
-const spotlightsContainer = document.getElementById('spotlights');
-spotlights.forEach(member => {
-  const div = document.createElement('div');
-  div.classList.add('spotlight-card');
-  div.innerHTML = `
-    <img src="${member.img}" alt="${member.name}" style="width:100%; border-radius:6px;">
-    <h3>${member.name}</h3>
-    <p>${member.desc}</p>
-  `;
-  spotlightsContainer.appendChild(div);
-});
-
-
-
-
-
-
-
-
-// ===== COURSES DATA =====
+// ===============================
+// COURSES
+// ===============================
 const courses = [
   { name: "Intro to CSE", credits: 3, type: "cse" },
   { name: "Advanced CSE", credits: 4, type: "cse" },
@@ -137,45 +154,38 @@ const courses = [
   { name: "UX/UI Design", credits: 2, type: "wdd" }
 ];
 
-// ===== FUNCTION TO DISPLAY COURSES =====
 function displayCourses(list) {
   const container = document.getElementById('courses');
-  container.innerHTML = ''; // Clear previous list
-  let totalCredits = 0;
+  container.innerHTML = '';
+  let total = 0;
 
   list.forEach(course => {
-    totalCredits += course.credits;
+    total += course.credits;
+
     const div = document.createElement('div');
     div.classList.add('course-card');
     div.innerHTML = `<strong>${course.name}</strong> - ${course.credits} credits`;
+
     container.appendChild(div);
   });
 
-  // Show total credits
-  document.getElementById('totalCredits').textContent = totalCredits;
+  document.getElementById('totalCredits').textContent = total;
 }
 
-// ===== FILTER COURSES FUNCTION =====
 function filterCourses(type) {
-  if (type === 'all') {
-    displayCourses(courses);
-  } else {
-    displayCourses(courses.filter(c => c.type === type));
-  }
+  if (type === "all") displayCourses(courses);
+  else displayCourses(courses.filter(c => c.type === type));
 }
 
-// ===== INITIAL DISPLAY =====
 displayCourses(courses);
 
-// ===== COURSE FILTER BUTTONS =====
-document.getElementById("allBtn").addEventListener("click", () => {
-  filterCourses("all");
-});
+document.getElementById("allBtn").onclick = () => filterCourses("all");
+document.getElementById("cseBtn").onclick = () => filterCourses("cse");
+document.getElementById("wddBtn").onclick = () => filterCourses("wdd");
 
-document.getElementById("cseBtn").addEventListener("click", () => {
-  filterCourses("cse");
-});
-
-document.getElementById("wddBtn").addEventListener("click", () => {
-  filterCourses("wdd");
-});
+// ===============================
+// INIT
+// ===============================
+getWeather();
+getForecast();
+getSpotlights();
