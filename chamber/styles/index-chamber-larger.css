@@ -177,16 +177,8 @@
   display: inline-block;
 }
 
-.membership:contains("Gold") {
-  background: gold;
-  color: #000;
-}
-
-.membership:contains("Silver") {
-  background: silver;
-  color: #000;
-}
-
+.card.gold { border: 2px solid gold; }
+.card.silver { border: 2px solid silver; }
 
 .spotlight-card {
   animation: fadeIn 0.6s ease-in;

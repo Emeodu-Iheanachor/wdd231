@@ -123,7 +123,9 @@ function displaySpotlights(members) {
   selected.forEach(member => {
     const card = document.createElement("div");
     card.classList.add("card");
-
+  
+    card.classList.add(member.membership.toLowerCase());
+    
     card.innerHTML = `
       <h3>${member.name}</h3>
       <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
@@ -138,6 +140,8 @@ function displaySpotlights(members) {
 }
 
 getSpotlights();
+
+
 
 // Example functions for weather & forecast (already exist)
 getWeather();
