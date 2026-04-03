@@ -7,10 +7,8 @@
 
   header h1 {
     font-size: 1.8rem;
-    color: var(--white); /* White text on primary-color background */
+    color: var(--white); /* White on dark blue is accessible */
   }
-
-    
 
   #menu {
     display: none;
@@ -26,7 +24,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5rem;
-    background-color: var(--primary-color); /* #002147 dark blue */
+    background-color: var(--primary-color); /* Deep navy */
   }
 
   /* Navigation links */
@@ -42,13 +40,13 @@
   /* Hover / focus */
   .navigation li a:hover,
   .navigation li a:focus {
-    background-color: var(--secondary-color); /* #ffd700 gold */
-    color: var(--black); /* Black text on gold background */
+    background-color: var(--secondary-color); /* Accessible gold */
+    color: var(--black); /* Black text on gold is accessible */
   }
 
   /* Active page */
   .navigation li a.active {
-    background-color: var(--primary-dark); /* #00132a very dark blue */
+    background-color: var(--primary-dark); /* Very dark blue */
     color: var(--white);
     border: 2px solid var(--secondary-color);
   }
@@ -62,11 +60,11 @@
   /* ===== HERO ===== */
   .hero-text h2 {
     font-size: clamp(1.5rem, 2.5vw, 2rem);
-    color: var(--white); /* White text */
+    color: var(--white); /* White text on dark overlay is accessible */
   }
 
   .hero-text {
-    background-color: rgba(0,0,0,0.7); /* Dark overlay for contrast */
+    background-color: rgba(0, 0, 0, 0.75); /* Slightly darker for better contrast */
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
@@ -77,7 +75,7 @@
     max-width: 1100px;
     margin: auto;
     padding: 0 1rem;
-    color: var(--text-color); /* #0d0d0d on white */
+    color: var(--text-color); /* Dark text on white */
   }
 
   /* ===== TOP GRID ===== */
@@ -94,232 +92,80 @@
     gap: 1rem;
   }
 
-  
- h2 {
-  font-weight: 1000; /* Makes it bold */
-}
-
-  /* =========================
-   SPOTLIGHT GRID
-   ========================= */
-.spotlight-grid {
-  display: grid;
-  grid-template-columns:3fr 1fr;
-  gap: 2rem;
-  padding: 1rem;
-}
-
-   SPOTLIGHT SECTION
-/*================================ */
-.spotlights {
-  padding: 2rem;
-  text-align: center;
-}
-
-#spotlights {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-/* ===============================
-   SPOTLIGHT CARD
-================================ */
-.spotlight-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.spotlight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.spotlight-card h3 {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.spotlight-card img {
-  width: 100%;
-  max-width: 120px;
-  height: auto;
-  margin: 0 auto 1rem;
-  display: block;
-}
-
-.spotlight-card p {
-  margin: 0.3rem 0;
-  color: #555;
-}
-
-.spotlight-card a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #0077cc;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.spotlight-card a:hover {
-  text-decoration: underline;
-}
-
-/* ===============================
-   MEMBERSHIP BADGE
-================================ */
-.membership {
-  margin-top: 0.8rem;
-  font-weight: bold;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.card.gold { border: 2px solid gold; }
-.card.silver { border: 2px solid silver; }
-
-.spotlight-card {
-  animation: fadeIn 0.6s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
-
-/* Tablet */
-@media (min-width: 600px) {
-  .spotlight-grid {
-    grid-template-columns: repeat(2, 1fr);
+  /* ===== HEADINGS ===== */
+  h2 {
+    font-weight: 700;
   }
-}
 
-/* Desktop */
-@media (min-width: 900px) {
-  .spotlight-grid {
-    grid-template-columns: repeat(3, 1fr);
+  h3 {
+    font-weight: 700;
   }
-}
 
-
-
-/* =========================
-   SPOTLIGHT CARD
-   ========================= */
-.spotlight-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-
-  /* Animation start */
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s ease forwards;
-}
-
-/* Stagger animation */
-.spotlight-card:nth-child(1) { animation-delay: 0.1s; }
-.spotlight-card:nth-child(2) { animation-delay: 0.2s; }
-.spotlight-card:nth-child(3) { animation-delay: 0.3s; }
-
-/* Hover effect */
-.spotlight-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  transition: 0.3s ease;
-}
-
-/* Image */
-.spotlight-card img {
-  max-width: 80px;
-  height: auto;
-  margin-bottom: 0.5rem;
-}
-
-/* Text styling */
-.spotlight-card h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.spotlight-card a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #003366;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.spotlight-card a:hover {
-  text-decoration: underline;
-}
-
-/* Membership highlight */
-.membership {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  color: #f4b400;
-}
-
-
-
-.membership.gold {
-  background: gold;
-  color: black;
-}
-
-.membership.silver {
-  background: silver;
-  color: black;
-}
-
-
-
-/* Animation keyframes */
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
+  /* ===== FORECAST CARD ===== */
   .forecast-card:hover,
   .forecast-card:focus {
-    background-color: #d4d4d4; /* Slightly darker on hover for visibility */
-    outline: 2px solid var(--primary-color); /* Focus outline for accessibility */
+    background-color: #dcdcdc; /* Slightly darker than base #e6e6e6 */
+    outline: 2px solid var(--primary-color);
   }
 
-
-  
-   h3 {
-  font-weight: 1000; /* Makes it bold */
-}
-
-  /* Forecast text */
   .forecast-card h3 {
     font-size: 1rem;
     margin-bottom: 0.25rem;
-    color: var(--primary-color); /* Dark blue for headings */
+    color: var(--primary-color); /* Deep navy for contrast */
   }
 
   .forecast-card p {
     font-size: 0.9rem;
-    color: var(--text-color); /* High contrast normal text */
+    color: var(--text-color);
+  }
+
+  /* ===== TABLET ===== */
+  @media (min-width: 640px) {
+    .spotlight-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+
+    #spotlights h2 {
+      font-size: 1.7rem;
+    }
+  }
+
+  /* ===== DESKTOP ===== */
+  @media (min-width: 1024px) {
+    .spotlight-container {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+
+    #spotlights {
+      padding: 2rem;
+    }
+
+    .spotlight-card {
+      padding: 1.5rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .spotlight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .spotlight-card h3 {
+      font-size: 1.3rem;
+      color: var(--primary-color); /* Ensures readable contrast */
+    }
+
+    .spotlight-card p {
+      font-size: 0.95rem;
+      color: var(--text-light); /* Slightly lighter for readability */
+    }
   }
 
   /* ===== FOOTER ===== */
   footer {
     font-size: 0.9rem;
     background-color: var(--primary-dark);
-    color: var(--white); /* White on very dark blue */
+    color: var(--white);
     text-align: center;
     padding: 1rem;
   }
@@ -332,6 +178,6 @@
 
   footer a:hover,
   footer a:focus {
-    color: var(--secondary-color); /* Gold links for hover/focus */
+    color: var(--secondary-color); /* Accessible gold for links */
   }
 }

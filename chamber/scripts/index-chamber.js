@@ -86,67 +86,114 @@ async function getForecast() {
 }
 
 
-const url = "data/members.json";
-const container = document.querySelector(".spotlight-container");
+const spotlightContainer = document.querySelector(".spotlight-container");
 
-async function getSpotlights() {
-  try {
-    const response = await fetch(url);
+// === DATA ===
+const members = [
+  {
+    name: "TechNova Ltd",
+    address: "12 Marina Road, Lagos",
+    phone: "+2348001111111",
+    website: "https://technova.com",
+    image: "technova.webp",
+    level: "Gold"
+  },
+  {
+    name: "GreenFarm Nigeria",
+    address: "45 Ikeja Avenue, Lagos",
+    phone: "+2348002222222",
+    website: "https://greenfarms.com",
+    image: "greenfarm.webp",
+    level: "Silver"
+  },
 
-    if (!response.ok) {
-      throw new Error("Network response was not OK");
-    }
-
-    const data = await response.json();
-
-    displaySpotlights(data.members);
-
-  } catch (error) {
-    container.innerHTML = "<p>Unable to load member spotlights.</p>";
-    console.error(error);
+  {
+    "name": "Skyline Properties",
+    "address": "8 Lekki Phase 1, Lagos",
+    "phone": "+2348003333333",
+    "website": "https://skyline.com",
+    "image": "skyline.webp",
+    "level": "Gold"
+  },
+  {
+    "name": "Ocean Logistics",
+    "address": "22 Apapa Port, Lagos",
+    "phone": "+2348004444444",
+    "website": "https://oceanlogistics.com",
+    "image": "ocean.webp",
+    "level": "Silver"
+  },
+  {
+    "name": "Bright Education",
+    "address": "10 Yaba Tech Road, Lagos",
+    "phone": "+2348005555555",
+    "website": "https://www.brighteducation.com.au/",
+    "image": "education.webp",
+    "level": "Bronze"
+  },
+  {
+    "name": "HealthPlus Clinic",
+    "address": "5 Surulere Street, Lagos",
+    "phone": "+2348006666666",
+    "website": "https://www.healthplusutah.com/",
+    "image": "health.webp",
+    "level": "Gold"
+  },
+  {
+    "name": "Fashion Hub",
+    "address": "3 Balogun Market, Lagos",
+    "phone": "+2348007777777",
+    "website": "https://fashionhubeg.com/collections",
+    "image": "fashion.webp",
+    "level": "Silver"
   }
+]
+;
+
+// === FILTER GOLD & SILVER ===
+const premiumMembers = members.filter(member =>
+  member.level === "Gold" || member.level === "Silver"
+);
+
+// === RANDOM FUNCTION ===
+function getRandomMembers(array, count) {
+  const shuffled = [...array].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
 }
 
+// === SELECT 2–3 MEMBERS ===
+const numberToShow = Math.min(
+  premiumMembers.length,
+  Math.floor(Math.random() * 2) + 2 // gives 2 or 3
+);
+
+const selectedMembers = getRandomMembers(premiumMembers, numberToShow);
+
+// === DISPLAY ===
 function displaySpotlights(members) {
+  spotlightContainer.innerHTML = "";
 
-  // ✅ Filter Gold & Silver only
-  const filtered = members.filter(member =>
-    member.membership === "Gold" || member.membership === "Silver"
-  );
-
-  // ✅ Shuffle randomly
-  const shuffled = filtered.sort(() => 0.5 - Math.random());
-
-  // ✅ Select 2–3 members
-  const selected = shuffled.slice(0, Math.floor(Math.random() * 2) + 2);
-
-  selected.forEach(member => {
+  members.forEach(member => {
     const card = document.createElement("div");
-    card.classList.add("card");
-  
-    card.classList.add(member.membership.toLowerCase());
-    
+    card.classList.add("spotlight-card");
+
     card.innerHTML = `
       <h3>${member.name}</h3>
       <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
       <p>${member.address}</p>
       <p>${member.phone}</p>
       <a href="${member.website}" target="_blank">Visit Website</a>
-      <p class="membership">${member.membership} Member</p>
+      <p class="membership ${member.level.toLowerCase()}">${member.level} Member</p>
     `;
 
-    container.appendChild(card);
+    spotlightContainer.appendChild(card);
   });
 }
 
-getSpotlights();
+// === RUN ===
+displaySpotlights(selectedMembers);
 
 
-
-// Example functions for weather & forecast (already exist)
-getWeather();
-getForecast();
-getSpotlights();
 
 
 // ===============================
