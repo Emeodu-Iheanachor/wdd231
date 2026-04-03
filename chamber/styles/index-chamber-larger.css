@@ -5,10 +5,12 @@
     padding: 1rem 2rem;
   }
 
+  
   header h1 {
-    font-size: 1.8rem;
-    color: var(--white); /* White on dark blue is accessible */
-  }
+  font-size: 1.2rem;
+  color: #ffffff; /* White text for high contrast */
+}
+
 
   #menu {
     display: none;
