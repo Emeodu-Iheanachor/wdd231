@@ -1,14 +1,25 @@
-/* ------------------ */
-/* LARGE              */
-/* ------------------ */
-@media (min-width: 1025px) {
-  .discover-grid {
-    grid-template-areas:
-      "c1 c2 c3 c4"
-      "c5 c6 c7 c8";
-  }
+/* ===============================
+   DISCOVER PAGE - LARGER SCREENS
+================================= */
 
-  /* IMAGE HOVER EFFECT (DESKTOP ONLY) */
+@media (min-width: 1025px) {
+
+.discover-grid {
+  grid-template-areas:
+    "card1 card2 card3"
+    "card4 card5 card6"
+    "card7 card8 card8";
+}
+
+/* HOVER EFFECT (ONLY DESKTOP ✅) */
+.card img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+
+}
+
+
+/* IMAGE HOVER EFFECT (DESKTOP ONLY) */
   .card img {
     transition: transform 0.3s ease, filter 0.3s ease;
   }
@@ -18,70 +29,15 @@
     filter: brightness(1.2);
   }
 
-
-
-/* ===============================
-   HORIZONTAL SCROLL SECTION
-================================= */
-
-.scroll-wrapper {
-  position: relative;
-  max-width: 1100px;
-  margin: 2rem auto;
-}
-
-/* SCROLL CONTAINER */
-.scroll-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  scroll-behavior: smooth;
-  padding: 1rem;
-
-  scrollbar-width: none; /* Firefox */
-}
-
-.scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome */
-}
-
-/* CARDS INSIDE SCROLL */
-.scroll-container .card {
-  min-width: 300px;   /* 🔥 KEY: forces horizontal scroll */
-  flex: 0 0 auto;
-}
-
-/* ===============================
-   SCROLL BUTTONS
-================================= */
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #002147;
-  color: #fff;
-  border: none;
-  padding: 0.6rem 0.9rem;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  z-index: 10;
-}
-
-.scroll-btn:hover {
-  background-color: #f4a261;
-  color: #111;
-}
-
-.scroll-btn.left {
-  left: -10px;
-}
-
-.scroll-btn.right {
-  right: -10px;
 }
 
 
 
+  
 
-}
+
+
+
+
+
+
