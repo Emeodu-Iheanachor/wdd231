@@ -17,4 +17,71 @@
     transform: scale(1.05);
     filter: brightness(1.2);
   }
+
+
+
+/* ===============================
+   HORIZONTAL SCROLL SECTION
+================================= */
+
+.scroll-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 2rem auto;
+}
+
+/* SCROLL CONTAINER */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  padding: 1rem;
+
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+/* CARDS INSIDE SCROLL */
+.scroll-container .card {
+  min-width: 300px;   /* 🔥 KEY: forces horizontal scroll */
+  flex: 0 0 auto;
+}
+
+/* ===============================
+   SCROLL BUTTONS
+================================= */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #002147;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+.scroll-btn:hover {
+  background-color: #f4a261;
+  color: #111;
+}
+
+.scroll-btn.left {
+  left: -10px;
+}
+
+.scroll-btn.right {
+  right: -10px;
+}
+
+
+
+
 }

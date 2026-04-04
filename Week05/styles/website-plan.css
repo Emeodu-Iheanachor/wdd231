@@ -1,0 +1,78 @@
+/* ROOT COLORS */
+:root {
+  --primary: #0A66C2;
+  --secondary: #0F172A;
+  --accent: #22C55E;
+  --background: #F8FAFC;
+  --text: #111827;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background-color: var(--primary);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+h1, h2 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* MAIN SECTIONS */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+
+section {
+  background: #ffffff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 5px solid var(--primary);
+}
+
+/* LISTS */
+ul {
+  padding-left: 1.5rem;
+}
+
+/* WIREFRAME */
+.wireframe {
+  border: 2px dashed var(--secondary);
+  padding: 1rem;
+  background-color: var(--background);
+}
+
+.box {
+  border: 1px solid var(--secondary);
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--secondary);
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+}

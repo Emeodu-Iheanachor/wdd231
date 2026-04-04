@@ -1,3 +1,20 @@
+// ===============================
+// HAMBURGER MENU TOGGLE
+// ===============================
+const menuBtn = document.getElementById("menu");
+const nav = document.querySelector(".navigation");
+
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("open");
+
+  const isOpen = nav.classList.contains("open");
+  menuBtn.textContent = isOpen ? "✖" : "☰";
+  menuBtn.setAttribute("aria-expanded", isOpen);
+});
+
+
+
+
 import { places } from "../data/places.mjs";
 
 const container = document.getElementById("cards");
@@ -49,3 +66,27 @@ const ctaBtn = document.querySelector('.cta-button');
 ctaBtn.addEventListener('click', () => {
   window.location.href = 'https://lccnigeria.org/';
 });
+
+
+// ===============================
+// HORIZONTAL SCROLL BUTTONS
+// ===============================
+const scrollContainer = document.querySelector(".scroll-container");
+const leftBtn = document.querySelector(".scroll-btn.left");
+const rightBtn = document.querySelector(".scroll-btn.right");
+
+if (leftBtn && rightBtn && scrollContainer) {
+  leftBtn.addEventListener("click", () => {
+    scrollContainer.scrollBy({
+      left: -320,
+      behavior: "smooth"
+    });
+  });
+
+  rightBtn.addEventListener("click", () => {
+    scrollContainer.scrollBy({
+      left: 320,
+      behavior: "smooth"
+    });
+  });
+}

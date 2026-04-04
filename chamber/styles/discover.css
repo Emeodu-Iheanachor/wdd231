@@ -77,4 +77,63 @@
     transform: scale(1.05);
     filter: brightness(1.2);
   }
+
+
+
+
+@media screen and (min-width: 1024px) {
+
+  /* ===============================
+     CENTER THE WHOLE PAGE
+  ================================= */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;           /* 🔥 THIS CENTERS EVERYTHING */
+    padding: 0 1rem;
+  }
+
+  /* ===============================
+     CENTER HERO + CTA TEXT
+  ================================= */
+  .discover-hero,
+  .cta-section {
+    text-align: center;
+  }
+
+  /* ===============================
+     GRID CENTERING FIX
+  ================================= */
+  .discover-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+
+    justify-content: center;   /* center grid */
+    align-items: stretch;
+  }
+
+  /* ===============================
+     CARD IMPROVEMENT
+  ================================= */
+  .card {
+    text-align: center;        /* center content inside card */
+    padding: 1.2rem;
+  }
+
+  .card img {
+    display: block;
+    margin: 0 auto;            /* center images */
+  }
+
+  /* ===============================
+     CTA BUTTON CENTER
+  ================================= */
+  .cta-button {
+    margin: 0 auto;
+  }
+}
+
+
+
+
 }
