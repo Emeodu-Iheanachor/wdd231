@@ -15,26 +15,17 @@
   <link rel="icon" href="images/favicon.ico">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Lagos Chamber of Commerce Directory">
-  <meta property="og:description" content="Explore businesses and events from the Lagos Chamber of Commerce directory.">
+  <meta property="og:title" content="Lagos Chamber of Commerce Discover">
+  <meta property="og:description" content="Explore attractions and places in Lagos.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://emeodu-iheanachor.github.io/wdd231/chamber/discover.html">
   <meta property="og:site_name" content="Lagos Chamber of Commerce">
-  <meta property="og:locale" content="en_US">
 
   <!-- OG Image -->
   <meta property="og:image" content="https://emeodu-iheanachor.github.io/wdd231/chamber/chamber-social.webp">
-  <meta property="og:image:secure_url" content="https://emeodu-iheanachor.github.io/wdd231/chamber/chamber-social.webp">
-  <meta property="og:image:type" content="image/webp">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Logo of Lagos Chamber of Commerce">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Lagos Chamber of Commerce Directory">
-  <meta name="twitter:description" content="Explore businesses and events from the Lagos Chamber of Commerce discover page.">
-  <meta name="twitter:image" content="https://emeodu-iheanachor.github.io/wdd231/chamber/chamber-social.webp">
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/directory-normalize.css">
@@ -56,46 +47,62 @@
 
 <!-- ================= HEADER ================= -->
 <header>
+  <div class="logo-title">
+    <img src="images/logo.webp" alt="Lagos Chamber of Commerce Logo" width="50" height="50">
+    <h1>Lagos Chamber of Commerce</h1>
+  </div>
 
-<div class="logo-title">
-<img src="images/logo.webp" alt="Lagos Chamber of Commerce Logo" width="50" height="50">
-<h1>Lagos Chamber of Commerce</h1>
-</div>
-
-<button id="menu" aria-label="Toggle Navigation Menu">☰</button>
+  <button id="menu" aria-label="Toggle Navigation Menu">☰</button>
 
 </header>
 
 <!-- ================= NAVIGATION ================= -->
-
 <nav>
-<ul class="navigation">
-<li><a href="index.html">Home</a></li>
-<li><a href="directory.html">Directory</a></li>
-<li><a href="join.html">Join</a></li>
-<li><a href="discover.html" class="active">Discover</a></li>
-</ul>
+  <ul class="navigation">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="directory.html">Directory</a></li>
+    <li><a href="join.html">Join</a></li>
+    <li><a href="discover.html" class="active">Discover</a></li>
+  </ul>
 </nav>
 
-<main>
 <!-- ================= MAIN ================= -->
-<section class="discover-hero">
-  <h2>Discover Lagos</h2>
-  <p>Lagos is Nigeria’s commercial heartbeat with vibrant culture and opportunities.</p>
-</section>
+<main>
 
-<section>
-  <div id="visit-message" class="visit-box"></div>
-</section>
+  <!-- HERO -->
+  <section class="discover-hero">
+    <h2>Discover Lagos</h2>
+    <p>
+      Lagos is Nigeria’s commercial heartbeat — a vibrant city filled with culture,
+      business opportunities, and world-class attractions.
+    </p>
+  </section>
 
-<section class="cta-section">
-  <a href="https://lccnigeria.org/" target="_blank" class="cta-button">
-    Learn More About Lekki Conservation Centre
-  </a>
-</section>
+  <!-- VISIT MESSAGE -->
+  <section aria-labelledby="visit-heading">
+    <h2 id="visit-heading" class="visually-hidden">Visit Information</h2>
+    <div id="visit-message" class="visit-box" role="status" aria-live="polite"></div>
+  </section>
 
-<!-- GRID AREA CONTAINER -->
-<section class="discover-grid" id="cards"></section>
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2 class="visually-hidden">Featured Attraction</h2>
+    <a 
+  class="cta-button"
+  href="https://r.search.yahoo.com/rdclks/dWU9MzNyMTFtaGt0NTJ1aSZ1dD0xNzc1NDA2MDM0NjM5JnVvPTgwNjc2ODI1NjMzOTg1Jmx0PTImcz0xJmVzPXlCN2VRaGM1YVJKY3NhR2Z4RldHU3g4MWo3YmN3eUVCWFYxR2txN3Fnc2luNVJDa3QuQjZ3WW11VHdOSmN4ZlgxRlZOWFhHTWVqYTV0elkt/RV=2/RE=1777998035/RO=14/RU=https%3a%2f%2fwww.bing.com%2faclick%3fld%3de8o7uyeSVLbSt7RBJEfmo85jVUCUxitYiOyUxY0clau9jS5MTFfXE--QaZkxDBxMoxiF3kkesQ6tMO9OTrrYgPZnScTBK_ijEqciuEUsBEAATMHB6ztVSiYhBXzbNo81_YKt0mkqcHhH-1iaVG6x2ofFkMHtbhKarW253Vf8AAixB8uwr15wSyu1A6hlSC8mtXdPfUz-iXCYBbbQ1pEBFe0ETljzA%26u%3daHR0cHMlM2ElMmYlMmZib29raW5nLmNvbSUyZmxhbmRtYXJrJTJmbmclMmZsZWtraS1yZXNlcnZlLXQ0LmVuLWdiLmh0bWwlM2ZhaWQlM2Q4NjE2MTglMjZwYWdlbmFtZSUzZGxla2tpLXJlc2VydmUtdDQlMjZsYWJlbCUzZG1zbi1GZGJBUEdBRWF2dzNsN2hUTENKOXZRLTgwNjc2ODI1NjMzOTg1JTNhdGlrd2QtODA2NzcwNzA2NzM5ODYlM2Fsb2MtMTM3JTNhbmVvJTNhbXRlJTNhbHAxNTI2MjglM2FkZWMlM2FjaWQ1Nzg1NDg5MjMlM2FhZ2lkMTI5MDgyNzIzMjg4OTQ2OCUyNnV0bV9jYW1wYWlnbiUzZEhvbGlkYXlzJTI1MjAtJTI1MjBOaWdlcmlhJTI1MjAyJTI2dXRtX21lZGl1bSUzZGNwYyUyNnV0bV9zb3VyY2UlM2RiaW5nJTI2dXRtX3Rlcm0lM2RGZGJBUEdBRWF2dzNsN2hUTENKOXZRJTI2bXNjbGtpZCUzZGU0ZmJjNzk2M2ZjOTExOTE0NzgyYWU0NGI0MWJkZWY4JTI2dXRtX2NvbnRlbnQlM2RMTSUyNTIwLSUyNTIwbGVra2ktcmVzZXJ2ZS10NC05MDAxMDc3NDQ%26rlid%3de4fbc7963fc911914782ae44b41bdef8/RK=2/RS=V0dES8_gOQE2PfM_fsd0UTDxHgk-;_ylt=AwriqvvSi9JpXwIA1AtXNyoA;_ylu=Y29sbwNiZjEEcG9zAzEEdnRpZAMEc2VjA292LXRvcA--;_ylc=X3IDMgRydAMw?IG=0ae2aafb36d2445f9900595ed7800dc1" 
+  target="_blank" 
+  rel="noopener">
+  Learn More About Lekki Conservation Centre
+</a>
+  </section>
+
+  <!-- ✅ ONLY ONE GRID (FIXED) -->
+  <section 
+    class="discover-grid" 
+    id="cards"
+    aria-label="Places to discover in Lagos">
+    <!-- JS WILL INSERT CARDS -->
+  </section>
 
 </main>
 
@@ -110,7 +117,7 @@
     </p>
 
     <p>
-      © 2026<span id="year"></span> Lagos Chamber of Commerce
+      © <span id="year"></span> Lagos Chamber of Commerce
     </p>
 
     <p>
