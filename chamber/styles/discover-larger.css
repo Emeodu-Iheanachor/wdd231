@@ -1,33 +1,98 @@
-/* discover-large.css */
+/* ===============================
+   MEDIUM SCREENS (641px - 1024px)
+=============================== */
+@media (min-width: 641px) and (max-width: 1024px) {
 
-/* MEDIUM */
-@media (min-width: 641px) {
+  /* Grid layout for medium screens */
   .discover-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  /* Card hover effect (images only, not mobile) */
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .card img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+
+  /* Hamburger visibility (optional) */
+  #menu {
+    display: block; /* keep hamburger visible on tablets */
+  }
+
+  nav {
+    display: none; /* hide the full nav until toggled */
+  }
+
+  nav.open {
+    display: block; /* shown when hamburger is clicked */
   }
 }
 
-/* LARGE */
+/* ===============================
+   LARGE SCREENS (1025px and above)
+=============================== */
 @media (min-width: 1025px) {
 
+  /* Grid layout for large screens */
   .discover-grid {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "card1 card2 card3 card4"
+      "card5 card6 card7 card8";
+    gap: 2rem;
+    padding: 2rem;
   }
 
-  /* SHOW NAV ALWAYS */
-  nav {
-    display: block !important;
+  /* Card lift effect */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  /* HIDE HAMBURGER */
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Card image hover effect */
+  .card img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .card img:hover {
+    transform: scale(1.08);
+    opacity: 0.95;
+  }
+
+  /* Hide hamburger/menu on desktop */
   #menu {
     display: none;
   }
 
-  /* HORIZONTAL MENU */
-  .navigation {
+  nav {
+    display: block !important;
+  }
+
+ .navigation {
+    display: flex !important;
     flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-evenly;
+    gap: 5px;
   }
 }
