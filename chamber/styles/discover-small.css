@@ -1,0 +1,30 @@
+/* discover-small.css */
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #111;
+}
+
+/* NAV (mobile) */
+nav {
+  display: none;
+}
+
+nav.open {
+  display: block;
+}
+
+/* GRID (1 column) */
+.discover-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
