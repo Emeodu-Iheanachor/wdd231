@@ -7,22 +7,23 @@
   padding: 0;
 }
 
-
-
-
+/* ===============================
+   VARIABLES (USE ONLY THESE COLORS)
+=============================== */
 :root {
   --primary-color: #002147;
   --secondary-color: #003366;
   --accent-color: #0055a5;
 
-  --text-color: #000;
+  --text-color: #000000;
+  --text-soft: #1a1a1a;
+  --text-muted: #2b2b2b;
+
   --light-text: #ffffff;
 
   --background-color: #ffffff;
-  --section-bg: #f0f8ff;
+  --section-bg: #e6f0ff;
 }
-
-
 
 /* ===============================
    BODY
@@ -30,8 +31,8 @@
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: black;
-  background-color: #fff;
+  color: var(--text-color); /* FIXED */
+  background-color: var(--background-color); /* FIXED */
 }
 
 /* ===============================
@@ -42,8 +43,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #002147;
-  color: #fff;
+  background-color: var(--primary-color); /* FIXED */
+  color: var(--light-text); /* FIXED */
 }
 
 header h1 {
@@ -54,7 +55,7 @@ header button {
   font-size: 1.5rem;
   background: none;
   border: none;
-  color: #fff;
+  color: var(--light-text);
   cursor: pointer;
 }
 
@@ -62,15 +63,19 @@ header button {
    NAVIGATION
 =============================== */
 .navigation {
-  display: flex;
-  flex-direction: column; /* mobile stacked nav */
+  display: none; /* FIXED for mobile */
+  flex-direction: column;
   list-style: none;
-  background-color: #003366;
+  background-color: var(--secondary-color); /* FIXED */
   width: 100%;
 }
 
+.navigation.open {
+  display: flex;
+}
+
 .navigation li a {
-  color: #fff;
+  color: var(--light-text);
   padding: 0.8rem 1rem;
   text-decoration: none;
   display: block;
@@ -78,7 +83,7 @@ header button {
 }
 
 .navigation li a.active {
-  background-color: #0055a5;
+  background-color: var(--accent-color);
 }
 
 /* ===============================
@@ -87,7 +92,7 @@ header button {
 .discover-hero {
   text-align: center;
   padding: 2rem 1rem;
-  background: #e6f0ff;
+  background: var(--section-bg); /* FIXED */
 }
 
 .discover-hero h2 {
@@ -97,7 +102,7 @@ header button {
 
 .discover-hero p {
   font-size: 1rem;
-  color: black;
+  color: var(--text-soft); /* FIXED */
 }
 
 /* ===============================
@@ -107,10 +112,10 @@ header button {
   text-align: center;
   padding: 1rem;
   font-weight: 500;
-  background-color: #f0f8ff;
+  background-color: var(--section-bg); /* FIXED */
   margin: 1rem;
   border-radius: 5px;
-  color: black;
+  color: var(--text-color);
 }
 
 /* ===============================
@@ -124,8 +129,8 @@ header button {
 .cta-button {
   display: inline-block;
   padding: 0.8rem 1.2rem;
-  background-color: #002147;
-  color: #fff;
+  background-color: var(--primary-color); /* FIXED */
+  color: var(--light-text);
   text-decoration: none;
   border-radius: 5px;
   font-weight: 500;
@@ -133,7 +138,108 @@ header button {
 }
 
 .cta-button:hover {
-  background-color: #0055a5;
+  background-color: var(--accent-color);
+}
+
+
+
+/* ===============================
+   CARD
+=============================== */
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.card figure {
+  margin: 0;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Hover effect (bonus) */
+.card img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* ===============================
+   CARD CONTENT
+=============================== */
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-content address {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--text-muted); /* FIXED */
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-soft); /* FIXED */
+}
+
+.card-content a {
+  text-decoration: none;
+  color: var(--primary-color); /* FIXED */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.card-content a:hover {
+  color: var(--accent-color);
+}
+
+/* ===============================
+   FOOTER
+=============================== */
+footer {
+  background-color: var(--primary-color); /* FIXED */
+  color: var(--light-text);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--light-text);
+  text-decoration: underline;
+}
+
+/* ===============================
+   HAMBURGER MENU
+=============================== */
+#menu {
+  display: block;
+}
+
+/* NAV TOGGLE */
+nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+nav.open {
+  display: flex;
 }
 
 /* ===============================
@@ -154,93 +260,3 @@ header button {
     "card8";
 }
 
-/* ===============================
-   CARD
-=============================== */
-.card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-.card figure {
-  margin: 0;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-/* Card content */
-.card-content {
-  padding: 1rem;
-}
-
-.card-content h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.card-content address {
-  font-style: normal;
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.5rem;
-}
-
-.card-content p {
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.card-content a {
-  text-decoration: none;
-  color: #002147;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.card-content a:hover {
-  color: #0055a5;
-}
-
-/* ===============================
-   FOOTER
-=============================== */
-footer {
-  background-color: #002147;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* ===============================
-   HAMBURGER MENU (Small Screens)
-=============================== */
-#menu {
-  display: block;
-}
-
-/* Make nav hidden initially for mobile */
-nav {
-  display: none;
-  flex-direction: column;
-  width: 100%;
-}
-
-nav.open {
-  display: flex;
-}
