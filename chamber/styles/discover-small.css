@@ -81,7 +81,9 @@ header button {
 }
 
 .navigation li a.active {
-  background-color: var(--accent-color);
+  color: #00FFFF;        /* cyan active text */
+  background-color: var(--accent-color); /* single, consolidated */
+  font-weight: 700;      /* optional, keep bold active */
 }
 
 /* ===============================
@@ -270,9 +272,6 @@ nav .navigation a:hover {
   transform: scale(1.05); /* subtle zoom */
 }
 
-.navigation li a.active {
-  background-color: var(--accent-color);
-}
 
 @media (min-width: 641px) {
 
