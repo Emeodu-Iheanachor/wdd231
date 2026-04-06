@@ -85,6 +85,39 @@
     
   }
 
+
+
+
+
+
+  
+.navigation a {
+    color: #333333; /* FIX */
+
+
+ }
+
+/* Hover (ALL links) */
+.navigation li a:hover {
+  background-color: gold;
+  color: none;
+}
+
+/* Active page */
+.navigation a.active {
+  background-color: gold; 
+  color: var(--white);
+  border: 2px solid gold;
+}
+
+/* Hover on active */
+.navigation a.active:hover {
+  background-color: var(--white);
+  color: white;
+}
+
+
+
 } h2 {
   text-align: center;
   margin-bottom: 1.5rem;  

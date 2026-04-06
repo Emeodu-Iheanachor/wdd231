@@ -59,18 +59,8 @@ header button {
   cursor: pointer;
 }
 
-/* ===============================
-   NAVIGATION
-=============================== */
-/* Header */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: var(--primary-color);
-  color: var(--light-text);
-}
+
+ 
 
 .logo-title {
   display: flex;
@@ -85,11 +75,12 @@ header {
 }
 
 /* Menu button (mobile) */
+
+
 #menu {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: var(--header-text-color);
+  color: #ffffff; /* FIX */
+  background-color: #002147;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -110,16 +101,16 @@ header {
   display: block;
   padding: 0.75rem 1rem;
   text-decoration: none;
-  color: gray;
   font-weight: 500;
   border-radius: 5px;
   transition: 0.3s;
 }
 
+
 /* Hover (ALL links) */
 .navigation li a:hover {
   background-color: gold;
-  color: var(--primary-dark);
+  color: none;
 }
 
 /* Active page */
@@ -131,8 +122,8 @@ header {
 
 /* Hover on active */
 .navigation li a.active:hover {
-  background-color: var(--secondary-color);
-  color: var(--primary-dark);
+  background-color: var(--white);
+  color: none;
 }
 
 /* ===============================
