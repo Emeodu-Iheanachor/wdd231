@@ -1,14 +1,18 @@
 
 // ===============================
-// HAMBURGER MENU (CLEAN VERSION)
+// HAMBURGER MENU
 // ===============================
-const menuBtn = document.getElementById('menu');
-const nav = document.querySelector('nav');
+const menuBtn = document.getElementById("menu");
+const nav = document.querySelector("nav");
 
-menuBtn.addEventListener('click', () => {
-  nav.classList.toggle('open');
-  menuBtn.textContent = nav.classList.contains('open') ? '✖' : '☰';
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("open");
+
+  // Toggle icon
+  menuBtn.textContent =
+    nav.classList.contains("open") ? "✖" : "☰";
 });
+
 
 
 import { items } from "../data/discover.mjs";
