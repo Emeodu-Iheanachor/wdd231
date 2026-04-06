@@ -97,6 +97,11 @@ nav.open {
     background-color: #002147; /* dark blue, high contrast */
   }
 
+nav .navigation a {
+  color: #FFFFFF;
+}
+
+
   /* Navigation container */
   nav .navigation {
     display: flex;
@@ -147,9 +152,13 @@ nav.open {
 
   /* Header */
   header {
-    background-color: #001F4D; /* slightly darker than nav for contrast */
     color: #FFFFFF;
   }
+
+  ul.navigation a {
+  color: #FFFFFF;
+}
+  
 
 }
   
