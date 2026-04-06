@@ -89,43 +89,61 @@
     display: block !important;
   }
 
+
+
+  /* Navigation container */
+nav .navigation {
+  display: flex;
+  justify-content: space-evenly; /* evenly distribute items */
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
  .navigation {
     display: flex !important;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 5px;
+    gap: 10px;
 
   }
-
-
-
 
   
-  /* Navigation links */
-  .navigation a {
-    text-decoration: none;
-    color: #1a1a1a; /* dark for better contrast */
-    padding: 10px 15px;
-    display: block;
-    font-weight: 500;
-    border-radius: 5px;
-    transition: 0.3s;
-  }
-
-  /* Hover effect */
-  .navigation a:hover {
-    background-color: #d9d9d9;
-    color: #000000; /* strong contrast */
-  }
-
-  /* Active page style */
-  .navigation a.active {
-    background-color: #000000;
-    color: #ffffff;
-    font-weight: bold;
-  }
-
-
-
   
+  /* Header */
+header {
+  color: var(--light-text); /* white instead of black */
+}
+
+/* Base links */
+nav .navigation a {
+  color: var(--light-text);
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  display: block;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  background-color: transparent; /* ensures no bg */
+}
+
+/* Hover effect */
+nav .navigation a:hover {
+  color: #FFD700; /* gold */
+  background-color: transparent; /* optional, keeps bg clean */
+}
+
+/* Active link */
+nav .navigation a.active {
+  color: none;
+  font-weight: 700;
+  text-decoration: underline;
+  background-color: transparent; /* remove active background */
+}
+
+/* Active + hover override */
+nav .navigation a.active:hover {
+  color: #FFD700; /* hover still gold */
+  background-color: transparent; /* no bg on hover */
+}
+
 }

@@ -62,28 +62,30 @@ header button {
 /* ===============================
    NAVIGATION
 =============================== */
-.navigation {
-  display: none; /* FIXED for mobile */
-  flex-direction: column;
-  list-style: none;
-  background-color: var(--secondary-color); /* FIXED */
-  width: 100%;
-}
+/* ===============================
+   SMALL + MEDIUM (DEFAULT)
+=============================== */
 
-.navigation.open {
-  display: flex;
-}
-
-.navigation li a {
-  color: var(--light-text);
-  padding: 0.8rem 1rem;
-  text-decoration: none;
+/* Show hamburger */
+#menu {
   display: block;
+}
+
+/* Hide nav initially */
+nav {
+  display: none;
+}
+
+/* Navigation layout */
+.navigation {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
-.navigation li a.active {
-  background-color: var(--accent-color);
+/* When menu is clicked */
+nav.open {
+  display: block;
 }
 
 /* ===============================
