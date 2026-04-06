@@ -16,6 +16,10 @@
     padding: 1rem;
   }
 
+  header {
+  color: #FFFFFF; /* fixes contrast */
+}
+
   /* Card hover effect (images only, not mobile) */
   .card img {
     width: 100%;
