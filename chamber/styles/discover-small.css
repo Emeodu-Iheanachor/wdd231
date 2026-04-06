@@ -8,92 +8,281 @@
 }
 
 /* ===============================
-   ROOT VARIABLES
+   VARIABLES (USE ONLY THESE COLORS)
 =============================== */
 :root {
-  --primary: #002147;
-  --secondary: #003366;
-  --text-light: #ffffff;
-  --text-dark: #000000;
-}
+  --primary-color: #002147;
+  --secondary-color: #003366;
+  --accent-color: #0055a5;
 
+  --text-color: #000000;
+  --text-soft: #1a1a1a;
+  --text-muted: #2b2b2b;
+
+  --light-text: #ffffff;
+
+  --background-color: #ffffff;
+  --section-bg: #e6f0ff;
+}
 
 /* ===============================
-   BASE STYLES (MOBILE FIRST)
+   BODY
 =============================== */
-
 body {
   font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color); /* FIXED */
+  background-color: var(--background-color); /* FIXED */
 }
 
-/* Header */
+/* ===============================
+   HEADER
+=============================== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: var(--primary);
-  color: var(--text-light);
+  background-color: var(--primary-color); /* FIXED */
+  color: var(--light-text); /* FIXED */
 }
 
-.logo-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+header h1 {
+  font-size: 1.2rem;
 }
 
-/* Hamburger */
-#menu {
-  font-size: 1.8rem;
-  color: var(--text-light);
+header button {
+  font-size: 1.5rem;
   background: none;
   border: none;
+  color: var(--light-text);
   cursor: pointer;
 }
 
-/* Navigation */
-nav {
-  display: none;
-  background-color: var(--primary);
-}
-
-nav.open {
-  display: block;
-}
-
-/* Nav list */
+/* ===============================
+   NAVIGATION
+=============================== */
 .navigation {
-  display: flex;
+  display: none; /* FIXED for mobile */
   flex-direction: column;
+  list-style: none;
+  background-color: var(--secondary-color); /* FIXED */
+  width: 100%;
+}
+
+.navigation.open {
+  display: flex;
+}
+
+.navigation li a {
+  color: var(--light-text);
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  display: block;
   text-align: center;
 }
 
-.navigation li {
+.navigation li a.active {
+  background-color: var(--accent-color);
+}
+
+/* ===============================
+   HERO
+=============================== */
+.discover-hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--section-bg); /* FIXED */
+}
+
+.discover-hero h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.discover-hero p {
+  font-size: 1rem;
+  color: var(--text-soft); /* FIXED */
+}
+
+/* ===============================
+   VISIT BOX
+=============================== */
+
+.visit-box {
+  text-align: center;
+  padding: 1rem;
+  font-weight: 500;
+  background-color: var(--section-bg);
+  margin: 1rem;
+  border-radius: 5px;
+  color: var(--text-color);
+}
+
+
+/* ===============================
+   CTA
+=============================== */
+.cta-section {
+  text-align: center;
+  margin: 2rem 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  background-color: var(--primary-color); /* FIXED */
+  color: var(--light-text);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-color);
+}
+
+
+
+/* ===============================
+   CARD
+=============================== */
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--background-color);
+}
+
+.card figure {
+  margin: 0;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+
+/* ===============================
+   CARD CONTENT
+=============================== */
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-content address {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--text-muted); /* FIXED */
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-soft); /* FIXED */
+}
+
+.card-content a {
+  text-decoration: none;
+  color: var(--primary-color); /* FIXED */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.card-content a:hover {
+  color: var(--accent-color);
+}
+
+/* ===============================
+   FOOTER
+=============================== */
+footer {
+  background-color: var(--primary-color); /* FIXED */
+  color: var(--light-text);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--light-text);
+  text-decoration: underline;
+}
+
+/* Hamburger menu */
+#menu {
+  display: block;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile nav hidden by default */
+nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #003366;
+}
+
+nav.open {
+  display: flex;
+}
+
+nav .navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav .navigation li {
   border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-.navigation a {
+nav .navigation a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
   display: block;
-  padding: 1rem;
-  color: var(--text-light);
 }
 
-.navigation a:hover {
-  background-color: var(--secondary);
+/* Hide hamburger on larger screens */
+@media (min-width: 641px) {
+  #menu {
+    display: none;
+  }
+
+  nav {
+    display: block !important;
+  }
+
+  nav .navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  nav .navigation li {
+    border: none;
+  }
 }
 
-/* Active link */
-.navigation .active {
-  background-color: var(--secondary);
-}
-
-/* Discover Grid */
-.discover-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  padding: 1rem;
-}
 /* ===============================
    GRID (Small Screens)
 =============================== */
@@ -112,27 +301,3 @@ nav.open {
     "card8";
 }
 
-
-
-/* ===============================
-   MEDIUM SCREENS (641px - 1024px)
-=============================== */
-@media (min-width: 641px) {
-
-  .discover-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Keep hamburger */
-  #menu {
-    display: block;
-  }
-
-  nav {
-    display: none;
-  }
-
-  nav.open {
-    display: block;
-  }
-}

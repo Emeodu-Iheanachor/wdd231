@@ -1,17 +1,15 @@
 
-// ===============================
-// HAMBURGER MENU
-// ===============================
+// ====== HAMBURGER MENU ======
 const menuBtn = document.getElementById("menu");
 const nav = document.querySelector("nav");
+const navList = document.querySelector(".navigation");
 
 menuBtn.addEventListener("click", () => {
-  nav.classList.toggle("open");
-
-  // Toggle icon
-  menuBtn.textContent =
-    nav.classList.contains("open") ? "✖" : "☰";
+  navList.classList.toggle("open");
+  const isOpen = navList.classList.contains("open");
+  menuBtn.textContent = isOpen ? "✖" : "☰";
 });
+
 
 
 
