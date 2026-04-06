@@ -162,6 +162,9 @@ nav .navigation a {
   ul.navigation a {
   color: #FFFFFF;
 }
+ul.navigation a:hover {
+  color: #FFD700; /* gold for hover, still high enough contrast */
+}
   
 
 }
