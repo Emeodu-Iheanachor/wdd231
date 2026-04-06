@@ -16,20 +16,8 @@
     padding: 1rem;
   }
 
-  /* Card hover effect (images only, not mobile) */
-  .card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  .card img:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
-
+  
+  
   /* Hamburger visibility (optional) */
   #menu {
     display: block; /* keep hamburger visible on tablets */
@@ -94,5 +82,10 @@
     flex-direction: row;
     justify-content: space-evenly;
     gap: 5px;
+    
   }
+
+} h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;  
 }
