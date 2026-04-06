@@ -25,23 +25,29 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  .card img:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-  }
+  
 
   /* Hamburger visibility (optional) */
   #menu {
     display: block; /* keep hamburger visible on tablets */
   }
 
-  nav {
-    display: none; /* hide the full nav until toggled */
-  }
+  /* Show hamburger */
+#menu {
+  display: block;
+}
 
-  nav.open {
-    display: block; /* shown when hamburger is clicked */
-  }
+/* Hide nav initially */
+nav {
+  display: none;
+}
+
+/* Show nav when open */
+nav.open {
+  display: block;
+}
+
+
 }
 
 /* ===============================
@@ -85,86 +91,66 @@
     display: none;
   }
 
+  /* Show nav and fix background */
   nav {
     display: block !important;
+    background-color: #002147; /* dark blue, high contrast */
   }
-
-
-
-  nav {
-  background-color: rgb(0, 51, 102);
-}
-
-nav .navigation a {
-  color: #FFFFFF; /* white */
-}
-
-
 
   /* Navigation container */
-nav .navigation {
-  display: flex;
-  justify-content: space-evenly; /* evenly distribute items */
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
- .navigation {
-    display: flex !important;
+  nav .navigation {
+    display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    gap: 10px;
-
+    justify-content: space-evenly; /* evenly distribute items */
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
-  
-  
+  nav .navigation li {
+    border: none;
+  }
+
+  /* Navigation links */
+  nav .navigation a {
+    color: #FFFFFF; /* white, high contrast */
+    text-decoration: none;
+    padding: 0.8rem 1rem;
+    display: block;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+    background-color: transparent; /* ensures no bg */
+  }
+
+  /* Hover effect */
+  nav .navigation a:hover {
+    color: #FFD700; /* gold */
+    transform: scale(1.05);
+    background-color: transparent;
+  }
+
+  /* Active link */
+  nav .navigation a.active {
+    color: #00FFFF; /* cyan */
+    font-weight: 700;
+    background-color: transparent;
+  }
+
+  /* Active + hover override */
+  nav .navigation a.active:hover {
+    color: #FFD700; /* gold hover even if active */
+    background-color: transparent;
+  }
+
+
+
   /* Header */
-header {
-  background-color: rgb(0, 33, 71);
-  color: #FFFFFF; /* white */
-}
-
-/* Base links */
-nav .navigation a {
-  color: var(--light-text);
-  text-decoration: none;
-  padding: 0.8rem 1rem;
-  display: block;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  background-color: transparent; /* ensures no bg */
-}
-
-/* Hover effect */
-nav .navigation a:hover {
-  color: #FFD700; /* gold */
-  background-color: transparent; /* optional, keeps bg clean */
-}
-
-/* Active link */
-nav .navigation a.active {
-  font-weight: 700;
-  background-color: transparent; /* remove active background */
-}
-
-/* Active + hover override */
-nav .navigation a.active:hover {
-  color: #FFD700; /* hover still gold */
-  background-color: transparent; /* no bg on hover */
-}
-
-
-
-/* Hover */
-nav .navigation a:hover {
-  color: #FFD700; /* gold */
-}
-
-/* Active */
-nav .navigation a.active {
-  color: #00FFFF; /* cyan */
-}
+  header {
+    background-color: #001F4D; /* slightly darker than nav for contrast */
+    color: #FFFFFF;
+  }
 
 }
+  
+  

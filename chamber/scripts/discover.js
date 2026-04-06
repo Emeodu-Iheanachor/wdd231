@@ -1,16 +1,12 @@
 
 // ====== HAMBURGER MENU ======
+
 const menuBtn = document.getElementById("menu");
 const nav = document.querySelector("nav");
-const navList = document.querySelector(".navigation");
 
 menuBtn.addEventListener("click", () => {
-  navList.classList.toggle("open");
-  const isOpen = navList.classList.contains("open");
-  menuBtn.textContent = isOpen ? "✖" : "☰";
+  nav.classList.toggle("open");
 });
-
-
 
 
 import { items } from "../data/discover.mjs";
