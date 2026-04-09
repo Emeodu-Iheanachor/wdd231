@@ -1,55 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore tech learning resources in Nigeria.">
-  <meta name="author" content="Emeodu, R. C. Iheanachor">
-  
-  <title>Resources | Tech Skills Hub Nigeria</title>
-   <link rel="stylesheet" href="styles/index.css">
-  <script type="module" src="scripts/index.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resources | Tech Skills Hub Nigeria</title>
+<meta name="description" content="Find tech learning resources in Nigeria.">
+<meta name="author" content="Emeodu, R. C. Iheanachor">
+
+<!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/resources.css">
+<link rel="stylesheet" href="styles/index.css">
+
+<script type="module" src="scripts/main.js" defer></script>
+<script type="module" src="scripts/resources.js" defer></script>
+
+
+<!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+
+
+<!-- CANONICAL -->
+<link rel="canonical" href="https://emeodu-iheanachor.github.io/wdd231/resources.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Tech Learning Resources | Tech Skills Hub Nigeria">
+<meta property="og:description" content="Explore curated tech courses, tools, and resources to build your skills in Nigeria.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emeodu-iheanachor.github.io/wdd231/resources.html">
+<meta property="og:image" content="https://emeodu-iheanachor.github.io/wdd231/images/resources-preview.jpg">
+<meta property="og:site_name" content="Tech Skills Hub Nigeria">
+<meta property="og:locale" content="en_NG">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tech Learning Resources">
+<meta name="twitter:description" content="Learn coding and tech skills with curated resources in Nigeria.">
+<meta name="twitter:image" content="https://emeodu-iheanachor.github.io/wdd231/images/resources-preview.jpg">
+<!-- EXTRA -->
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#002147">
+
+
 </head>
 
 <body>
-<header>
+
+  <header>
+
+
+  <button id="menu-btn" aria-label="Menu">☰</button>
   <h1>Tech Skills Hub Nigeria</h1>
-  <button id="menu">☰</button>
-  <nav class="navigation">
+  <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
+
+  <nav id="nav-menu">
     <a href="index.html">Home</a>
-    <a href="resources.html" class="active">Resources</a>
     <a href="opportunities.html">Opportunities</a>
+     <a href="resources.html" class="active">Resources</a>
   </nav>
-</header>
 
-<main>
+
+ </header>
+
+ <main>
   <h2>Learning Resources</h2>
+  <div id="resources-container" class="grid"></div>
+ </main>
 
-  <section class="cards">
-    <article class="card">
-      <h3>FreeCodeCamp</h3>
-      <p>Learn web development with interactive lessons and certifications.</p>
-      <a href="https://www.freecodecamp.org/" target="_blank">Visit</a>
-    </article>
-
-    <article class="card">
-      <h3>MDN Web Docs</h3>
-      <p>Comprehensive documentation for HTML, CSS, and JavaScript.</p>
-      <a href="https://developer.mozilla.org/" target="_blank">Visit</a>
-    </article>
-
-    <article class="card">
-      <h3>Coursera</h3>
-      <p>Online courses from top universities and companies.</p>
-      <a href="https://www.coursera.org/" target="_blank">Visit</a>
-    </article>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2026 Tech Skills Hub Nigeria</p>
-</footer>
-
+ 
+  
+  <footer>
+   <p>&copy; 2026 Tech Skills Hub Nigeria</p>
+   <a href="attributions.html">Attributions</a>
+   <a href="https://your-video-link.com" target="_blank">🎥 Project Video</a>
+  </footer>
 
 </body>
+
 </html>
