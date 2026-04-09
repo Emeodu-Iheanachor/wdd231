@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- META BASICS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Tech Skills Hub Nigeria | Learn & Grow</title>
+  <meta name="description" content="Learn tech skills in Nigeria with resources, opportunities, and tools to grow your career.">
+  <meta name="author" content="Your Name">
+
+  <!-- OPEN GRAPH (SOCIAL SHARING) -->
+  <meta property="og:title" content="Tech Skills Hub Nigeria">
+  <meta property="og:description" content="Explore tech skills, resources, and opportunities in Nigeria.">
+  <meta property="og:type" content="website">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/index.css">
+
+  <!-- JS MODULE -->
+  <script type="module" src="scripts/index.js"></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <button id="menu-btn" aria-label="Open navigation">☰</button>
+    <h1>Tech Skills Hub Nigeria</h1>
+    <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
+
+    <!-- NAVIGATION -->
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="resources.html">Resources</a>
+      <a href="opportunities.html">Opportunities</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h2>Learn In-Demand Tech Skills</h2>
+      <p>Discover resources, tools, and opportunities to grow your tech career.</p>
+      <a href="resources.html" class="btn">Explore Resources</a>
+    </section>
+
+    <!-- DYNAMIC CONTENT -->
+    <section>
+      <h2>Featured Opportunities</h2>
+      <div id="cards-container" class="cards">
+        <!-- JS will inject 15+ items here -->
+      </div>
+    </section>
+
+    <!-- WEATHER / API EXAMPLE -->
+    <section class="weather">
+      <h2>Current Weather</h2>
+      <p id="weather-output">Loading weather...</p>
+    </section>
+
+    <!-- FORM -->
+    <section>
+      <h2>Join Our Community</h2>
+      <form method="get" action="form-action.html">
+        <label>
+          Name:
+          <input type="text" name="name" required>
+        </label>
+
+        <label>
+          Email:
+          <input type="email" name="email" required>
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- MODAL -->
+  <dialog id="modal">
+    <h3>More Details</h3>
+    <p id="modal-content"></p>
+    <button onclick="document.getElementById('modal').close()">Close</button>
+  </dialog>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Tech Skills Hub Nigeria</p>
+
+    <!-- VIDEO LINK (REQUIRED) -->
+    <p>
+      <a href="https://your-video-link.com" target="_blank">
+        🎥 Watch Project Demonstration
+      </a>
+      <a href="https://youtube.com">Project Demo</a>
+    </p>
+
+    <!-- ATTRIBUTIONS -->
+    <p>
+      <a href="attributions.html">Attributions</a>
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+[
+  {
+    "title": "Frontend Internship",
+    "company": "TechHub Lagos",
+    "location": "Lagos",
+    "type": "Internship",
+    "description": "Learn HTML, CSS, and JavaScript."
+  },
+  {
+    "title": "Backend Developer",
+    "company": "NaijaSoft",
+    "location": "Abuja",
+    "type": "Full-time",
+    "description": "Work with Node.js and APIs."
+  },
+  {
+    "title": "UI/UX Designer",
+    "company": "DesignPro",
+    "location": "Remote",
+    "type": "Contract",
+    "description": "Design user-friendly interfaces."
+  },
+  {
+    "title": "Data Analyst",
+    "company": "DataWorks",
+    "location": "Ibadan",
+    "type": "Full-time",
+    "description": "Analyze business data."
+  },
+  {
+    "title": "Mobile Developer",
+    "company": "AppDev NG",
+    "location": "Remote",
+    "type": "Internship",
+    "description": "Build mobile apps."
+  },
+  {
+    "title": "Cybersecurity Trainee",
+    "company": "SecureIT",
+    "location": "Lagos",
+    "type": "Training",
+    "description": "Learn cybersecurity basics."
+  },
+  {
+    "title": "AI Engineer",
+    "company": "FutureTech",
+    "location": "Remote",
+    "type": "Full-time",
+    "description": "Work with machine learning."
+  },
+  {
+    "title": "Web Designer",
+    "company": "Creative NG",
+    "location": "Port Harcourt",
+    "type": "Contract",
+    "description": "Design modern websites."
+  },
+  {
+    "title": "DevOps Engineer",
+    "company": "CloudNet",
+    "location": "Remote",
+    "type": "Full-time",
+    "description": "Manage cloud systems."
+  },
+  {
+    "title": "Software Engineer",
+    "company": "CodeBase",
+    "location": "Abuja",
+    "type": "Full-time",
+    "description": "Build scalable apps."
+  },
+  {
+    "title": "Tech Support",
+    "company": "HelpDesk NG",
+    "location": "Lagos",
+    "type": "Full-time",
+    "description": "Assist users with tech issues."
+  },
+  {
+    "title": "Blockchain Developer",
+    "company": "CryptoTech",
+    "location": "Remote",
+    "type": "Contract",
+    "description": "Develop blockchain apps."
+  },
+  {
+    "title": "QA Tester",
+    "company": "TestLab",
+    "location": "Ibadan",
+    "type": "Internship",
+    "description": "Test applications."
+  },
+  {
+    "title": "Cloud Engineer",
+    "company": "SkyNet",
+    "location": "Remote",
+    "type": "Full-time",
+    "description": "Work on cloud platforms."
+  },
+  {
+    "title": "Product Manager",
+    "company": "InnovateX",
+    "location": "Lagos",
+    "type": "Full-time",
+    "description": "Manage product lifecycle."
+  }
+]

@@ -1,0 +1,27 @@
+
+{
+"resources": [
+{
+"title": "HTML & CSS Basics",
+"platform": "FreeCodeCamp",
+"link": "https://www.freecodecamp.org/"
+},
+{
+"title": "JavaScript for Beginners",
+"platform": "MDN",
+"link": "https://developer.mozilla.org/"
+}
+],
+"opportunities": [
+{
+"title": "Google Internship",
+"type": "Internship",
+"deadline": "April 30, 2026"
+},
+{
+"title": "Tech Scholarship Program",
+"type": "Scholarship",
+"deadline": "May 15, 2026"
+}
+]
+}   
