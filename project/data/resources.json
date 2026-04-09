@@ -1,0 +1,92 @@
+[
+  {
+    "name": "freeCodeCamp",
+    "type": "Website",
+    "level": "Beginner",
+    "link": "https://freecodecamp.org"
+  },
+  {
+    "name": "MDN Web Docs",
+    "type": "Documentation",
+    "level": "All",
+    "link": "https://developer.mozilla.org"
+  },
+  {
+    "name": "Coursera",
+    "type": "Courses",
+    "level": "Intermediate",
+    "link": "https://coursera.org"
+  },
+  {
+    "name": "Udemy",
+    "type": "Courses",
+    "level": "All",
+    "link": "https://udemy.com"
+  },
+  {
+    "name": "W3Schools",
+    "type": "Tutorials",
+    "level": "Beginner",
+    "link": "https://w3schools.com"
+  },
+  {
+    "name": "Codecademy",
+    "type": "Interactive",
+    "level": "Beginner",
+    "link": "https://codecademy.com"
+  },
+  {
+    "name": "Khan Academy",
+    "type": "Courses",
+    "level": "Beginner",
+    "link": "https://khanacademy.org"
+  },
+  {
+    "name": "CS50",
+    "type": "Course",
+    "level": "Beginner",
+    "link": "https://cs50.harvard.edu"
+  },
+  {
+    "name": "Frontend Masters",
+    "type": "Courses",
+    "level": "Advanced",
+    "link": "https://frontendmasters.com"
+  },
+  {
+    "name": "Egghead",
+    "type": "Courses",
+    "level": "Advanced",
+    "link": "https://egghead.io"
+  },
+  {
+    "name": "Scrimba",
+    "type": "Interactive",
+    "level": "Beginner",
+    "link": "https://scrimba.com"
+  },
+  {
+    "name": "Pluralsight",
+    "type": "Courses",
+    "level": "Intermediate",
+    "link": "https://pluralsight.com"
+  },
+  {
+    "name": "Google Dev",
+    "type": "Docs",
+    "level": "All",
+    "link": "https://developers.google.com"
+  },
+  {
+    "name": "Stack Overflow",
+    "type": "Community",
+    "level": "All",
+    "link": "https://stackoverflow.com"
+  },
+  {
+    "name": "GitHub",
+    "type": "Platform",
+    "level": "All",
+    "link": "https://github.com"
+  }
+]

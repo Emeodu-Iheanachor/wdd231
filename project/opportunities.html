@@ -1,38 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Find tech opportunities in Nigeria.">
-  <meta name="author" content="Emeodu, R. C. Iheanachor">
-  
-  <title>Opportunities | Tech Skills Hub Nigeria</title>
-  <link rel="stylesheet" href="styles/index.css">
-  <link rel="stylesheet" href="styles/opportunities.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="scripts/opportunities.js" defer></script>
+<title>Opportunities | Tech Skills Hub Nigeria</title>
+<meta name="description" content="Explore tech opportunities in Nigeria.">
+<meta name="author" content="Emeodu, R. C. Iheanachorr">
+
+<!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+
+
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/opportunities.css">
+<link rel="stylesheet" href="styles/index.css">
+
+<script type="module" src="scripts/main.js" defer></script>
+<script type="module" src="scripts/opportunities.js" defer></script>
+
+
+
+<!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+
+<!-- CANONICAL -->
+<link rel="canonical" href="https://emeodu-iheanachor.github.io/wdd231/opportunities.html">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Tech Opportunities in Nigeria | Tech Skills Hub">
+<meta property="og:description" content="Discover internships, jobs, and tech opportunities in Nigeria to grow your career.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://emeodu-iheanachor.github.io/wdd231/opportunities.html">
+<meta property="og:image" content="https://emeodu-iheanachor.github.io/wdd231/images/opportunities-preview.jpg">
+<meta property="og:site_name" content="Tech Skills Hub Nigeria">
+<meta property="og:locale" content="en_NG">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tech Opportunities in Nigeria">
+<meta name="twitter:description" content="Find internships, remote jobs, and tech opportunities in Nigeria.">
+<meta name="twitter:image" content="https://emeodu-iheanachor.github.io/wdd231/images/opportunities-preview.jpg">
+
+<!-- EXTRA -->
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#002147">
+
+
 </head>
 
 <body>
+
+
 <header>
+  <button id="menu-btn" aria-label="Menu">☰</button>
   <h1>Tech Skills Hub Nigeria</h1>
-  <button id="menu">☰</button>
-  <nav class="navigation">
+  <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
+
+  <nav id="nav-menu">
     <a href="index.html">Home</a>
-    <a href="resources.html">Resources</a>
-    <a href="opportunities.html" class="active">Opportunities</a>
+    <a href="opportunities.html"  class="active">Opportunities</a>
+     <a href="resources.html">Resources</a>
   </nav>
+
+
+
 </header>
 
 <main>
-  <h2>Tech Opportunities</h2>
-  <section id="opportunities-container" class="cards"></section>
+  <h2>All Opportunities</h2>
+  <div id="opportunities-container" class="grid"></div>
 </main>
 
 <footer>
   <p>&copy; 2026 Tech Skills Hub Nigeria</p>
+  <a href="attributions.html">Attributions</a>
+  <a href="https://your-video-link.com" target="_blank">🎥 Project Video</a>
 </footer>
-
 
 </body>
 </html>
