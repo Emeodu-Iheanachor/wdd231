@@ -73,20 +73,16 @@ header h1 {
 
 /* ===== NAVIGATION ===== */
 nav {
-  display: none;
   background-color: var(--primary-color);
 }
 
-nav.open {
-  display: block;
-}
-
 nav a {
-  color: var(--text-light);
+  color: #ffffff;
 }
 
-nav a:hover {
-  color: var(--secondary-color); /* FIX: better contrast than accent variable */
+nav a:hover,
+nav a:focus {
+  color: var(--secondary-color);
 }
 
 .navigation {
