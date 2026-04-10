@@ -73,8 +73,10 @@ header h1 {
 
 /* ===== NAVIGATION ===== */
 nav {
-  background-color: var(--primary-color);
+  background-color: #002147;
+  color: #ffffff;
 }
+
 
 nav a {
   color: #ffffff;
