@@ -26,7 +26,6 @@
   --white: #ffffff;
   --black: #000000;
 
-  --text-light: #ffffff;
   --accent: #ffc72c;
 }
 
@@ -90,11 +89,6 @@ nav.open {
   display: block;
 }
 
-
-
-:root {
-  
-}
 
 
 nav a {
