@@ -3,27 +3,20 @@
   /* ===== HEADER ===== */
   header {
     padding: 1rem 2rem;
+    background-color: var(--primary-color); /* FIX: removed rgb duplicate */
+    color: var(--white);
   }
 
-  header {
-  background-color: rgb(0, 33, 71);
-  color: #ffffff;
-}
-
-
-
-header p,
-header span,
-header a {
-  color: #ffffff;
-}
-
-  
+  header p,
+  header span,
+  header a,
   header h1 {
-  font-size: 1.2rem;
-  color: #ffffff; /* White text for high contrast */
-}
+    color: var(--white);
+  }
 
+  header h1 {
+    font-size: 1.2rem;
+  }
 
   #menu {
     display: none;
@@ -39,13 +32,13 @@ header a {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5rem;
-    background-color: var(--primary-color); /* Deep navy */
+    background-color: var(--primary-color);
   }
 
   /* Navigation links */
   .navigation li a {
     padding: 1rem 1.5rem;
-    color: var(--white); /* White text on dark background */
+    color: var(--white);
     font-weight: 500;
     text-decoration: none;
     border-radius: 5px;
@@ -55,13 +48,13 @@ header a {
   /* Hover / focus */
   .navigation li a:hover,
   .navigation li a:focus {
-    background-color: var(--secondary-color); /* Accessible gold */
-    color: var(--black); /* Black text on gold is accessible */
+    background-color: var(--secondary-color);
+    color: var(--black);
   }
 
   /* Active page */
   .navigation li a.active {
-    background-color: var(--primary-dark); /* Very dark blue */
+    background-color: var(--primary-dark);
     color: var(--white);
     border: 2px solid var(--secondary-color);
   }
@@ -75,11 +68,11 @@ header a {
   /* ===== HERO ===== */
   .hero-text h2 {
     font-size: clamp(1.5rem, 2.5vw, 2rem);
-    color: var(--white); /* White text on dark overlay is accessible */
+    color: var(--white);
   }
 
   .hero-text {
-    background-color: rgba(0, 0, 0, 0.75); /* Slightly darker for better contrast */
+    background-color: rgba(0, 0, 0, 0.8); /* FIX: better contrast */
     padding: 1rem;
     border-radius: 8px;
     text-align: center;
@@ -90,7 +83,7 @@ header a {
     max-width: 1100px;
     margin: auto;
     padding: 0 1rem;
-    color: var(--text-color); /* Dark text on white */
+    color: var(--text-color);
   }
 
   /* ===== TOP GRID ===== */
@@ -108,10 +101,7 @@ header a {
   }
 
   /* ===== HEADINGS ===== */
-  h2 {
-    font-weight: 700;
-  }
-
+  h2,
   h3 {
     font-weight: 700;
   }
@@ -119,14 +109,14 @@ header a {
   /* ===== FORECAST CARD ===== */
   .forecast-card:hover,
   .forecast-card:focus {
-    background-color: #dcdcdc; /* Slightly darker than base #e6e6e6 */
+    background-color: #dcdcdc;
     outline: 2px solid var(--primary-color);
   }
 
   .forecast-card h3 {
     font-size: 1rem;
     margin-bottom: 0.25rem;
-    color: var(--primary-color); /* Deep navy for contrast */
+    color: var(--primary-color);
   }
 
   .forecast-card p {
@@ -134,10 +124,10 @@ header a {
     color: var(--text-color);
   }
 
-  /* ===== TABLET ===== */
+  /* ===== TABLET SPOTLIGHT ===== */
   @media (min-width: 640px) {
     .spotlight-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      grid-template-columns: repeat(2, 1fr);
     }
 
     #spotlights h2 {
@@ -148,7 +138,7 @@ header a {
   /* ===== DESKTOP ===== */
   @media (min-width: 1024px) {
     .spotlight-container {
-      grid-template-columns: repeat(3, 1fr); /* 3 columns */
+      grid-template-columns: repeat(3, 1fr);
     }
 
     #spotlights {
@@ -167,12 +157,13 @@ header a {
 
     .spotlight-card h3 {
       font-size: 1.3rem;
-      color: var(--primary-color); /* Ensures readable contrast */
+      color: var(--primary-color);
     }
 
+    /* FIX: low contrast issue */
     .spotlight-card p {
       font-size: 0.95rem;
-      color: var(--text-light); /* Slightly lighter for readability */
+      color: var(--text-color); /* was var(--text-light) */
     }
   }
 
@@ -193,6 +184,6 @@ header a {
 
   footer a:hover,
   footer a:focus {
-    color: var(--secondary-color); /* Accessible gold for links */
+    color: var(--secondary-color);
   }
 }
