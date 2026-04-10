@@ -11,6 +11,8 @@
 :root {
   /* Primary colors */
   --primary-color: #002147;      /* Deep navy */
+  --primary-dark: #00132a;       /* Very dark navy */
+
   /* Secondary colors */
   --secondary-color: #FFC72C;    /* Accessible gold */
   --secondary-dark: #E6B800;     /* Darker gold for hover */
@@ -26,6 +28,12 @@
   --white: #ffffff;
   --black: #000000;
 
+   --primary-color: #002147;
+  --text-light: #ffffff;
+
+
+  --primary-color: #002147;
+  --text-light: #ffffff;
   --accent: #ffc72c;
 }
 
@@ -51,7 +59,7 @@ header {
 header {
   background-color: var(--primary-color);
   color: var(--text-light);
-  
+  padding: 1rem;
 }
 
 header p,
