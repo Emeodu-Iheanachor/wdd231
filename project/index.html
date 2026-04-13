@@ -24,8 +24,8 @@
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/index.css">
 
-<script type="module" src="scripts/main.js" defer></script>
-<script type="module" src="scripts/index.js" defer></script>
+<script type="module" src="scripts/main.js"></script>
+<script type="module" src="scripts/index.js"></script>
 
 
 <!-- Google Fonts -->
@@ -57,23 +57,44 @@
 
 <header>
   <button id="menu-btn" aria-label="Menu">☰</button>
-  <h1>Tech Skills Hub Nigeria</h1>
+
+  <!-- LOGO -->
+  <a href="index.html" class="logo">
+    <img src="images/logo.png" alt="Tech Skills Hub Nigeria Logo" width="48" height="48">
+    <span>Tech Skills Hub Nigeria</span>
+  </a>
+
   <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
 
   <nav id="nav-menu">
-    <a href="index.html"  class="active">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="opportunities.html">Opportunities</a>
-     <a href="resources.html">Resources</a>
+    <a href="resources.html">Resources</a>
   </nav>
 </header>
 
 <main>
 
 <section class="hero">
-  <h2>Build Your Tech Future</h2>
-  <p>Access curated learning resources and opportunities.</p>
-
   
+
+
+  <!-- HERO IMAGE -->
+  <figure class="hero-image">
+    <img src="images/hero.jpg" alt="Young Nigerians learning tech skills together" width="1200" loading="lazy">
+  </figure>
+
+  <!-- HERO CONTENT -->
+  <div class="hero-content">
+    <h2>Build Your Tech Future</h2>
+    <p>Access curated learning resources and opportunities.</p>
+
+    <div class="hero-actions">
+      <a href="opportunities.html" class="btn primary">Explore Opportunities</a>
+      <a href="resources.html" class="btn secondary">Browse Resources</a>
+    </div>
+  </div>
+
 </section>
 
 <section>
@@ -81,14 +102,13 @@
   <div id="cards-container" class="grid"></div>
 </section>
 
-<section>
+<section class="weather">
   <h2>Weather (API)</h2>
-  <p id="weather-output">Loading...</p>
 
   <div class="weather-clock">
-  <p id="weather-output"></p>
-  <p id="clock"></p>
-</div>
+    <p id="weather-output">Loading weather...</p>
+    <p id="clock">--:--</p>
+  </div>
 </section>
 
 <section>
@@ -108,9 +128,21 @@
 </dialog>
 
 <footer>
-  <p>&copy; 2026 Tech Skills Hub Nigeria</p>
+  
+</footer>
+
+
+
+<footer>
+
+<p>
+<p>&copy; 2026 Tech Skills Hub Nigeria</p>
   <a href="attributions.html">Attributions</a>
   <a href="https://your-video-link.com" target="_blank">🎥 Project Video</a>
+<p>© <span id="year"></span> Lagos Chamber of Commerce</p>
+<p>Emeodu, R. C. Iheanachor | WDD231</p>
+<p id="lastModified"></p>
+
 </footer>
 
 </body>

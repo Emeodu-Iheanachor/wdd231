@@ -28,7 +28,7 @@
 }
 
 /* ===============================
-   BODY
+   BASE / BODY
 =============================== */
 body {
   font-family: 'Roboto', sans-serif;
@@ -43,15 +43,42 @@ body {
 header {
   background-color: var(--primary);
   color: var(--light);
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 5rem; /* merged padding */
   text-align: center;
   position: relative;
-  padding-left: 5rem;
-  
 }
 
 header h1 {
   margin-bottom: 0.5rem;
+}
+
+
+
+
+/* =========================
+   HEADER
+   ========================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-color);
+  color: var(--header-text-color);
+  padding: 1rem;
+}
+
+header * {
+  color: var(--header-text-color);
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-title h1 {
+  font-size: 1.2rem;
 }
 
 /* ===============================
@@ -78,7 +105,8 @@ header h1 {
 }
 
 /* NAV BUTTONS */
-#menu-btn, #dark-toggle {
+#menu-btn,
+#dark-toggle {
   position: absolute;
   top: 1rem;
   background: none;
@@ -89,7 +117,8 @@ header h1 {
   transition: color 0.3s ease;
 }
 
-#menu-btn:hover, #dark-toggle:hover {
+#menu-btn:hover,
+#dark-toggle:hover {
   color: var(--accent);
 }
 
@@ -111,13 +140,13 @@ header h1 {
   color: var(--light);
 }
 
-
 h2 {
   padding-left: 5rem;
-  position: relative;
 }
 
-
+form {
+  padding-left: 3rem;
+}
 
 /* ===============================
    BUTTONS
@@ -134,7 +163,7 @@ h2 {
 }
 
 .btn:hover {
-  background-color: #1fae50; /* slightly darker green for hover */
+  background-color: #1fae50; /* could also convert to variable if reused */
   transform: scale(1.05);
 }
 
@@ -156,22 +185,21 @@ h2 {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* ===============================
-   WEATHER
+   WEATHER / CLOCK
 =============================== */
 .weather {
   margin: 1rem;
-  
+  padding-left: 3rem;
 }
-
 
 #clock {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #002147;
+  color: var(--primary); /* fixed color inconsistency */
   text-align: center;
   margin: 10px 0;
 }
@@ -186,22 +214,23 @@ img {
   border-radius: 5px;
 }
 
+
+
 /* ===============================
-   FOOTER
+   MODAL
 =============================== */
-footer {
-  text-align: center;
+dialog {
   padding: 1rem;
-  background-color: var(--primary);
-  color: var(--light);
+  border: none;
+  border-radius: 8px;
 }
 
 /* ===============================
-   DESKTOP / MEDIA QUERIES
+   MEDIA QUERIES (DESKTOP)
 =============================== */
 @media (min-width: 768px) {
   #nav-menu {
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     justify-content: center;
   }
@@ -215,21 +244,239 @@ footer {
   }
 }
 
-/* ===============================
-   MODAL
-=============================== */
-dialog {
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.hero-content {
   padding: 1rem;
+}
+
+.hero-actions {
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.7rem 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.primary {
+  background: #006400;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #006400;
+  color: #006400;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--primary-dark);
+  color: var(--white);
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--white);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--secondary-color);
+}
+
+
+/* Hamburger menu */
+#menu {
+  display: block;
+  font-size: 2rem;
+  background: none;
   border: none;
-  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile nav hidden by default */
+nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #003366;
+}
+
+nav.open {
+  display: flex;
+}
+
+nav .navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav .navigation li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+nav .navigation a {
+  color: var(--light-text);
+  text-decoration: none;
+  padding: 1rem;
+  display: block;
+  text-align: right;
+
+  /* Smooth effect */
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav .navigation a:hover {
+  color: #FFD700; /* GOLD */
+  transform: scale(1.05); /* subtle zoom */
+}
+
+
+
+/* ===============================
+   ROOT VARIABLES
+=============================== */
+:root {
+  --primary: #002147;
+  --accent: #ffcc00;
+  --text: #111;
+  --bg: #ffffff;
+  --white: #ffffff;
+}
+
+/* DARK MODE */
+body.dark {
+  --text: #f5f5f5;
+  --bg: #121212;
+  --primary: #001530;
 }
 
 /* ===============================
-   NAV FIX
+   HEADER
 =============================== */
-#nav-menu {
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.8rem 1rem;
+  position: relative;
+}
+
+/* ===============================
+   LOGO
+=============================== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.logo img {
+  border-radius: 6px;
+}
+
+.logo span {
+  white-space: nowrap;
+}
+
+/* ===============================
+   NAVIGATION
+=============================== */
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover & Active */
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a.active {
+  border-bottom: 2px solid var(--accent);
+}
+
+/* ===============================
+   BUTTONS (MENU + DARK MODE)
+=============================== */
+#menu-btn,
+#dark-toggle {
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.4rem;
+  cursor: pointer;
   display: none;
 }
-#nav-menu.open {
-  display: flex;
+
+/* ===============================
+   MOBILE STYLES
+=============================== */
+@media (max-width: 768px) {
+  #menu-btn,
+  #dark-toggle {
+    display: block;
+  }
+
+  nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--primary);
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+    border-radius: 0 0 0 8px;
+  }
+
+  nav a {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  /* Show menu when active */
+  nav.open {
+    display: flex;
+  }
 }
+

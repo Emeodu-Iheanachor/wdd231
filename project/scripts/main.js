@@ -1,19 +1,24 @@
+const menuBtn = document.getElementById("menu-btn");
 const nav = document.getElementById("nav-menu");
-document.getElementById("menu-btn").onclick = () => {
+const darkToggle = document.getElementById("dark-toggle");
+const header = document.querySelector("header");
+
+/* MOBILE MENU */
+menuBtn.addEventListener("click", () => {
   nav.classList.toggle("open");
-};
+});
 
-// DARK MODE (LOCAL STORAGE)
-const toggle = document.getElementById("dark-toggle");
-
-toggle.onclick = () => {
+/* DARK MODE TOGGLE */
+darkToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  localStorage.setItem("dark", document.body.classList.contains("dark"));
-};
 
-if (localStorage.getItem("dark") === "true") {
-  document.body.classList.add("dark");
-}
+  // Change icon
+  darkToggle.textContent =
+    document.body.classList.contains("dark") ? "☀️" : "🌙";
+});
 
-
+/* HEADER SHADOW ON SCROLL */
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 10);
+});
 
