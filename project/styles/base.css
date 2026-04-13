@@ -48,6 +48,7 @@ header {
   top: 0;
   z-index: 1000;
 
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,6 +56,18 @@ header {
   background: var(--primary);
   color: var(--white);
   padding: 0.8rem 1.2rem;
+}
+
+
+.logo span {
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+}
+
+
+.logo img {
+  width: 50px;
+  height: 50px;
 }
 
 /* LOGO */

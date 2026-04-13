@@ -51,25 +51,7 @@
   }
 
 
-
-.logo {
-  display: flex;
-  align-items: center;   /* 🔥 THIS is the key */
-  gap: 0.5rem;           /* space between image and text */
-}
-
-.logo img {
-  width: 48px;
-  height: 48px;
-}
-
-
-
-
-
-  h2 {
-    padding-left: 3rem;
-  }
+  
 /* ===============================
    WEATHER
 =============================== */
