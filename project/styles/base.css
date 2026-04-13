@@ -194,7 +194,10 @@ footer {
   background: var(--primary);
   color: var(--white);
   margin-top: 2rem;
+  padding-bottom: 3rem;
 }
+
+
 
 footer a {
   color: var(--accent);
