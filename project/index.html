@@ -4,39 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tech Skills Hub Nigeria | Home</title>
-<meta name="description" content="Learn tech skills, explore opportunities, and grow your career in Nigeria.">
+<title>Tech Skills Hub Nigeria | Learn Skills & Opportunities</title>
+<meta name="description" content="Discover tech learning resources, training programs, and opportunities in Nigeria with Tech Skills Hub Nigeria to advance your career.">
 <meta name="author" content="Emeodu, R. C. Iheanachor">
+<meta name="theme-color" content="#002147">
 
-<meta property="og:title" content="Tech Skills Hub Nigeria">
-<meta property="og:description" content="Explore tech resources and opportunities in Nigeria.">
-<meta property="og:type" content="website">
-
-
-<!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico">
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="apple-touch-icon" href="images/favicon.png">
-
-
-<link rel="stylesheet" href="styles/base.css">
-<link rel="stylesheet" href="styles/index.css">
-
-<script type="module" src="scripts/main.js"></script>
-<script type="module" src="scripts/index.js"></script>
-
-
-<!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-
-
-<!-- Open Graph (Social Sharing) -->
-<meta property="og:title" content="Tech Skills Hub Nigeria | Home">
+<!-- Open Graph -->
+<meta property="og:title" content="Tech Skills Hub Nigeria | Learn Tech Skills & Opportunities">
 <meta property="og:description" content="Learn tech skills, explore opportunities, and grow your career in Nigeria.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://emeodu-iheanachor.github.io/wdd231/index.html">
@@ -44,21 +18,36 @@
 <meta property="og:site_name" content="Tech Skills Hub Nigeria">
 <meta property="og:locale" content="en_NG">
 
-<!-- Twitter Card -->
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tech Skills Hub Nigeria | Home">
 <meta name="twitter:description" content="Learn tech skills, explore opportunities, and grow your career in Nigeria.">
 <meta name="twitter:image" content="https://emeodu-iheanachor.github.io/wdd231/images/preview.jpg">
 
+<!-- Favicon -->
+<link rel="icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/favicon.png">
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/index.css">
+
+<!-- Scripts -->
+<script type="module" src="scripts/main.js" defer></script>
+<script type="module" src="scripts/index.js" defer></script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
 <header>
-  <button id="menu-btn" aria-label="Menu">☰</button>
+  <button id="menu-btn" aria-label="Open menu">☰</button>
 
-  <!-- LOGO -->
   <a href="index.html" class="logo">
     <img src="images/logo.png" alt="Tech Skills Hub Nigeria Logo" width="48" height="48">
     <span>Tech Skills Hub Nigeria</span>
@@ -66,7 +55,7 @@
 
   <button id="dark-toggle" aria-label="Toggle dark mode">🌙</button>
 
-  <nav id="nav-menu">
+  <nav id="nav-menu" aria-label="Main Navigation">
     <a href="index.html" class="active">Home</a>
     <a href="opportunities.html">Opportunities</a>
     <a href="resources.html">Resources</a>
@@ -75,16 +64,14 @@
 
 <main>
 
+<h1>Welcome to Tech Skills Hub Nigeria</h1>
+
 <section class="hero">
-  
 
-
-  <!-- HERO IMAGE -->
   <figure class="hero-image">
     <img src="images/hero.jpg" alt="Young Nigerians learning tech skills together" width="1200" loading="lazy">
   </figure>
 
-  <!-- HERO CONTENT -->
   <div class="hero-content">
     <h2>Build Your Tech Future</h2>
     <p>Access curated learning resources and opportunities.</p>
@@ -104,7 +91,6 @@
 
 <section class="weather">
   <h2>Weather (API)</h2>
-
   <div class="weather-clock">
     <p id="weather-output">Loading weather...</p>
     <p id="clock">--:--</p>
@@ -114,8 +100,12 @@
 <section>
   <h2>Join Community</h2>
   <form method="get" action="form-action.html">
-    <label>Name <input name="name" required></label>
-    <label>Email <input type="email" name="email" required></label>
+    <label for="name">Name</label>
+    <input id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" required>
+
     <button type="submit">Submit</button>
   </form>
 </section>
@@ -128,21 +118,11 @@
 </dialog>
 
 <footer>
-  
-</footer>
-
-
-
-<footer>
-
-<p>
-<p>&copy; 2026 Tech Skills Hub Nigeria</p>
+  <p>&copy 2026; <span id="year"></span> Tech Skills Hub Nigeria</p>
   <a href="attributions.html">Attributions</a>
   <a href="https://your-video-link.com" target="_blank">🎥 Project Video</a>
-<p>© <span id="year"></span> Lagos Chamber of Commerce</p>
-<p>Emeodu, R. C. Iheanachor | WDD231</p>
-<p id="lastModified"></p>
-
+  <p>Emeodu, R. C. Iheanachor | WDD231</p>
+  <p id="lastModified"></p>
 </footer>
 
 </body>
