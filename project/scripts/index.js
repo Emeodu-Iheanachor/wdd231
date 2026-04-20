@@ -1,11 +1,17 @@
 const container = document.getElementById("cards-container");
 const modal = document.getElementById("modal");
 const modalText = document.getElementById("modal-text");
+const closeBtn = document.getElementById("close-modal");
 
-// LOAD CARDS DATA
+// ==========================
+// LOAD OPPORTUNITIES DATA
+// ==========================
 async function loadData() {
   try {
     const res = await fetch("data/opportunities.json");
+
+    if (!res.ok) throw new Error("Failed to load opportunities data");
+
     const data = await res.json();
 
     container.innerHTML = data.slice(0, 6).map(item => `
@@ -16,20 +22,30 @@ async function loadData() {
       </div>
     `).join("");
 
-    document.querySelectorAll("button[data-desc]").forEach(btn => {
-      btn.onclick = () => {
-        modalText.textContent = btn.dataset.desc;
-        modal.showModal();
-      };
-    });
-
   } catch (error) {
-    container.textContent = "Error loading data";
     console.error(error);
+    container.textContent = "Error loading opportunities.";
   }
 }
 
-// WEATHER API
+// ==========================
+// MODAL (EVENT DELEGATION)
+// ==========================
+container.addEventListener("click", (e) => {
+  if (e.target.dataset.desc) {
+    modalText.textContent = e.target.dataset.desc;
+    modal.showModal();
+  }
+});
+
+// Close modal
+closeBtn.addEventListener("click", () => {
+  modal.close();
+});
+
+// ==========================
+// WEATHER API FUNCTION
+// ==========================
 async function weather() {
   try {
     const res = await fetch(
@@ -44,32 +60,31 @@ async function weather() {
       `${data.main.temp}°C - ${data.weather[0].description}`;
 
   } catch (error) {
-    document.getElementById("weather-output").textContent = "Weather unavailable";
     console.error(error);
+    document.getElementById("weather-output").textContent =
+      "Weather unavailable";
   }
 }
 
-// MODAL CLOSE
-document.getElementById("close-modal").onclick = () => modal.close();
-
-// RUN FUNCTIONS
-loadData();
-weather();
-
+// ==========================
+// LIVE CLOCK
+// ==========================
 function updateClock() {
   const now = new Date();
 
   const time = now.toLocaleTimeString([], {
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
   });
 
   document.getElementById("clock").textContent = time;
 }
 
-setInterval(updateClock, 1000);
+// ==========================
+// INIT FUNCTIONS
+// ==========================
+loadData();
+weather();
 updateClock();
-
-
-
+setInterval(updateClock, 1000);
